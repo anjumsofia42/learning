@@ -1,0 +1,173 @@
+.javascript-course-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar (Desktop) */
+.sidebar {
+  width: 270px;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  padding: 20px 15px;
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #161b22;
+}
+
+/* Custom scrollbar for Chrome/Edge */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  color: #58a6ff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  color: #c9d1d9;
+  white-space: nowrap; /* prevent text wrapping */
+}
+
+.sidebar ul li:hover {
+  background: #21262d;
+  color: #58a6ff;
+}
+
+.sidebar ul li.active {
+  background: #238636;
+  color: white;
+}
+
+/* Main Content */
+.course-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.course-content h1 {
+  color: #58a6ff;
+}
+
+.code-block {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 12px;
+  border-radius: 6px;
+  color: #c9d1d9;
+}
+
+/* Toggle Button for Mobile */
+.toggle-sidebar {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1050;
+  border-radius: 8px;
+}
+
+/* Responsive Sidebar (for mobile only) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.active {
+    display: block;
+    position: fixed;
+    top: 70px; /* below navbar */
+    left: 0;
+    width: 230px;
+    height: calc(100vh - 70px);
+    background: #161b22;
+    z-index: 1040;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+  }
+
+  .course-content {
+    padding: 20px;
+    margin-top: 60px;
+  }
+}
+
+/* Slide animation for mobile sidebar */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* ===========================
+   Layout With Navbar + Sidebar
+=========================== */
+
+.javascript-page-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Navbar Section (Left side) */
+.navbar-section {
+  width: 200px;
+  min-height: 100vh;
+  background-color: #161b22;
+  border-right: 1px solid #30363d;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-section .nav-link {
+  color: #c9d1d9;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.navbar-section .nav-link:hover {
+  background: #21262d;
+  color: #58a6ff;
+}
+
+/* Hide navbar on small screens */
+@media (max-width: 768px) {
+  .navbar-section {
+    display: none;
+  }
+}
+

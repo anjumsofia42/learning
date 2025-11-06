@@ -1,0 +1,97 @@
+/* ================================
+   Navbar Layout
+================================ */
+.navbar-container {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  padding: 15px 20px;
+  color: white;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Left Section: Logo + Title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.navbar-title span {
+  color: #fef08a;
+}
+
+/* ================================
+   Buttons Section
+================================ */
+.subject-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.subject-btn {
+  background-color: #f1f5f9;
+  border: 2px solid #dbeafe;
+  color: #1e3a8a;
+  padding: 8px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Active link highlight */
+.subject-btn.active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+/* Hover effect */
+.subject-btn:hover {
+  background-color: #dbeafe;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 768px) {
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .subject-btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+}

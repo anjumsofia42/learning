@@ -1,0 +1,183 @@
+/* ========== Layout ========== */
+.react-course-container {
+  display: flex;
+  height: 100vh;
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 280px;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  padding: 20px 15px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* ✅ Prevent sidebar from shrinking */
+  
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #58a6ff;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  color: #c9d1d9;
+  text-align: left; /* ✅ Makes list text properly aligned */
+}
+
+.sidebar ul li:hover {
+  background: #21262d;
+  color: #58a6ff;
+}
+
+.sidebar ul li.active {
+  background: #238636;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ========== Main Content ========== */
+.course-content {
+  flex: 1;
+  padding: 30px 60px; /* ✅ More left padding for better readability */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  box-sizing: border-box;
+   
+}
+
+.course-content h1 {
+  font-size: 30px;
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+.course-content h2 {
+  font-size: 26px;
+  margin-top: 20px;
+  color: #79c0ff;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #a6b1bb;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.bullet-points {
+  margin-left: 25px;
+  line-height: 1.8;
+  padding-left: 10px; /* ✅ Aligns bullets properly */
+}
+
+.bullet-points li {
+  margin-bottom: 8px;
+}
+
+/* ========== Code Blocks ========== */
+.code-block {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 18px;
+  color: #c9d1d9;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 6px;
+
+}
+.code-block::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 10px;
+}
+
+/* ========== Tables ========== */
+.style-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.style-table th,
+.style-table td {
+  border: 1px solid #30363d;
+  padding: 10px;
+  text-align: left;
+}
+
+.style-table th {
+  background: #238636;
+  color: #fff;
+}
+
+.style-table tr:nth-child(even) {
+  background: #161b22;
+}
+
+.style-table tr:hover {
+  background: #1f6feb;
+  color: #fff;
+}
+
+/* ========== Scrollbar Styling ========== */
+.sidebar::-webkit-scrollbar,
+.course-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.course-content::-webkit-scrollbar-thumb {
+  background-color: #30363d;
+  border-radius: 10px;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 900px) {
+  .javascript-course-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #30363d;
+    height: auto;
+  }
+
+  .course-content {
+    padding: 20px;
+  }
+}
