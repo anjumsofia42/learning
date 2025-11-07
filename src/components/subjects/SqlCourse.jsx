@@ -193,7 +193,7 @@ const SqlCourse = () => {
     </p>
 
     <p className="subtitle">Example Table: Students</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>student_id</th>
@@ -229,7 +229,7 @@ const SqlCourse = () => {
     </ul>
 
     <h2>🔢 What Is a Record and a Field?</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Term</th>
@@ -266,7 +266,7 @@ const SqlCourse = () => {
     <p>
       <b>Keys</b> uniquely identify records and connect tables together.
     </p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Type of Key</th>
@@ -295,7 +295,7 @@ const SqlCourse = () => {
 
     <h2>🔗 Relationships Between Tables</h2>
     <p>There are three main types of relationships in databases:</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Type</th>
@@ -323,7 +323,7 @@ const SqlCourse = () => {
     </table>
 
     <h2>⚙️ Types of Databases</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Type</th>
@@ -359,7 +359,7 @@ const SqlCourse = () => {
     <p>Let’s say you have two tables 👇</p>
 
     <p className="subtitle">1️⃣ Students Table</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>student_id</th>
@@ -382,7 +382,7 @@ const SqlCourse = () => {
     </table>
 
     <p className="subtitle">2️⃣ Courses Table</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>course_id</th>
@@ -402,7 +402,7 @@ const SqlCourse = () => {
     </table>
 
     <p className="subtitle">3️⃣ Enrollments Table</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>student_id</th>
@@ -428,7 +428,7 @@ const SqlCourse = () => {
     <p>This shows how relationships connect data between tables using keys.</p>
 
     <h2>🧠 Summary</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>

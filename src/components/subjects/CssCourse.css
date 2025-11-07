@@ -6,7 +6,7 @@
   color: #e6edf3;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  padding-top: 60px; /* ✅ Fix overlap on mobile navbar */
+  
 }
 
 /* ========== Sidebar ========== */

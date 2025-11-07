@@ -540,7 +540,7 @@ const HtmlCourse = () => {
             </pre>
 
             <h2>✅ Output:</h2>
-            <table className="output-table" border="1">
+            <table className="style-table" border="1">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -966,9 +966,9 @@ const HtmlCourse = () => {
 )}{/* ✅ Semantic HTML – Explained Simply */}
 {activeSection === "html-semantic" && (
   <>
-  <h2>🧠 Semantic HTML – Explained Simply</h2>
+  <h1>🧠 Semantic HTML – Explained Simply</h1>
 
-    <h3>🌍 What is Semantic HTML?</h3>
+    <h2>🌍 What is Semantic HTML?</h2>
     <p className="subtitle">
       Semantic HTML means using HTML tags that clearly describe their meaning —
       both to the browser and to developers.
@@ -1088,9 +1088,9 @@ const HtmlCourse = () => {
 {/* ✅ HTML Multimedia – Images, Audio & Video */}
 {activeSection === "html-multimedia" && (
   <>
-    <h2>🎥 HTML Multimedia – Images, Audio & Video</h2>
+    <h1>🎥 HTML Multimedia – Images, Audio & Video</h1>
 
-    <h3>🌍 What is Multimedia?</h3>
+    <h2>🌍 What is Multimedia?</h2>
     <p className="subtitle">
       Multimedia means any content that uses more than one medium — for example:
     </p>
@@ -1523,9 +1523,9 @@ const HtmlCourse = () => {
 {/* 🧱 Div and Span */}
 {activeSection === "html-div-span" && (
   <>
-    <h2>🧱 Div and Span</h2>
+    <h1>🧱 Div and Span</h1>
 
-    <h3>📘 Definition</h3>
+    <h2>📘 Definition</h2>
     <p className="subtitle">
       Both <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> are
       <strong> non-semantic elements</strong> used to group or style parts of a webpage.
@@ -1703,24 +1703,18 @@ const HtmlCourse = () => {
 {/* 🧰 HTML Entities and Symbols */}
 {activeSection === "html-entities-symbols" && (
   <>
-    <h2>🧰 HTML Entities and Symbols</h2>
-
-    {/* 📘 Definition */}
-    <h3>📘 Definition</h3>
+    <h1>🧰 HTML Entities and Symbols</h1>
+    <h2>📘 Definition</h2>
     <p className="subtitle">
       HTML Entities are special codes used to display reserved characters, symbols, or emojis that can’t be typed directly in HTML.
     </p>
-
-    {/* 🧱 Why Use Entities */}
     <h2>🧱 Why Use Entities?</h2>
     <ul className="bullet-points">
       <li>➡️ To display characters like <code>&lt;</code>, <code>&gt;</code>, or <code>&amp;</code> safely.</li>
       <li>💎 To show special symbols like €, ©, ®, →, etc.</li>
       <li>🌐 To ensure proper rendering across browsers.</li>
     </ul>
-
-    {/* 💡 Common Entities Table */}
-    <h2>💡 Common Entities</h2>
+  <h2>💡 Common Entities</h2>
     <table className="style-table">
       <thead>
         <tr>
@@ -1742,16 +1736,12 @@ const HtmlCourse = () => {
         <tr><td>♥</td><td>&amp;hearts;</td><td>Heart symbol</td></tr>
       </tbody>
     </table>
-
-    {/* 🧩 Example */}
-    <h2>🧩 Example</h2>
+  <h2>🧩 Example</h2>
     <pre className="code-block">
 {`<p>5 &lt; 10 &amp; 10 &gt; 5</p>
 <p>&copy; 2025 My Website</p>`}
     </pre>
-
-    {/* 🎯 Key Points */}
-    <h2>🎯 Key Points</h2>
+  <h2>🎯 Key Points</h2>
     <ul className="bullet-points">
       <li>✅ Use entities to show special characters safely.</li>
       <li>✅ Begin with <code>&amp;</code> and end with <code>;</code>.</li>
@@ -1762,15 +1752,11 @@ const HtmlCourse = () => {
 {/* 🗂️ HTML Layouts */}
 {activeSection === "html-layouts" && (
   <>
-    <h2>🗂️ HTML Layouts</h2>
-
-    {/* 📘 Definition */}
-    <h3>📘 Definition</h3>
+    <h1>🗂️ HTML Layouts</h1>
+    <h2>📘 Definition</h2>
     <p className="subtitle">
       An <strong>HTML layout</strong> defines how different sections like header, content, sidebar, and footer are arranged on a webpage.
     </p>
-
-    {/* 🧱 Common Layout Elements */}
     <h2>🧱 Common Layout Elements</h2>
     <table className="style-table">
       <thead>
@@ -1806,8 +1792,6 @@ const HtmlCourse = () => {
         <tr><td>Float / Position</td><td>Older methods (less used today)</td></tr>
       </tbody>
     </table>
-
-    {/* 💡 Simple Example */}
     <h2>💡 Simple Example</h2>
     <pre className="code-block">
 {`<header>Header</header>
@@ -1816,8 +1800,6 @@ const HtmlCourse = () => {
 <aside>Sidebar</aside>
 <footer>Footer</footer>`}
     </pre>
-
-    {/* 🎯 Key Points */}
     <h2>🎯 Key Points</h2>
     <ul className="bullet-points">
       <li>✅ Use <strong>semantic elements</strong> for page structure.</li>

@@ -1,26 +1,39 @@
 /* ========== Layout ========== */
+.header {
+  text-align: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
 .html-course-container {
   display: flex;
+  flex-wrap: nowrap; /* ensures sidebar and content stay side-by-side */
   height: 100vh;
   background-color: #0d1117;
   color: #e6edf3;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
-  padding-top: 60px; /* ✅ Fix overlap on mobile navbar */
+  overflow: hidden; /* remove or replace with: */
+  overflow: hidden; /* optional if you want only sidebar/content to scroll separately */
 }
+
 
 /* ========== Sidebar ========== */
 .sidebar {
   width: 280px;
+  min-height: 100vh;
   background: #161b22;
   border-right: 1px solid #30363d;
   padding: 20px 15px;
   overflow-y: auto;
   transition: all 0.3s ease;
-  flex-shrink: 0;
+  flex-shrink: 0; /* ✅ Prevent sidebar from shrinking */
+  
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
-.sidebar h4 {
+.sidebar h2 {
   font-size: 20px;
   font-weight: 600;
   text-align: center;
@@ -41,6 +54,7 @@
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
   color: #c9d1d9;
+  text-align: left; /* ✅ Makes list text properly aligned */
 }
 
 .sidebar ul li:hover {
@@ -55,14 +69,20 @@
 }
 
 /* ========== Main Content ========== */
+@media (max-width: 900px){
+.html-course-container {
+  padding: 10px;
+}
+}
 .course-content {
   flex: 1;
   padding: 30px 60px;
-  overflow-y: auto;
+  overflow-y: auto; /* ✅ scrolling enabled */
   scroll-behavior: smooth;
   max-width: 100%;
   box-sizing: border-box;
 }
+
 
 .course-content h1 {
   font-size: 28px;
@@ -77,7 +97,7 @@
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 22px;
   color: #a6b1bb;
   margin-bottom: 20px;
   line-height: 1.6;
@@ -86,11 +106,64 @@
 .bullet-points {
   margin-left: 25px;
   line-height: 1.8;
-  padding-left: 10px;
+  padding-left: 10px; /* ✅ Aligns bullets properly */
 }
 
 .bullet-points li {
   margin-bottom: 8px;
+}
+
+/* ========== Code Blocks ========== */
+.code-block {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 22px;
+  color: #c9d1d9;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 6px;
+
+}
+.code-block::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 10px;
+}
+
+/* ========== Tables ========== */
+.style-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.style-table th,
+.style-table td {
+  border: 1px solid #30363d;
+  padding: 10px;
+  text-align: left;
+}
+
+.style-table th {
+  background: #238636;
+  color: #fff;
+}
+
+.style-table tr:nth-child(even) {
+  background: #161b22;
+}
+
+.style-table tr:hover {
+  background: #1f6feb;
+  color: #fff;
 }
 
 /* ========== Scrollbar Styling ========== */
@@ -110,11 +183,11 @@
   .html-course-container {
     flex-direction: column;
     height: auto;
-    padding-top: 10px; /* ✅ Enough space under mobile navbar */
   }
 
   .sidebar {
     width: 100%;
+    min-height: auto;
     border-right: none;
     border-bottom: 1px solid #30363d;
     height: auto;

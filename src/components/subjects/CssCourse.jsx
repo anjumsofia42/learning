@@ -115,7 +115,7 @@ const CssCourse = () => {
     </ul>
 
     <h2>⚙️ Ways to Add CSS</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Method</th>
@@ -180,10 +180,10 @@ const CssCourse = () => {
     </p>
 
     <h2>📘 Definition</h2>
-    <p>Selectors specify the HTML elements that the CSS rules will apply to.</p>
+    <p className="subtitle">Selectors specify the HTML elements that the CSS rules will apply to.</p>
 
     <h2>🧩 Types of Selectors</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Type</th>
@@ -260,7 +260,7 @@ const CssCourse = () => {
     </p>
 
     <h2>🎨 1. Colors</h2>
-    <p>Used to set <b>text</b> and <b>element</b> colors.</p>
+    <p className='subtitle'>Used to set <b>text</b> and <b>element</b> colors.</p>
 
     <ul className="bullet-points">
       <li><code>color: red;</code> → Text color</li>
@@ -270,9 +270,9 @@ const CssCourse = () => {
     </ul>
 
     <h2>🖼️ 2. Backgrounds</h2>
-    <p>Used to set a background color or image behind an element.</p>
+    <p className="subtitle">Used to set a background color or image behind an element.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -312,7 +312,7 @@ const CssCourse = () => {
     <h2>⬛ 3. Borders</h2>
     <p>Used to create outlines or frames around elements.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -367,7 +367,7 @@ const CssCourse = () => {
     </p>
 
     <h2>🧩 1. Text Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -415,7 +415,7 @@ const CssCourse = () => {
     </table>
 
     <h2>🖋️ 2. Font Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -491,7 +491,7 @@ const CssCourse = () => {
     </pre>
 
     <h2>⚙️ Box Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -559,7 +559,7 @@ const CssCourse = () => {
     <h2>🧩 1. Display Property</h2>
     <p className="subtitle">Defines how an element is shown in the layout.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Value</th>

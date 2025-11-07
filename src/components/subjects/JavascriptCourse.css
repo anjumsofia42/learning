@@ -1,12 +1,18 @@
+/* =========================
+   🌐 Base Layout
+========================= */
 .javascript-course-container {
   display: flex;
   min-height: 100vh;
   background-color: #0d1117;
   color: #e6edf3;
   font-family: "Poppins", sans-serif;
+  
 }
 
-/* Sidebar (Desktop) */
+/* =========================
+   🧭 Sidebar (Desktop)
+========================= */
 .sidebar {
   width: 270px;
   background: #161b22;
@@ -21,7 +27,7 @@
   scrollbar-color: #444 #161b22;
 }
 
-/* Custom scrollbar for Chrome/Edge */
+/* Custom scrollbar */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
@@ -45,6 +51,9 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* change to center if you want center alignment */
 }
 
 .sidebar ul li {
@@ -57,7 +66,7 @@
   border-radius: 6px;
   transition: all 0.2s ease;
   color: #c9d1d9;
-  white-space: nowrap; /* prevent text wrapping */
+  white-space: nowrap;
 }
 
 .sidebar ul li:hover {
@@ -68,9 +77,16 @@
 .sidebar ul li.active {
   background: #238636;
   color: white;
+  width: fit-content;
+   padding-right: 16px;        /* add small right padding for balance */
+  border-radius: 8px;
+  box-shadow: 0 0 8px #23863680;
+  transition: all 0.3s ease;
 }
 
-/* Main Content */
+/* =========================
+   📘 Main Content
+========================= */
 .course-content {
   flex: 1;
   padding: 30px 40px;
@@ -88,43 +104,87 @@
   padding: 12px;
   border-radius: 6px;
   color: #c9d1d9;
+  font-size: 15px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
-/* Toggle Button for Mobile */
+/* =========================
+   📱 Toggle Button (Mobile)
+========================= */
 .toggle-sidebar {
+  display: none;
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 1050;
-  border-radius: 8px;
+  background-color: #238636;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background 0.3s ease;
 }
 
-/* Responsive Sidebar (for mobile only) */
-@media (max-width: 768px) {
+.toggle-sidebar:hover {
+  background-color: #2ea043;
+}
+
+/* =========================
+   📲 Responsive Styles
+========================= */
+@media (max-width: 992px) {
+  .javascript-course-container {
+    flex-direction: column;
+  }
+
   .sidebar {
     display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #30363d;
   }
 
   .sidebar.active {
     display: block;
     position: fixed;
-    top: 70px; /* below navbar */
+    top: 60px;
     left: 0;
-    width: 230px;
-    height: calc(100vh - 70px);
+    width: 250px;
+    height: calc(100vh - 60px);
     background: #161b22;
-    z-index: 1040;
+    z-index: 1050;
     overflow-y: auto;
     animation: slideIn 0.3s ease;
   }
 
+  .toggle-sidebar {
+    display: block;
+  }
+
   .course-content {
-    padding: 20px;
-    margin-top: 60px;
+    padding: 80px 20px 40px 20px;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .style-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
   }
 }
 
-/* Slide animation for mobile sidebar */
+/* =========================
+   ✨ Animations
+========================= */
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
@@ -133,16 +193,15 @@
     transform: translateX(0);
   }
 }
-/* ===========================
-   Layout With Navbar + Sidebar
-=========================== */
 
+/* =========================
+   🧱 Layout with Navbar
+========================= */
 .javascript-page-layout {
   display: flex;
   min-height: 100vh;
 }
 
-/* Navbar Section (Left side) */
 .navbar-section {
   width: 200px;
   min-height: 100vh;
@@ -164,10 +223,8 @@
   color: #58a6ff;
 }
 
-/* Hide navbar on small screens */
 @media (max-width: 768px) {
   .navbar-section {
     display: none;
   }
 }
-

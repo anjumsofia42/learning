@@ -2598,9 +2598,9 @@ console.log(now.getDay());
 {activeSection === "dom" && (
 <>
 
-  <h2>🌐 DOM (Document Object Model)</h2>
+  <h1>🌐 DOM (Document Object Model)</h1>
 
-  <h3>🧠 What is the DOM?</h3>
+  <h2>🧠 What is the DOM?</h2>
   <p className="subtitle">
     DOM stands for <b>Document Object Model</b>.
   </p>
@@ -2640,8 +2640,8 @@ Document
 
   <h3>⚙️ Accessing HTML Elements with JavaScript</h3>
   <p className="subtitle">You can get (select) HTML elements using these methods 👇</p>
-
-  <table className="style-table">
+ 
+  <table className="style-table"  >
     <thead>
       <tr>
         <th>Method</th>
