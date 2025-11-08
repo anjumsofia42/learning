@@ -3748,18 +3748,22 @@ console.log(calculator.add(5, 3)); // 8
 {/* ⏳ Asynchronous JavaScript */}
 {activeSection === "async-js" && (
   <>
-    <h2>⏳ Asynchronous JavaScript</h2>
+    <h1>⏳ Asynchronous JavaScript (Simple Explanation)</h1>
 
     <p className="subtitle">
-      JavaScript is <strong>single-threaded</strong>, meaning it runs one line at a time.
-      But some tasks (like API calls or timers) take time ⏱️.
+      JavaScript single-thread normally runs <strong>one line at a time</strong> — this is called
+      <strong> synchronous execution</strong>.
+      But some tasks like fetching data from the internet or waiting for a timer take time ⏱️(like API calls or timers).
       <br />
       <strong>Asynchronous JavaScript</strong> allows such tasks to run in the background
-      — without freezing your main code.
+      so your program doesn’t freeze while waiting.
     </p>
 
     <h3>🕒 1. setTimeout()</h3>
-    <p className="subtitle">Runs a function once after a delay (in milliseconds).</p>
+    <p className="subtitle">
+      Runs a function <strong>once after a delay</strong> (in milliseconds).
+      It lets your code keep running while waiting.
+    </p>
     <div className="code-block">{`
 console.log("Start");
 
@@ -3776,7 +3780,9 @@ console.log("End");
     `}</div>
 
     <h3>🔁 2. setInterval()</h3>
-    <p className="subtitle">Repeats a function every given interval (until stopped).</p>
+    <p className="subtitle">
+      Repeats a function again and again after a specific time interval.
+    </p>
     <div className="code-block">{`
 let count = 0;
 
@@ -3789,12 +3795,12 @@ let timer = setInterval(() => {
 
     <h3>🔄 3. Callback Functions</h3>
     <p className="subtitle">
-      A <strong>callback</strong> is a function passed as an argument to another function and executed later.
+      A <strong>callback</strong> is a function that you pass into another function, and it runs later.
     </p>
     <div className="code-block">{`
 function greet(name, callback) {
   console.log("Hi, " + name);
-  callback();
+  callback(); // runs after greet finishes
 }
 
 function sayBye() {
@@ -3810,7 +3816,7 @@ greet("Sofia", sayBye);
 
     <h3>⚠️ 4. Callback Hell</h3>
     <p className="subtitle">
-      When multiple callbacks are nested, the code becomes messy and hard to maintain.
+      When callbacks are <strong>nested inside each other</strong>, the code becomes confusing and messy.
     </p>
     <div className="code-block">{`
 setTimeout(() => {
@@ -3828,11 +3834,12 @@ setTimeout(() => {
 // Step 2
 // Step 3
     `}</div>
-    <p className="subtitle">😵 This deep nesting is known as <strong>callback hell</strong>.</p>
+    <p className="subtitle">😵 This messy nesting is called <strong>callback hell</strong>.</p>
 
     <h3>🌈 5. Promises</h3>
     <p className="subtitle">
-      A <strong>Promise</strong> represents a future value — either success (<code>resolve</code>) or failure (<code>reject</code>).
+      A <strong>Promise</strong> means “I’ll give you the result later”.
+      It handles success (<code>resolve</code>) or failure (<code>reject</code>).
     </p>
     <div className="code-block">{`
 let promise = new Promise((resolve, reject) => {
@@ -3848,9 +3855,11 @@ promise
 // Output: ✅ Task completed!
     `}</div>
 
-    <h3>⚡ 6. Async / Await</h3>
+    <h3>⚡ 6. Async / Await (Easy Way)</h3>
     <p className="subtitle">
-      A modern and cleaner way to handle asynchronous code. It looks synchronous, but runs asynchronously.
+      The <strong>modern way</strong> to write asynchronous code — it looks simple like normal code.
+      <br />
+      <code>await</code> waits for the result, but it doesn’t block other parts of your program.
     </p>
     <div className="code-block">{`
 function getData() {
@@ -3861,7 +3870,7 @@ function getData() {
 
 async function showData() {
   console.log("Fetching data...");
-  let data = await getData();
+  let data = await getData(); // waits until promise is done
   console.log(data);
 }
 
@@ -3872,12 +3881,11 @@ showData();
 // Data received!
     `}</div>
 
-    <h3>🌀 7. Event Loop (Microtasks & Call Stack)</h3>
+    <h3>🌀 7. Event Loop (Behind the Scenes)</h3>
     <p className="subtitle">
-      The <strong>Event Loop</strong> manages when asynchronous code runs.
-      It moves tasks from the <em>queue</em> to the <em>call stack</em> when the stack is free.
+      The <strong>Event Loop</strong> makes sure JavaScript knows when to run async tasks.
       <br />
-      Promises (microtasks) run before timers (macrotasks).
+      Promises (microtasks) always run <strong>before</strong> timers (macrotasks).
     </p>
     <div className="code-block">{`
 console.log("Start");
@@ -3905,26 +3913,26 @@ console.log("End");
       </thead>
       <tbody>
         <tr><td>setTimeout()</td><td>Runs once after delay</td><td>setTimeout(() =&gt; &#123;&#125;, 1000)</td></tr>
-        <tr><td>setInterval()</td><td>Runs repeatedly</td><td>setInterval(() =&gt; &#123;&#125;, 1000)</td></tr>
-        <tr><td>Callback</td><td>Function passed to another</td><td>greet("Sofia", sayBye)</td></tr>
-        <tr><td>Callback Hell</td><td>Nested callbacks (messy)</td><td>setTimeout inside setTimeout</td></tr>
-        <tr><td>Promise</td><td>Handles async results</td><td>.then().catch()</td></tr>
+        <tr><td>setInterval()</td><td>Repeats after intervals</td><td>setInterval(() =&gt; &#123;&#125;, 1000)</td></tr>
+        <tr><td>Callback</td><td>Runs after another function</td><td>greet("Sofia", sayBye)</td></tr>
+        <tr><td>Callback Hell</td><td>Too many nested callbacks</td><td>setTimeout inside setTimeout</td></tr>
+        <tr><td>Promise</td><td>Handles async result</td><td>.then().catch()</td></tr>
         <tr><td>async / await</td><td>Cleaner async handling</td><td>await getData()</td></tr>
-        <tr><td>Event Loop</td><td>Manages async tasks</td><td>Promise runs before Timeout</td></tr>
+        <tr><td>Event Loop</td><td>Decides task order</td><td>Promise runs before Timeout</td></tr>
       </tbody>
     </table>
 
     <h3>💬 In Simple Words</h3>
     <ul>
       <li>JavaScript runs one thing at a time (single-threaded).</li>
-      <li>Asynchronous code helps run tasks in the background smoothly.</li>
-      <li><code>setTimeout</code>, <code>fetch</code>, and event listeners are async.</li>
-      <li>Use <code>Promises</code> or <code>async/await</code> for cleaner code.</li>
+      <li>Async code helps your app keep running while waiting for something.</li>
+      <li><code>setTimeout</code>, <code>fetch</code>, and <code>Promises</code> are async examples.</li>
+      <li>Use <code>Promises</code> or <code>async/await</code> to make your code clean and readable.</li>
     </ul>
 
-    <h3>💡 Tip:</h3>
+    <h3>💡 Tip: Handle Errors Properly</h3>
     <p className="subtitle">
-      Always handle errors using <code>try...catch</code> inside <code>async</code> functions:
+      Use <code>try...catch</code> inside <code>async</code> functions to catch errors safely:
     </p>
     <div className="code-block">{`
 async function getData() {
@@ -3939,6 +3947,7 @@ async function getData() {
     `}</div>
   </>
 )}
+
 
 {/* 🌍 20. JSON (JavaScript Object Notation) */}
 {activeSection === "json" && (
@@ -4334,7 +4343,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
 {/* 💾 Web Storage & Cookies */}
 {activeSection === "cookies" && (
 <>
-  <h2>💾 Web Storage & Cookies</h2>
+  <h1>💾 Web Storage & Cookies</h1>
     <p className="subtitle">
       The <strong>Web Storage API</strong> and <strong>Cookies</strong> help you store data in the
       browser — so you can remember user information, settings, or session details.
