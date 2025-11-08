@@ -599,7 +599,7 @@ const CssCourse = () => {
       Controls whether an element is visible or hidden — but still affects the layout.
     </p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Value</th>
@@ -639,7 +639,8 @@ const CssCourse = () => {
   <>
     <h1>📐 CSS Positioning</h1>
     <p className="subtitle">
-      The <b>position</b> property in CSS controls how an element is placed in the document flow and how it interacts with other elements.
+      The <b>position</b> property in CSS determines how elements are placed in the document
+      and how they interact with other elements.
     </p>
 
     <h2>🧩 Position Values</h2>
@@ -674,46 +675,36 @@ const CssCourse = () => {
       </tbody>
     </table>
 
+    <h2>🖼️ Visual Example</h2>
+    <div className="position-image-container">
+      <img src="/position.png" alt="CSS Positioning Examples" className="position-image" />
+      <p className="image-caption">
+        Illustration showing how <b>static</b>, <b>relative</b>, <b>absolute</b>, <b>fixed</b>, 
+        and <b>sticky</b> elements behave in CSS layout.
+      </p>
+    </div>
+
     <h2>⚙️ Example</h2>
     <pre className="code-block">
-{`div.static {
-  position: static;
-}
-
-div.relative {
-  position: relative;
-  top: 10px;
-  left: 20px;
-}
-
-div.absolute {
-  position: absolute;
-  top: 50px;
-  left: 100px;
-}
-
-div.fixed {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-div.sticky {
-  position: sticky;
-  top: 0;
-}`}
+{`div.static { position: static; }
+div.relative { position: relative; top: 10px; left: 20px; }
+div.absolute { position: absolute; top: 50px; left: 100px; }
+div.fixed { position: fixed; top: 0; right: 0; }
+div.sticky { position: sticky; top: 0; }`}
     </pre>
 
     <h2>🎯 Key Points</h2>
     <ul className="bullet-points">
-      <li>✅ <b>static</b> is the default position (no special behavior)</li>
-      <li>✅ <b>relative</b> moves element without removing it from layout</li>
-      <li>✅ <b>absolute</b> removes element from flow and positions it relative to parent</li>
-      <li>✅ <b>fixed</b> stays visible even when the page scrolls</li>
-      <li>✅ <b>sticky</b> is great for headers or navigation bars</li>
+      <li>✅ <b>static</b>: Default, follows document flow</li>
+      <li>✅ <b>relative</b>: Shifts relative to itself</li>
+      <li>✅ <b>absolute</b>: Positioned relative to parent</li>
+      <li>✅ <b>fixed</b>: Fixed to viewport (stays on scroll)</li>
+      <li>✅ <b>sticky</b>: Scrolls then sticks to top</li>
     </ul>
   </>
 )}
+
+
 {/* Float and Clear */}
 {activeSection === "css-float-clear" && (
   <>
@@ -725,7 +716,7 @@ div.sticky {
     </p>
 
     <h2>🧩 1. Float Property</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Value</th>
@@ -762,7 +753,7 @@ div.sticky {
     <p className="subtitle">🧠 Commonly used for images or sidebars.</p>
 
     <h2>🧹 2. Clear Property</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Value</th>
@@ -835,7 +826,7 @@ div.sticky {
     <p className="subtitle">All child elements inside become flex items.</p>
 
     <h2>⚙️ 2. Main Flexbox Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -873,7 +864,7 @@ div.sticky {
     </table>
 
     <h2>🧱 3. Flex Item Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -943,7 +934,7 @@ div.sticky {
     <p className="subtitle">All child elements inside become grid items.</p>
 
     <h2>⚙️ 2. Grid Container Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -981,7 +972,7 @@ div.sticky {
     </table>
 
     <h2>🧱 3. Grid Item Properties</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -1043,9 +1034,9 @@ div.sticky {
 
     {/* 🧩 1. Absolute Units */}
     <h2>🧩 1. Absolute Units</h2>
-    <p>Fixed sizes that don’t change with screen size.</p>
+    <p className="subtitle">Fixed sizes that don’t change with screen size.</p>
 
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Unit</th>
@@ -1086,7 +1077,7 @@ div.sticky {
     <h2>📐 2. Relative Units</h2>
     <p>Sizes that adjust based on parent or viewport.</p>
 
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Unit</th>
@@ -1123,16 +1114,17 @@ div.sticky {
       </tbody>
     </table>
 
-    <div className="code-box">
-      <p>💡 Example:</p>
-      <pre>
+    
+    <p className="subtitle">💡 Example:</p>
+    <pre className="code-box" >
 {`div {
   width: 50%;
   padding: 1rem;
   font-size: 16px;
 }`}
-      </pre>
-    </div>
+</pre>
+      
+    
 
     <h2>🎯 Key Points</h2>
     <ul>
@@ -1152,11 +1144,11 @@ div.sticky {
     </p>
 
     <h2>🧩 1. Pseudo-classes ( : )</h2>
-    <p>
+    <p className="subtitle">
       A pseudo-class defines a special state of an element.
     </p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Pseudo-class</th>
@@ -1199,11 +1191,11 @@ div.sticky {
     </table>
 
     <h2>🧱 2. Pseudo-elements ( :: )</h2>
-    <p>
+    <p className="subtitle">
       A pseudo-element targets a specific part of an element.
     </p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Pseudo-element</th>
@@ -1256,14 +1248,12 @@ div.sticky {
     <p className="subtitle">
       Used to add movement and visual effects to elements — making websites look smooth and interactive.
     </p>
-
-    {/* ⚡ 1. Transitions */}
     <h2>⚡ 1. Transitions</h2>
-    <p>
+    <p className="subtitle">
       Transitions create smooth changes between two CSS states (like hover).
     </p>
 
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -1295,9 +1285,9 @@ div.sticky {
       </tbody>
     </table>
 
-    <div className="code-box">
-      <p>💡 Example:</p>
-      <pre>
+    
+      <p className="subtitle">💡 Example:</p>
+      <pre className="code-block">
 {`button {
   background: blue;
   transition: background 0.5s ease;
@@ -1307,7 +1297,7 @@ button:hover {
   background: red;
 }`}
       </pre>
-    </div>
+    
 
     {/* 🎞️ 2. Animations */}
     <h2>🎞️ 2. Animations</h2>
@@ -1315,7 +1305,7 @@ button:hover {
       Animations allow multi-step keyframe animations — more control than transitions.
     </p>
 
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -1379,7 +1369,7 @@ div {
     <p className="subtitle">
       The <code>transform</code> property lets you visually manipulate an element’s shape, size, and position in 2D or 3D space — without affecting the document layout.
     </p>
-    <p>
+    <p className="subtitle">
       💡 Think of it like “changing how an element looks” rather than “where it exists.”
     </p>
 
@@ -1398,7 +1388,7 @@ transform: rotate(45deg) scale(1.5) translateX(100px);`}
 
     {/* ⚙️ 3. 2D Transform Functions */}
     <h2>⚙️ 3. 2D Transform Functions</h2>
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Function</th>
@@ -1499,7 +1489,7 @@ transform: rotate(45deg) scale(1.5) translateX(100px);`}
 
     {/* 🧭 5. Transform Origin */}
     <h2>🧭 5. Transform Origin</h2>
-    <p>
+    <p className="subtitle">
       By default, transforms happen around the center of the element.
       You can change this point using <code>transform-origin</code>.
     </p>
@@ -1519,7 +1509,7 @@ transform-origin: right bottom;`}
 
     {/* 🧩 6. 3D Transforms */}
     <h2>🧩 6. 3D Transforms</h2>
-    <table className="table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Function</th>
@@ -1609,7 +1599,7 @@ button:hover {
 }`}
       </pre>
 
-      <p>🔸 3D Flip Card</p>
+      <p className="subtitle">🔸 3D Flip Card</p>
       <pre>
 {`.card {
   width: 200px;

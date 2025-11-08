@@ -1630,7 +1630,7 @@ console.log(fruits[0]); // apple
 console.log(fruits[1]); // banana
 console.log(fruits[2]); // mango
 `}</div>
-<h2>✍️ Creating Arrays</h2>
+<h1>✍️ Creating Arrays</h1>
 <h3>There are two common ways:</h3>
 <ul >
   <li>✅ 1. Using square brackets []</li>
@@ -2005,8 +2005,92 @@ myMap.forEach((value, key) => {
     <p className="subtitle">
       ✅ <b>Use Map</b> when you need a key-value pair structure where keys can be of any data type.
     </p>
+    <h2>🧩 Object vs Map in JavaScript</h2>
 
-    <h2>🧩 2. Set</h2>
+<p className="subtitle">
+  Both <b>Object</b> and <b>Map</b> store key–value pairs, but they work differently in several important ways.
+</p>
+
+<h3>💡 Key Differences:</h3>
+
+<table className="style-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>🧱 Object</th>
+      <th>🗺️ Map</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Type of Keys</td>
+      <td>Only <b>strings</b> or <b>symbols</b></td>
+      <td>Any type (objects, numbers, strings, etc.)</td>
+    </tr>
+    <tr>
+      <td>Order of Keys</td>
+      <td>Not guaranteed</td>
+      <td>Maintains <b>insertion order</b></td>
+    </tr>
+    <tr>
+      <td>Default Keys</td>
+      <td>Has built-in keys from <code>Object.prototype</code></td>
+      <td>No default keys — only what you add</td>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>Use <code>Object.keys(obj).length</code></td>
+      <td>Has built-in <code>.size</code> property</td>
+    </tr>
+    <tr>
+      <td>Iteration</td>
+      <td><code>for...in</code> or <code>Object.entries()</code></td>
+      <td><code>for...of</code> or <code>map.forEach()</code></td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Slower for frequent key changes</td>
+      <td>Optimized for additions/deletions</td>
+    </tr>
+    <tr>
+      <td>Serialization</td>
+      <td>Can be easily converted to JSON</td>
+      <td>Not directly JSON-serializable</td>
+    </tr>
+    <tr>
+      <td>Best For</td>
+      <td>Structured data (like user info)</td>
+      <td>Dynamic key–value pairs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>🧠 Example:</h3>
+
+<div className="code-block">{`
+//// ✅ Using an Object
+let obj = { name: "Sofia", age: 22 };
+console.log(obj["name"]); // Sofia
+
+
+//// ✅ Using a Map
+let map = new Map();
+map.set("name", "Sofia");
+map.set("age", 22);
+map.set({ role: "dev" }, "Engineer");
+
+console.log(map.get("name")); // Sofia
+console.log(map.size);        // 3
+`}</div>
+
+<h3>⚡ Summary:</h3>
+<ul className="bullet-points">
+  <li>Use <b>Object</b> for structured data like configurations or user details.</li>
+  <li>Use <b>Map</b> for flexible key–value storage with any key type.</li>
+  <li><b>Map</b> is faster and cleaner for large or dynamic datasets.</li>
+</ul>
+
+    <h1>🧩 2. Set</h1>
     <p className="subtitle">
       A <b>Set</b> is a collection of <b>unique values</b> — duplicates are not allowed.
     </p>
@@ -2043,35 +2127,63 @@ mySet.forEach(value => console.log(value));
       ✅ <b>Use Set</b> when you need to store unique values, such as unique IDs or item lists.
     </p>
 
-    <h2>🧠 3. WeakMap</h2>
-    <p className="subtitle">
-      A <b>WeakMap</b> is similar to a Map, but it only accepts <b>objects</b> as keys and holds them
-      weakly — meaning they can be garbage collected when not referenced elsewhere.
-    </p>
+      <h1>💡 What is a WeakMap?</h1>
 
-    <div className="code-block">{`
+<p className="subtitle">
+  A <b>WeakMap</b> is almost like a normal <b>Map</b>, but with a few special rules:
+</p>
+
+<ul className="bullet-points">
+  <li>It stores <b>key–value pairs</b>.</li>
+  <li>The <b>keys must be objects</b> (not strings, numbers, etc).</li>
+  <li>
+    Those object keys are <b>“weakly held”</b> — meaning, if the object is no longer used anywhere in your program, it’s automatically removed from the WeakMap (saving memory).
+  </li>
+</ul>
+
+<h3>🧠 Example:</h3>
+
+<div className="code-block">{`
 let weakMap = new WeakMap();
 
-let obj = { name: "Sofia" };
-weakMap.set(obj, "Hello");
+let person = { name: "Sofia" };
+weakMap.set(person, "Developer");
 
-console.log(weakMap.get(obj)); // Hello
+console.log(weakMap.get(person)); // "Developer"
 
-obj = null; // Object removed
-// Now the entry in weakMap is automatically deleted
-    `}</div>
+// Now remove the only reference to 'person'
+person = null; // object is gone!
 
-    <h3>✅ Key Points:</h3>
-    <ul className="bullet-points">
-      <li>Keys must be objects</li>
-      <li>Not iterable (can’t use forEach or size)</li>
-      <li>Automatically removes unused object keys (memory-safe)</li>
-    </ul>
+// The entry is automatically removed from weakMap
+`}</div>
 
-    <p className="subtitle">
-      ✅ <b>Use WeakMap</b> when you need temporary data storage tied to object lifetimes (like
-      caching).
-    </p>
+<p className="subtitle">
+  After <code>person = null</code>, the WeakMap entry disappears automatically — 
+  because the object <code>{'{ name: "Sofia" }'}</code> is no longer used anywhere.
+</p>
+
+<h3>✅ Key Points (Easy to Remember):</h3>
+<ul className="bullet-points">
+  <li><b>Keys must be objects</b>, not strings or numbers.</li>
+  <li>If the object is deleted, its entry in the WeakMap also disappears.</li>
+  <li><b>No size</b>, <b>no iteration</b> (you can’t loop over a WeakMap).</li>
+  <li>Used mostly for <b>private data</b> or <b>memory-efficient caching</b>.</li>
+</ul>
+
+<h3>🧩 Simple Real-Life Example:</h3>
+
+<div className="code-block">{`
+let user = { name: "Alex" };
+let secrets = new WeakMap();
+
+secrets.set(user, "Likes pizza");
+
+console.log(secrets.get(user)); // "Likes pizza"
+
+user = null; // user is gone
+// WeakMap forgets automatically → no memory leak!
+`}</div>
+
 
     <h2>♻️ 4. WeakSet</h2>
     <p className="subtitle">
@@ -2180,7 +2292,7 @@ obj1 = null; // obj1 removed -> automatically cleared from WeakSet
           <>
           
   
-  <h2>🌳 Strings in JavaScript</h2>
+  <h1>🌳 Strings in JavaScript</h1>
   <p className="subtitle">
     A string is a sequence of characters (letters, numbers, or symbols) enclosed
     in quotes. Strings are used to store and manipulate text in JavaScript.
@@ -2374,7 +2486,7 @@ console.log(message);
 {activeSection === "numbers" && (
   <>
   
-  <h2>🧮 Numbers and Math in JavaScript</h2>
+  <h1>🧮 Numbers and Math in JavaScript</h1>
 
   <h3>🔢 What are Numbers?</h3>
   <p className="subtitle">
@@ -2912,8 +3024,8 @@ console.log("Screen Size:", screen.width + "x" + screen.height);
 {/* ⚙️ Output methods in JavaScript */}
 {activeSection === "output" && (
   <>
-<h2>💬 JavaScript Output Methods</h2>
-<h3>🧠 What Does “Output” Mean?</h3>
+<h1>💬 JavaScript Output Methods</h1>
+<h2>🧠 What Does “Output” Mean?</h2>
   <p className="subtitle">
     Output means showing the result of your JavaScript code to the user — either on the webpage,
     in the console, or in an alert box.
@@ -3053,8 +3165,8 @@ alert("Hello! Welcome to JavaScript!");
 {/* Events in JavaScript */}
 {activeSection === "events" && (
   <>
-  <h2>🕹️  Events in JavaScript</h2>
-  <h3>💡 What is an Event?</h3>
+  <h1>🕹️  Events in JavaScript</h1>
+  <h2>💡 What is an Event?</h2>
   <p className="subtitle">
     An event is something that happens on a webpage — like a click, key press, mouse move, or page load.
     JavaScript can listen for these events and respond to them.
@@ -3215,8 +3327,8 @@ alert("Hello! Welcome to JavaScript!");
 {/* ES6+ (Modern JavaScript)*/}
 {activeSection === "es6" && (
   <>
-  <h2>🔄 ES6+ (Modern JavaScript)</h2>
-  <h3>🧠 What is ES6?</h3>
+  <h1>🔄 ES6+ (Modern JavaScript)</h1>
+  <h2>🧠 What is ES6?</h2>
   <p className="subtitle">
     ES6 (ECMAScript 2015) and later versions (ES7, ES8, etc.) are modern updates to JavaScript. 
     They make JavaScript easier to write, faster to read, and more powerful.
@@ -3413,8 +3525,8 @@ fetchData();
 {/*Objects in Depth*/}
 {activeSection === "objects-depth" && (
   <>
-  <h2>⚙️ Objects in Depth</h2>
-  <h3>🧠 What is an Object?</h3>
+  <h1>⚙️ Objects in Depth</h1>
+  <h2>🧠 What is an Object?</h2>
   <p className="subtitle">
     In JavaScript, an object is a collection of related data and functions — stored as key–value pairs.
   </p>

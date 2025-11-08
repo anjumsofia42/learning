@@ -5,13 +5,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const currentYear = new Date().getFullYear();
 
   return (
@@ -37,12 +30,18 @@ export default function Footer() {
           {/* Right Section */}
           <div className="col-md-4 text-md-end">
             <div className="d-flex justify-content-center justify-content-md-end gap-3 align-items-center">
-              <a href="#" className="text-light opacity-75 small text-decoration-none">
+              <button
+                type="button"
+                className="btn btn-link text-light opacity-75 small text-decoration-none p-0"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="text-light opacity-75 small text-decoration-none">
+              </button>
+              <button
+                type="button"
+                className="btn btn-link text-light opacity-75 small text-decoration-none p-0"
+              >
                 Terms of Service
-              </a>
+              </button>
 
               <button
                 onClick={scrollToTop}
