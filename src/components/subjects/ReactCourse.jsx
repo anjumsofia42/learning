@@ -23,13 +23,11 @@ const ReactCourse = () => {
           <li className={activeSection === 'react-components' ? 'active' : ''} onClick={() => setActiveSection('react-components')}>🧱 Components in React</li>
           <li className={activeSection === 'react-props-state' ? 'active' : ''} onClick={() => setActiveSection('react-props-state')}>🔁 Props and State</li>
           <li className={activeSection === 'react-hooks' ? 'active' : ''} onClick={() => setActiveSection('react-hooks')}>🔄 React Hooks (Core Hooks)</li>
-          <li className={activeSection === 'react-context-api' ? 'active' : ''} onClick={() => setActiveSection('react-context-api')}>🌳React Context API</li>
           <li className={activeSection === 'react-event-handling' ? 'active' : ''} onClick={() => setActiveSection('react-event-handling')}>📋Event Handling</li>
           <li className={activeSection === 'react-router' ? 'active' : ''} onClick={() => setActiveSection('react-router')}>🧭 React Router</li>
           <li className={activeSection === 'react-lists-keys' ? 'active' : ''} onClick={() => setActiveSection('react-lists-keys')}>🧮 Lists and Keys</li>
           <li className={activeSection === 'react-conditional-rendering' ? 'active' : ''} onClick={() => setActiveSection('react-conditional-rendering')}>⚙️ Conditional Rendering</li>
           <li className={activeSection === 'react-forms' ? 'active' : ''} onClick={() => setActiveSection('react-forms')}>🧩 Forms in React</li>
-          <li className={activeSection === 'react-useeffect' ? 'active' : ''} onClick={() => setActiveSection('react-useeffect')}>🗃️ useEffect </li>
           <li className={activeSection === 'react-fetching-data' ? 'active' : ''} onClick={() => setActiveSection('react-fetching-data')}>🌍 Fetching Data (API Integration)</li>
           <li className={activeSection === 'react-advanced-hooks' ? 'active' : ''} onClick={() => setActiveSection('react-advanced-hooks')}>💡 Advanced Hooks (useReducer, useMemo, useCallback, useRef)</li>
           <li className={activeSection === 'react-performance' ? 'active' : ''} onClick={() => setActiveSection('react-performance')}>⚡ Performance Optimization (memo, Suspense, Lazy Loading)</li>
@@ -92,13 +90,11 @@ const ReactCourse = () => {
           <li className={activeSection === 'react-components' ? 'active' : ''} onClick={() => setActiveSection('react-components')}>🧱 Components in React</li>
           <li className={activeSection === 'react-props-state' ? 'active' : ''} onClick={() => setActiveSection('react-props-state')}>🔁 Props and State</li>
           <li className={activeSection === 'react-hooks' ? 'active' : ''} onClick={() => setActiveSection('react-hooks')}>🔄 React Hooks (Core Hooks)</li>
-          <li className={activeSection === 'react-context-api' ? 'active' : ''} onClick={() => setActiveSection('react-context-api')}>🌳React Context API</li>
           <li className={activeSection === 'react-event-handling' ? 'active' : ''} onClick={() => setActiveSection('react-event-handling')}>📋Event Handling</li>
           <li className={activeSection === 'react-router' ? 'active' : ''} onClick={() => setActiveSection('react-router')}>🧭 React Router</li>
           <li className={activeSection === 'react-lists-keys' ? 'active' : ''} onClick={() => setActiveSection('react-lists-keys')}>🧮 Lists and Keys</li>
           <li className={activeSection === 'react-conditional-rendering' ? 'active' : ''} onClick={() => setActiveSection('react-conditional-rendering')}>⚙️ Conditional Rendering</li>
           <li className={activeSection === 'react-forms' ? 'active' : ''} onClick={() => setActiveSection('react-forms')}>🧩 Forms in React</li>
-          <li className={activeSection === 'react-useeffect' ? 'active' : ''} onClick={() => setActiveSection('react-useeffect')}>🗃️ useEffect </li>
           <li className={activeSection === 'react-fetching-data' ? 'active' : ''} onClick={() => setActiveSection('react-fetching-data')}>🌍 Fetching Data (API Integration)</li>
           <li className={activeSection === 'react-advanced-hooks' ? 'active' : ''} onClick={() => setActiveSection('react-advanced-hooks')}>💡 Advanced Hooks (useReducer, useMemo, useCallback, useRef)</li>
           <li className={activeSection === 'react-performance' ? 'active' : ''} onClick={() => setActiveSection('react-performance')}>⚡ Performance Optimization (memo, Suspense, Lazy Loading)</li>
@@ -135,11 +131,11 @@ const ReactCourse = () => {
 
       <h2>What is React?</h2>
       <ul className="bullet-points">
-        <li>React is a <b>JavaScript library</b> for building user interfaces.</li>
-        <li>It was developed by <b>Facebook</b> and is maintained by Meta and a community of developers.</li>
-        <li>React allows you to build reusable <b>UI components</b>.</li>
-        <li>It uses a <b>virtual DOM</b> for efficient rendering.</li>
-        <li>React helps you create fast, dynamic, and scalable web applications.</li>
+        <li>React is a JavaScript library.</li>
+        <li>building user interfaces (UIs) — especially single-page applications (SPAs).</li>
+        <li>It allows developers to create dynamic and interactive websites.</li>
+        <li>React uses a Virtual DOM (Document Object Model) — a lightweight copy of the real DOM.</li>
+        <li>When something changes in the app, React first updates the Virtual DOM, compares it with the previous version (using a process called reconciliation), and then updates only the changed parts of the real DOM.</li>
       </ul>
 
       <h2>Why Learn React?</h2>
@@ -431,7 +427,7 @@ return (
     </pre>
 
     <h2>💡 JSX vs HTML (Quick Comparison)</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Feature</th>
@@ -620,7 +616,7 @@ This is the main content area.
     </ul>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -656,7 +652,7 @@ This is the main content area.
     </p>
 
     <h2>🔷 What are Props and State?</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Feature</th>
@@ -707,9 +703,62 @@ Hello, Ava!`}
       <li><code>name</code> is a <b>prop</b>.</li>
       <li>Each <code>&lt;Welcome /&gt;</code> component receives a different value.</li>
     </ul>
+    <h2>🧩What is Destructuring in JavaScript</h2>
+    <p className="subtitle">
+  <b>Destructuring</b> is a short and clean way to extract values from arrays or objects 
+  and assign them to variables. It helps make your code concise and readable.
+  </p>
+  <pre className="code-block">
+{`// 🧩 Example: Array Destructuring
+const numbers = [10, 20, 30];
 
+// Old way
+let a = numbers[0];
+let b = numbers[1];
+let c = numbers[2];
+console.log("Old way:", a, b, c); // 10 20 30
+
+// ✅ Using destructuring
+const [x, y, z] = numbers;
+console.log("Using Destructuring:", x, y, z); // 10 20 30
+`}
+</pre>
+
+<p className='subtitle'>
+💡 You can also use <b>object destructuring</b> to unpack properties from objects easily.
+</p>
+
+<pre className="code-block">
+{`// 🧱 Example: Object Destructuring
+const person = { name: "Sofia", age: 22, city: "Delhi" };
+
+// Old way
+// let name = person.name;
+// let age = person.age;
+
+// ✅ Using destructuring
+const { name, age, city } = person;
+console.log(name, age, city); // Sofia 22 Delhi
+`}
+</pre>
+
+<p className="subtitle">
+✅ Destructuring is commonly used in React for props:
+</p>
+
+<pre className="code-block">
+{`// Example in React
+function Welcome({ name, age }) {
+  return <h3>Hello {name}, you are {age} years old!</h3>;
+}
+
+// Instead of:
+// function Welcome(props) {
+//   return <h3>Hello {props.name}, you are {props.age} years old!</h3>;
+// }`}
+</pre>
     <h2>💬 Using Destructuring with Props</h2>
-    <p>You can simplify props using <b>destructuring</b>.</p>
+    <p className="subtitle">You can simplify props using <b>destructuring</b>.</p>
 
     <p>Instead of:</p>
     <pre className="code-block">
@@ -718,22 +767,22 @@ Hello, Ava!`}
 }`}
     </pre>
 
-    <p>Write:</p>
+    <p className="subtitle">Write:</p>
     <pre className="code-block">
 {`function Welcome({ name }) {
   return <h1>Hello, {name}!</h1>;
 }`}
     </pre>
-    <p>✅ Same output — cleaner and shorter!</p>
+    <p className="subtitle">✅ Same output — cleaner and shorter!</p>
 
     <h2>🧱 Props Are Read-Only</h2>
-    <p>You cannot modify props inside a child component.</p>
+    <p className="subtitle">You cannot modify props inside a child component.</p>
     <pre className="code-block">
 {`❌ Wrong:
 props.name = "Emma"; // Error!`}
     </pre>
 
-    <p>✅ Correct: Props should only be received and displayed, not changed.</p>
+    <p className="subtitle">✅ Correct: Props should only be received and displayed, not changed.</p>
 
     <h2>⚙️ Passing Multiple Props</h2>
     <pre className="code-block">
@@ -752,7 +801,7 @@ function App() {
 }`}
     </pre>
 
-    <p><b>✅ Output:</b></p>
+    <p className="subtitle"><b>✅ Output:</b></p>
     <pre className="code-block">
 {`Sofia
 Age: 20
@@ -761,8 +810,7 @@ Grade: A`}
 
     <h2>🔁 2. State (Dynamic Data Inside a Component)</h2>
     <p className="subtitle">
-      <b>State</b> is used to manage data that changes over time inside a component. 
-      When the state changes, the component automatically re-renders.
+      State is an object in a React component that stores dynamic data — data that can change over time and affect what’s shown on the screen.
     </p>
 
     <h3>⚡ Using useState Hook</h3>
@@ -781,13 +829,13 @@ function Counter() {
 }`}
     </pre>
 
-    <p><b>✅ Output:</b></p>
+    <p className="subtitle"><b>✅ Output:</b></p>
     <pre className="code-block">
 {`Count: 0
 [Increase]`}
     </pre>
 
-    <p>Clicking the button updates the count dynamically! 🔄</p>
+    <p className="subtitle">Clicking the button updates the count dynamically! 🔄</p>
 
     <h2>💡 How useState Works</h2>
     <pre className="code-block">
@@ -821,7 +869,7 @@ setName("Ava");`}
 }`}
     </pre>
 
-    <p>✅ When you click the button, the text hides and shows dynamically!</p>
+    <p className="subtitle">✅ When you click the button, the text hides and shows dynamically!</p>
 
     <h2>🧩 Props vs State Example Together</h2>
     <pre className="code-block">
@@ -842,7 +890,7 @@ function App() {
 }`}
     </pre>
 
-    <p><b>✅ Output:</b></p>
+    <p className="subtitle"><b>✅ Output:</b></p>
     <pre className="code-block">
 {`Hello, Sofia!
 You clicked 0 times.
@@ -862,7 +910,7 @@ You clicked 0 times.
     </ul>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -892,7 +940,7 @@ You clicked 0 times.
   <>
     <h1>🔄 React Hooks (Core Hooks)</h1>
     <p className="subtitle">
-      React Hooks allow you to use <b>state</b> and other React features in functional components — without writing a class.  
+      React Hooks allow you to use <b>state</b> lifecycle, and context React features in functional components — without writing a class.  
       Before hooks, class components handled state and lifecycle methods.  
       Now, you can do everything with functional components using Hooks. 💡
     </p>
@@ -902,7 +950,7 @@ You clicked 0 times.
       Hooks are special functions that let you “hook into” React features such as state, lifecycle, and context.
     </p>
 
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Hook</th>
@@ -926,8 +974,8 @@ You clicked 0 times.
     </ul>
 
     <h2>🧩 1. useState Hook — Managing State</h2>
-    <p>
-      The <code>useState()</code> hook lets you add state to a functional component.
+    <p className='subtitle'>
+      useState is a Hook that lets you add state (data that can change) to a function component in React.
     </p>
 
     <pre className="code-block">
@@ -945,13 +993,19 @@ function Counter() {
 }`}
     </pre>
 
-    <p>✅ Each time you click the button, <code>setCount()</code> updates the state and re-renders the component automatically.</p>
+    <p className='subtitle'>✅ Each time you click the button, <code>setCount()</code> updates the state and re-renders the component automatically.</p>
 
     <h2>🧩 2. useEffect Hook — Handling Side Effects</h2>
-    <p>
-      <code>useEffect()</code> runs code after the component renders.  
-      It’s used for data fetching, subscriptions, DOM updates, or timers.
+    <p className='subtitle'>
+      useEffect is a React Hook that lets you perform side effects in a functional component.
+A side effect means anything that happens outside the normal rendering of the UI 
     </p>
+    <ul className="bullet-points">
+    <li>Fetching data from an API</li>
+    <li>Working with the browser (e.g., document.title, localStorage)</li>
+    <li>Setting up a timer or interval</li>
+    <li>Subscribing to an event (and cleaning it up)</li>
+    </ul>
 
     <pre className="code-block">
 {`useEffect(() => {
@@ -959,7 +1013,7 @@ function Counter() {
 }, [dependencies]);`}
     </pre>
 
-    <p>
+    <p className='subtitle'>
       Empty dependency <code>[]</code> → runs only once.  
       Dependencies present → runs when those values change.
     </p>
@@ -983,65 +1037,223 @@ function Timer() {
 }`}
     </pre>
 
-    <p>✅ The document title updates dynamically every time the count changes.</p>
+    <p className='subtitle'>✅ The document title updates dynamically every time the count changes.</p>
 
-    <h2>🧩 3. useContext Hook — Accessing Global Data</h2>
-    <p>
-      Instead of passing props manually through many levels, use <code>useContext()</code> to access data directly from the React Context API.
-    </p>
 
-    <pre className="code-block">
-{`import React, { createContext, useContext } from "react";
+<h2>🧩 3. useContext Hook — Accessing Global Data</h2>
+<p className="subtitle">
+  The <b>useContext()</b> hook lets you <b>share data</b> between components 
+  without passing props manually through every level of the component tree. 
+  It works with the <b>Context API</b> — React’s built-in way to manage global data like themes, user info, or settings.
+</p>
 
-const UserContext = createContext();
+<h3>🌐 What is useContext in React?</h3>
+<p className='subtitle'>
+  <code>useContext</code> is a React Hook that allows components to directly access data 
+  from a <b>Context</b> instead of using prop drilling. It's great for managing global data such as:
+</p>
+<ul className='bullet-points'>
+  <li>🌗 Theme (dark/light mode)</li>
+  <li>👤 Logged-in user info</li>
+  <li>🌍 App language</li>
+  <li>⚙️ Global settings</li>
+</ul>
 
-function Child() {
-  const user = useContext(UserContext);
-  return <h2>Hello, {user}!</h2>;
+<h3>🧩 The Problem (Without useContext)</h3>
+<pre className="code-block">
+{`function App() {
+  const user = "Sofia";
+  return <Parent user={user} />;
 }
 
+function Parent({ user }) {
+  return <Child user={user} />;
+}
+
+function Child({ user }) {
+  return <p>Hello, {user}!</p>;
+}
+
+// 😩 If your component tree has many levels,
+// you'll need to pass props through each one manually!`}
+</pre>
+
+<h3>✅ The Solution — useContext + createContext</h3>
+<p className='subtitle'>
+  React <b>Context</b> lets you share data directly, skipping all the middle components.
+</p>
+
+<pre className="code-block">
+{`import React, { createContext, useContext } from "react";
+
+// 1️⃣ Create Context
+const UserContext = createContext();
+
+// 2️⃣ Provide the value at a higher level
 function App() {
+  const userName = "Sofia";
+
   return (
-    <UserContext.Provider value="Sofia">
-      <Child />
+    <UserContext.Provider value={userName}>
+      <Dashboard />
     </UserContext.Provider>
   );
-}`}
-    </pre>
+}
 
-    <p>✅ Output: <b>Hello, Sofia!</b> — no prop drilling needed!</p>
+// 3️⃣ Consume the context in a child component
+function Dashboard() {
+  const user = useContext(UserContext);
+  return <h2>Welcome, {user}! 🎉</h2>;
+}
 
-    <h2>🧩 4. useRef Hook — Referencing DOM Elements</h2>
-    <p>
-      The <code>useRef()</code> hook gives you direct access to DOM elements without causing re-renders.
-    </p>
+export default App;`}
+</pre>
 
-    <pre className="code-block">
+<p className="subtitle">
+  ✅ Output: <b>Welcome, Sofia! 🎉</b> — no prop drilling needed!
+</p>
+
+<h3>🧠 Explanation</h3>
+<ul className='bullet-points'>
+  <li><code>createContext()</code> → creates a Context object.</li>
+  <li><code>&lt;UserContext.Provider&gt;</code> → makes the data (value) available to all nested components.</li>
+  <li><code>useContext(UserContext)</code> → reads that shared data from any component.</li>
+</ul>
+
+<h3>🧱 Example 2: Sharing Multiple Values</h3>
+<pre className="code-block">
+{`import React, { createContext, useContext } from "react";
+
+const ThemeContext = createContext();
+
+function App() {
+  const theme = { color: "white", background: "black" };
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      <Navbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Navbar() {
+  const { color, background } = useContext(ThemeContext);
+
+  return (
+    <nav style={{ color, background }}>
+      <h2>Dark Mode Navbar 🌙</h2>
+    </nav>
+  );
+}
+
+export default App;`}
+</pre>
+
+<h3>🧩 Real-World Uses of useContext</h3>
+<table className="style-table">
+  <thead>
+    <tr>
+      <th>Use Case</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>🌗 Theme Management</td><td>Dark/Light mode toggle</td></tr>
+    <tr><td>👤 User Authentication</td><td>Share logged-in user info</td></tr>
+    <tr><td>🌍 App Language</td><td>Switch between languages</td></tr>
+    <tr><td>⚙️ Global Settings</td><td>Font size, layout preferences</td></tr>
+  </tbody>
+</table>
+
+<h3>💬 In Short</h3>
+<table className="style-table">
+  <thead>
+    <tr><th>Concept</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>createContext()</code></td><td>Creates a new context</td></tr>
+    <tr><td><b>Provider</b></td><td>Makes data available to child components</td></tr>
+    <tr><td><code>useContext()</code></td><td>Reads the shared data in any component</td></tr>
+    <tr><td><b>Advantage</b></td><td>Avoids prop drilling (no need to pass props through many layers)</td></tr>
+  </tbody>
+</table>
+
+<h3>🔁 Summary Visualization</h3>
+<pre className="code-block">
+{`<App> 
+ └── <Provider value="Sofia">
+       ├── <Parent>
+       │     └── <Child> --> useContext(UserContext) = "Sofia"
+`}
+</pre>
+
+<h2>🧩 4. useRef Hook — Accessing DOM or Persistent Values</h2>
+<p className="subtitle">
+  The <code>useRef()</code> hook in React is used to <b>reference DOM elements</b> or 
+  <b>store mutable values</b> that persist across re-renders without causing the component 
+  to re-render when updated.
+</p>
+
+<h3>💡 Common Uses:</h3>
+<ul className='bullet-points'>
+  <li>🎯 Accessing DOM elements directly (like focusing an input box)</li>
+  <li>⏱️ Storing values that should persist between renders (like timers or counters)</li>
+</ul>
+
+<h3>⚙️ Syntax:</h3>
+<pre className="code-block">
+{`const refName = useRef(initialValue);
+
+// useRef() returns an object: { current: initialValue }
+// You can read or update it as refName.current
+// Updating refName.current does NOT trigger a re-render
+`}
+</pre>
+
+<h3>🧠 Example 1: Accessing a DOM Element</h3>
+<pre className="code-block">
 {`import React, { useRef } from "react";
 
-function FocusInput() {
+function InputFocus() {
   const inputRef = useRef(null);
 
   const handleFocus = () => {
-    inputRef.current.focus();
+    inputRef.current.focus(); // directly accesses DOM element
   };
 
   return (
-    <div>
-      <input ref={inputRef} type="text" placeholder="Type here..." />
+    <div style={{ textAlign: "center" }}>
+      <input ref={inputRef} type="text" placeholder="Type something..." />
+      <br /><br />
       <button onClick={handleFocus}>Focus Input</button>
     </div>
   );
-}`}
-    </pre>
+}
 
-    <p>✅ Clicking the button instantly focuses on the input field.</p>
+export default InputFocus;`}
+</pre>
+
+<p className="subtitle">
+  ✅ <b>Explanation:</b> 
+  <br />
+  - <code>useRef(null)</code> creates a reference object. <br />
+  - The <code>ref</code> attribute connects it to the input field. <br />
+  - <code>inputRef.current.focus()</code> directly interacts with the DOM — without re-rendering.
+</p>
+
 
     <h2>🧩 5. useMemo Hook — Memoizing Expensive Calculations</h2>
-    <p>
+    <p className='subtitle'>
       The <code>useMemo()</code> hook caches a computed value to avoid recalculating it on every render.
     </p>
-
+    <h2>💡 What is useMemo and Why We Use It</h2>
+    <p className='subtitle'>
+    When a React component updates (re-renders), everything inside it runs again — even if some parts don’t need to. If you have a big or slow calculation, this can make your app lag or feel slow. 👉 useMemo helps by remembering the result of that slow work. It only recalculates when the data (dependencies) you care about changes.
+    </p>
+    <h2>🧠 In Very Simple Words:</h2>
+    <p className='subtitle'>
+      “useMemo saves a value so React doesn’t have to recalculate it every time.”
+    </p>
     <pre className="code-block">
 {`import React, { useMemo } from "react";
 
@@ -1055,11 +1267,19 @@ function ExpensiveCalculation({ number }) {
 }`}
     </pre>
 
-    <p>✅ React only recalculates when <b>number</b> changes — improving performance.</p>
+    <p className='subtitle'>✅ React only recalculates when <b>number</b> changes — improving performance.</p>
 
     <h2>🧩 6. useCallback Hook — Optimizing Functions</h2>
-    <p>
-      <code>useCallback()</code> stores a function reference, preventing unnecessary re-renders of child components.
+    <p className='subtitle'>
+      useCallback() is a hook that memoizes (remembers) a function,
+      so React doesn’t recreate that function every time the component re-renders.
+    </p>
+    <h2>💡 Simple Explanation</h2>
+    <p className='subtitle'>
+      🔁 useCallback tells React:
+    “Don’t recreate this function unless something important changes.”
+    It’s like React saying:
+    “I’ll just reuse the old function — no need to make a new one.”
     </p>
 
     <pre className="code-block">
@@ -1086,10 +1306,10 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ The Button component doesn’t re-render unnecessarily — it’s optimized!</p>
+    <p className='subtitle'>✅ The Button component doesn’t re-render unnecessarily — it’s optimized!</p>
 
     <h2>💡 Summary</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Hook</th>
@@ -1118,194 +1338,14 @@ function App() {
     </ul>
 
     <h2>✅ Summary Line</h2>
-    <p>
+    <p className='subtitle'>
       Hooks make functional components powerful and reactive — managing state, effects, and optimization elegantly. 💪
     </p>
   </>
 )}
 
 
-  {/* 🌳 React Context API */}
-  {activeSection === "react-context-api" && (
-    <>
-      <h1>🌳 React Context API</h1>
-      <p className="subtitle">
-        The React Context API helps you share data easily across multiple components — without passing props manually at every level.
-      </p>
-      <p className="subtitle">
-        Think of it as a <b>global data store</b> for your app. 🌍
-      </p>
-
-      <h2>💡 Why We Need Context API</h2>
-      <ul className="bullet-points">
-        <li>In React, data normally flows from <b>parent → child</b> using props.</li>
-        <li>When you have deeply nested components, you might end up doing <b>prop drilling</b> 😩</li>
-      </ul>
-
-      <h2>Example of Prop Drilling 👇</h2>
-      <pre className="code-block">
-{`function App() {
-  const user = "Sofia";
-  return <Parent user={user} />;
-}
-
-function Parent({ user }) {
-  return <Child user={user} />;
-}
-
-function Child({ user }) {
-  return <GrandChild user={user} />;
-}
-
-function GrandChild({ user }) {
-  return <h2>Hello, {user}!</h2>;
-}`}
-      </pre>
-
-      <p className="subtitle">✅ Output: Hello, Sofia!</p>
-      <p className="subtitle">❌ Problem → We’re passing user through 3 levels just to reach GrandChild.</p>
-      <p className="subtitle">✅ Solution → Use <b>Context API</b> to share data directly! 🎯</p>
-
-      <h2>🧩 Steps to Use Context API</h2>
-      <table className="bullet-points">
-        <thead>
-          <tr><th>Step</th><th>Description</th><th>Function</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1️⃣</td><td>Create Context</td><td><code>createContext()</code></td></tr>
-          <tr><td>2️⃣</td><td>Provide Context</td><td><code>&lt;Context.Provider&gt;</code></td></tr>
-          <tr><td>3️⃣</td><td>Consume Context</td><td><code>useContext()</code></td></tr>
-        </tbody>
-      </table>
-
-      <h2>⚙️ Step-by-Step Example</h2>
-      <pre className="code-block">
-{`import React, { createContext, useContext } from "react";
-
-const UserContext = createContext();
-
-function App() {
-  return (
-    <UserContext.Provider value="Sofia">
-      <Child />
-    </UserContext.Provider>
-  );
-}
-
-function Child() {
-  return <GrandChild />;
-}
-
-function GrandChild() {
-  const user = useContext(UserContext);
-  return <h2>Hello, {user}!</h2>;
-}
-
-export default App;`}
-      </pre>
-
-      <p className="subtitle">✅ Output: Hello, Sofia!</p>
-
-      <h2>💬 Explanation</h2>
-      <ul className="bullet-points">
-        <li><b>createContext()</b> → creates a Context object.</li>
-        <li><b>Provider</b> → wraps components that need access to the data.</li>
-        <li><b>useContext()</b> → allows you to access context data without props.</li>
-      </ul>
-
-      <h2>🧱 Providing More Complex Data</h2>
-      <pre className="code-block">
-{`const UserContext = createContext();
-
-function App() {
-  const user = { name: "Sofia", age: 20, city: "Mumbai" };
-
-  return (
-    <UserContext.Provider value={user}>
-      <Profile />
-    </UserContext.Provider>
-  );
-}
-
-function Profile() {
-  const { name, age, city } = useContext(UserContext);
-  return (
-    <div>
-      <h2>Name: {name}</h2>
-      <p>Age: {age}</p>
-      <p>City: {city}</p>
-    </div>
-  );
-}`}
-      </pre>
-
-      <p className="subtitle">✅ Output: Name: Sofia | Age: 20 | City: Mumbai</p>
-
-      <h2>🔁 Updating Context Data (with useState)</h2>
-      <pre className="code-block">
-{`import React, { createContext, useState, useContext } from "react";
-
-const ThemeContext = createContext();
-
-function App() {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <Toolbar />
-    </ThemeContext.Provider>
-  );
-}
-
-function Toolbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  return (
-    <div>
-      <p>Current Theme: {theme}</p>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-    </div>
-  );
-}`}
-      </pre>
-
-      <p className="subtitle">✅ Output: Current Theme: light [Toggle Theme]</p>
-
-      <h2>🧠 Real-World Analogy</h2>
-      <ul className="bullet-points">
-        <li>Think of Context API as a <b>Wi-Fi router</b> 🛜</li>
-        <li>The router (Provider) sends signals (data).</li>
-        <li>Any device (component) can connect via <b>useContext()</b>.</li>
-        <li>No need for passing wires (props) manually. ⚡</li>
-      </ul>
-
-      <h2>💡 When to Use Context</h2>
-      <ul className="bullet-points">
-        <li>✅ When many components need the same data (e.g., theme, user, language).</li>
-        <li>✅ When you want to avoid prop drilling.</li>
-        <li>🚫 Avoid using it for small local states.</li>
-      </ul>
-
-      <h2>🔍 Summary Table</h2>
-      <table className="bullet-points">
-        <thead>
-          <tr><th>Concept</th><th>Description</th><th>Example</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>createContext()</td><td>Creates a Context object</td><td><code>const UserContext = createContext()</code></td></tr>
-          <tr><td>Provider</td><td>Supplies data to components</td><td><code>&lt;UserContext.Provider value={`data`}&gt;</code></td></tr>
-          <tr><td>useContext()</td><td>Accesses context data</td><td><code>const data = useContext(UserContext)</code></td></tr>
-          <tr><td>Benefit</td><td>Avoids prop drilling</td><td>Easier data sharing</td></tr>
-        </tbody>
-      </table>
-
-      <h2>✅ Summary Line</h2>
-      <p className="subtitle">
-        React Context API provides a clean, global way to share data between components — no more prop drilling! 🌐💪
-      </p>
-    </>
-  )}
+  
 {/* 📋 Event Handling in React */}
 {activeSection === "react-event-handling" && (
   <>
@@ -1316,7 +1356,7 @@ function Toolbar() {
     </p>
 
     <h2>💡 Key Rules in React Event Handling</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>JavaScript</th>
@@ -1340,7 +1380,7 @@ function Toolbar() {
   return <button onClick={handleClick}>Click Me</button>;
 }`}
     </pre>
-    <p>✅ When you click the button, it shows an alert “Button clicked!”.</p>
+    <p className='subtitle'>✅ When you click the button, it shows an alert “Button clicked!”.</p>
 
     <h2>⚙️ Using Arrow Functions</h2>
     <pre className="code-block">
@@ -1348,7 +1388,7 @@ function Toolbar() {
   return <button onClick={() => alert("Clicked with Arrow Function!")}>Click</button>;
 }`}
     </pre>
-    <p>✅ Works the same — best for simple, one-line actions.</p>
+    <p className='subtitle'>✅ Works the same — best for simple, one-line actions.</p>
 
     <h2>🧱 2. Passing Parameters in Events</h2>
     <pre className="code-block">
@@ -1360,7 +1400,7 @@ function Toolbar() {
   return <button onClick={() => sayHello("Sofia")}>Greet</button>;
 }`}
     </pre>
-    <p>✅ Output: Click the button → “Hello, Sofia!”</p>
+    <p className='subtitle'>✅ Output: Click the button → “Hello, Sofia!”</p>
 
     <h2>🧠 3. Event Object</h2>
     <pre className="code-block">
@@ -1372,7 +1412,7 @@ function Toolbar() {
   return <button onClick={handleClick}>Show Event Type</button>;
 }`}
     </pre>
-    <p>✅ Console Output: <code>click</code></p>
+    <p className='subtitle'>✅ Console Output: <code>click</code></p>
 
     <h2>✍️ 4. Handling Input Changes</h2>
     <pre className="code-block">
@@ -1393,7 +1433,7 @@ function InputExample() {
   );
 }`}
     </pre>
-    <p>✅ Displays the typed text in real-time as you type.</p>
+    <p className='subtitle'>✅ Displays the typed text in real-time as you type.</p>
 
     <h2>🧮 5. Handling Form Submission</h2>
     <pre className="code-block">
@@ -1411,7 +1451,7 @@ function InputExample() {
   );
 }`}
     </pre>
-    <p>✅ When you click submit, it alerts without reloading the page.</p>
+    <p className='subtitle'>✅ When you click submit, it alerts without reloading the page.</p>
 
     <h2>🔄 6. Combining Events and State</h2>
     <pre className="code-block">
@@ -1429,7 +1469,7 @@ function Counter() {
   );
 }`}
     </pre>
-    <p>✅ Two buttons — Increase and Decrease — control count dynamically.</p>
+    <p className='subtitle'>✅ Two buttons — Increase and Decrease — control count dynamically.</p>
 
     <h2>🧩 Event Handling in Class Components (Older Way)</h2>
     <pre className="code-block">
@@ -1450,7 +1490,7 @@ export default ClickClass;`}
     <p>✅ Works fine, but functional components + Hooks are preferred today.</p>
 
     <h2>💬 Common Event Types in React</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Event</th>
@@ -1477,7 +1517,7 @@ export default ClickClass;`}
     </ul>
 
     <h2>✅ Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -1510,8 +1550,7 @@ export default ClickClass;`}
   <>
     <h1>🧭 React Router</h1>
     <p className="subtitle">
-      React Router helps you create <b>navigation between pages</b> in a React app without reloading the page.  
-      It makes your single-page app (SPA) feel like a full website — smooth and fast ⚡.
+      React Router is a library that allows you to create multiple pages (routes) in a single-page React app (SPA) — without reloading the browser.
     </p>
 
     <h2>💡 Why Use React Router?</h2>
@@ -1521,7 +1560,7 @@ export default ClickClass;`}
       <li>Navigation happens instantly without refreshing the page. 🚀</li>
     </ul>
 
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Path</th>
@@ -1569,7 +1608,7 @@ function App() {
 
 export default App;`}
     </pre>
-    <p>✅ Visit <code>/</code>, <code>/about</code>, or <code>/contact</code> — no page reloads!</p>
+    <p className='subtitle'>✅ Visit <code>/</code>, <code>/about</code>, or <code>/contact</code> — no page reloads!</p>
 
     <h2>🧭 3. Adding Navigation Links</h2>
     <pre className="code-block">
@@ -1586,7 +1625,7 @@ function Navbar() {
 }`}
     </pre>
 
-    <p>✅ Use <code>&lt;Link&gt;</code> instead of <code>&lt;a&gt;</code> for smooth in-app navigation.</p>
+    <p className='subtitle'>✅ Use <code>&lt;Link&gt;</code> instead of <code>&lt;a&gt;</code> for smooth in-app navigation.</p>
 
     <h2>⚡ 4. Using useNavigate() Hook (Programmatic Navigation)</h2>
     <pre className="code-block">
@@ -1604,7 +1643,7 @@ function Login() {
 }`}
     </pre>
 
-    <p>✅ After login, it redirects to <code>/home</code> automatically.</p>
+    <p className='subtitle'>✅ After login, it redirects to <code>/home</code> automatically.</p>
 
     <h2>🧠 5. Dynamic Routing (URL Parameters)</h2>
     <pre className="code-block">
@@ -1625,7 +1664,7 @@ function App() {
   );
 }`}
     </pre>
-    <p>✅ Visit <code>/user/Sofia</code> → shows “Welcome, Sofia!”</p>
+    <p className='subtitle'>✅ Visit <code>/user/Sofia</code> → shows “Welcome, Sofia!”</p>
 
     <h2>🔄 6. Navigate Component (Redirects)</h2>
     <pre className="code-block">
@@ -1639,7 +1678,7 @@ function ProtectedPage({ isLoggedIn }) {
 }`}
     </pre>
 
-    <p>✅ If not logged in → redirected to <code>/login</code>.</p>
+    <p className='subtitle'>✅ If not logged in → redirected to <code>/login</code>.</p>
 
     <h2>💬 7. Nested Routes</h2>
     <pre className="code-block">
@@ -1668,7 +1707,7 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Visit <code>/dashboard/profile</code> → renders Profile inside Dashboard.</p>
+    <p className='subtitle'>✅ Visit <code>/dashboard/profile</code> → renders Profile inside Dashboard.</p>
 
     <h2>🧭 8. 404 Page (No Match Route)</h2>
     <pre className="code-block">
@@ -1680,7 +1719,7 @@ function App() {
   <Route path="*" element={<NotFound />} />
 </Routes>`}
     </pre>
-    <p>✅ Unknown routes show the 404 page.</p>
+    <p className='subtitle'>✅ Unknown routes show the 404 page.</p>
 
     <h2>🧠 Real-World Analogy</h2>
     <ul className="bullet-points">
@@ -1690,7 +1729,7 @@ function App() {
     </ul>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -1729,13 +1768,13 @@ function App() {
     </p>
 
     <h2>🧩 1. What is a List in React?</h2>
-    <p>
+    <p className="subtitle">
       A list is a collection of elements rendered from an array using the <code>.map()</code> function.
     </p>
 
     <pre className="code-block">
 {`function NameList() {
-  const names = ["Sofia", "Aarav", "Emma", "Liam"];
+  const names = ["Sofia", "bareera", "Faseeha", "humera"];
 
   return (
     <ul>
@@ -1749,18 +1788,18 @@ function App() {
 export default NameList;`}
     </pre>
 
-    <p>✅ Output:</p>
+    <p className="subtitle">✅ Output:</p>
     <ul className="bullet-points">
       <li>Sofia</li>
-      <li>Aarav</li>
-      <li>Emma</li>
-      <li>Liam</li>
+      <li>Bareera</li>
+      <li>Faseeha</li>
+      <li>Humera</li>
     </ul>
 
     <h2>💡 .map() creates a new array of &lt;li&gt; elements — one per name.</h2>
 
     <h2>🧩 2. Why We Need “Keys”</h2>
-    <p>
+    <p className="subtitle">
       React needs a unique <b>key</b> for each list element to efficiently update only changed items.
     </p>
 
@@ -1778,7 +1817,7 @@ export default NameList;`}
 }`}
     </pre>
 
-    <p>✅ Always provide a unique <b>key</b> for each list item.</p>
+    <p className="subtitle">✅ Always provide a unique <b>key</b> for each list item.</p>
 
     <h2>🧠 Example 3: Using Unique IDs as Keys</h2>
     <pre className="code-block">
@@ -1800,7 +1839,7 @@ export default NameList;`}
 }`}
     </pre>
 
-    <p>✅ React now uses <code>id</code> to efficiently track list changes.</p>
+    <p className="subtitle">✅ React now uses <code>id</code> to efficiently track list changes.</p>
 
     <h2>⚙️ 3. Rendering Lists of Components</h2>
     <pre className="code-block">
@@ -1821,7 +1860,7 @@ function UserList() {
 }`}
     </pre>
 
-    <p>✅ Each User component gets a key and name prop.</p>
+    <p className="subtitle">✅ Each User component gets a key and name prop.</p>
 
     <h2>🧠 4. Why Keys Are Important</h2>
     <ul className="bullet-points">
@@ -1834,7 +1873,7 @@ function UserList() {
 
     <p>⚠️ React Warning: “Each child in a list should have a unique ‘key’ prop.”</p>
 
-    <h2>🔄 5. Lists Inside Components</h2>
+    <h2 className="subtitle">🔄 5. Lists Inside Components</h2>
     <pre className="code-block">
 {`function HobbyList({ hobbies }) {
   return (
@@ -1852,7 +1891,7 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Output:</p>
+    <p className="subtitle">✅ Output:</p>
     <ul className="bullet-points">
       <li>Coding</li>
       <li>Reading</li>
@@ -1880,7 +1919,7 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Output:</p>
+    <p className="subtitle">✅ Output:</p>
     <ul className="bullet-points">
       <li>Laptop</li>
       <li>Tablet</li>
@@ -1907,14 +1946,14 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Output:</p>
+    <p className="subtitle">✅ Output:</p>
     <ul className="bullet-points">
       <li>React Basics — by Sofia</li>
       <li>React Hooks Explained — by Liam</li>
     </ul>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -1970,7 +2009,7 @@ function App() {
   return <Greeting isLoggedIn={true} />;
 }`}
     </pre>
-    <p>✅ Output: <b>Welcome back, Sofia!</b></p>
+    <p className="subtitle">✅ Output: <b>Welcome back, Sofia!</b></p>
 
     <h2>🧠 2. Using Ternary Operator (Short Way)</h2>
     <pre className="code-block">
@@ -1984,7 +2023,7 @@ function App() {
   return <Greeting isLoggedIn={false} />;
 }`}
     </pre>
-    <p>✅ Output: <b>Please log in to continue.</b></p>
+    <p className="subtitle">✅ Output: <b>Please log in to continue.</b></p>
 
     <h2>🔁 3. Using Logical AND (&&)</h2>
     <pre className="code-block">
@@ -2001,7 +2040,7 @@ function App() {
   return <Message hasNewMessage={true} />;
 }`}
     </pre>
-    <p>✅ Output:</p>
+    <p className="subtitle">✅ Output:</p>
     <ul className="bullet-points">
       <li>Inbox</li>
       <li>You have a new message! 📩</li>
@@ -2022,7 +2061,7 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Simple and easy to read!</p>
+    <p className="subtitle">✅ Simple and easy to read!</p>
 
     <h2>🧱 5. Conditional Rendering with Components</h2>
     <pre className="code-block">
@@ -2038,7 +2077,7 @@ function App({ isLoggedIn }) {
   return <div>{isLoggedIn ? <LoggedIn /> : <LoggedOut />}</div>;
 }`}
     </pre>
-    <p>✅ Output depends on <code>isLoggedIn</code>.</p>
+    <p className="subtitle">✅ Output depends on <code>isLoggedIn</code>.</p>
 
     <h2>🧠 6. Example: Toggle Between States</h2>
     <pre className="code-block">
@@ -2098,7 +2137,7 @@ function App() {
 }`}
     </pre>
 
-    <p>✅ Nothing will be displayed on screen when <code>show</code> is false.</p>
+    <p className="subtitle">✅ Nothing will be displayed on screen when <code>show</code> is false.</p>
 
     <h2>🧮 9. Real-World Example: Login/Logout Button</h2>
     <pre className="code-block">
@@ -2124,7 +2163,7 @@ function App() {
     </ul>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -2333,7 +2372,7 @@ function FeedbackForm() {
 }`}</pre>
 
     <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -2386,251 +2425,7 @@ function FeedbackForm() {
   </>
 )}
 
-{/* 🗃️ useEffect */}
-{activeSection === "react-useeffect" && (
-  <>
-    <h1>🗃️ useEffect</h1>
-    <p className="subtitle">
-      The <b>useEffect</b> Hook lets you perform side effects in your React components.  
-      A side effect is anything that affects something outside the component, such as fetching data, updating the DOM, or setting timers.
-    </p>
 
-    <h2>🔷 What is useEffect?</h2>
-    <ul className="bullet-points">
-      <li>Fetching data from an API 🌐</li>
-      <li>Updating the document title 🧭</li>
-      <li>Setting up a timer ⏰</li>
-      <li>Working with browser storage (localStorage, etc.)</li>
-      <li>Adding or cleaning up event listeners ⚙️</li>
-    </ul>
-
-    <h2>⚙️ Basic Syntax</h2>
-    <pre className="code-block">{`useEffect(() => {
-  // Side effect logic here
-}, [dependencies]);`}</pre>
-
-    <p className="subtitle">
-      <b>Parameters:</b>  
-      <br />• <b>Callback Function</b> – The code to run when the effect is triggered.  
-      <br />• <b>Dependency Array (optional)</b> – Controls when the effect runs.
-    </p>
-
-    <h2>🧩 1. Run on Every Render</h2>
-    <pre className="code-block">{`import React, { useState, useEffect } from "react";
-
-function Example1() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log("Component rendered!");
-  });
-
-  return (
-    <div>
-      <h2>Count: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
-    </div>
-  );
-}`}</pre>
-
-    <p className="subtitle">
-      ✅ Runs after every render — including updates.  
-      ⚠️ Use dependencies wisely to avoid performance issues.
-    </p>
-
-    <h2>🧩 2. Run Only Once (on Mount)</h2>
-    <pre className="code-block">{`useEffect(() => {
-  console.log("Component mounted!");
-}, []);`}</pre>
-
-    <pre className="code-block">{`import React, { useEffect } from "react";
-
-function WelcomeMessage() {
-  useEffect(() => {
-    alert("Welcome to the React App!");
-  }, []);
-
-  return <h2>Hello, React Learner!</h2>;
-}`}</pre>
-
-    <h2>🧩 3. Run When Specific Data Changes</h2>
-    <pre className="code-block">{`import React, { useState, useEffect } from "react";
-
-function CounterEffect() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log(\`Count changed to: \${count}\`);
-  }, [count]);
-
-  return (
-    <div>
-      <h2>Count: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
-    </div>
-  );
-}`}</pre>
-
-    <p className="subtitle">✅ Runs only when <b>count</b> changes.</p>
-
-    <h2>⚡ 4. Cleanup Function (Avoid Memory Leaks)</h2>
-    <pre className="code-block">{`useEffect(() => {
-  const timer = setInterval(() => {
-    console.log("Tick ⏱️");
-  }, 1000);
-
-  return () => {
-    clearInterval(timer);
-    console.log("Timer stopped ❌");
-  };
-}, []);`}</pre>
-
-    <p className="subtitle">
-      ✅ Cleans up timers, listeners, or subscriptions when component unmounts.
-    </p>
-
-    <h2>🌐 5. Fetching Data with useEffect</h2>
-    <pre className="code-block">{`import React, { useState, useEffect } from "react";
-
-function FetchUsers() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(data => setUsers(data));
-  }, []);
-
-  return (
-    <div>
-      <h2>👥 User List</h2>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}`}</pre>
-
-    <h2>🧠 6. useEffect Lifecycle Analogy</h2>
-    <table className="summary-table">
-      <thead>
-        <tr>
-          <th>Stage</th>
-          <th>Class Component Equivalent</th>
-          <th>useEffect Behavior</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mount</td>
-          <td>componentDidMount()</td>
-          <td>Runs once when component loads</td>
-        </tr>
-        <tr>
-          <td>Update</td>
-          <td>componentDidUpdate()</td>
-          <td>Runs when dependencies change</td>
-        </tr>
-        <tr>
-          <td>Unmount</td>
-          <td>componentWillUnmount()</td>
-          <td>Cleanup function runs</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>💬 7. Multiple useEffects</h2>
-    <pre className="code-block">{`useEffect(() => {
-  console.log("Fetching data...");
-}, []);
-
-useEffect(() => {
-  document.title = "React App";
-  console.log("Updating document title...");
-}, []);`}</pre>
-
-    <h2>🧩 8. Common Mistakes</h2>
-    <pre className="code-block">{`❌ Missing dependencies
-useEffect(() => {
-  fetchData();
-}, []); // fetchData uses state/prop → should be in dependencies
-
-✅ Correct:
-useEffect(() => {
-  fetchData();
-}, [fetchData]);`}</pre>
-
-    <h2>💡 9. useEffect + useState Example</h2>
-    <pre className="code-block">{`import React, { useState, useEffect } from "react";
-
-function SearchUser() {
-  const [query, setQuery] = useState("Bret");
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch(\`https://jsonplaceholder.typicode.com/users?username=\${query}\`)
-      .then(res => res.json())
-      .then(data => setUser(data[0]));
-  }, [query]);
-
-  return (
-    <div>
-      <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-      {user && <p>Found: {user.name}</p>}
-    </div>
-  );
-}`}</pre>
-
-    <h2>💬 Quick Recap</h2>
-    <table className="summary-table">
-      <thead>
-        <tr>
-          <th>Concept</th>
-          <th>Description</th>
-          <th>Example</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>useEffect</td>
-          <td>Handles side effects</td>
-          <td><code>Fetching, timers, DOM updates</code></td>
-        </tr>
-        <tr>
-          <td>Dependency Array</td>
-          <td>Controls when effect runs</td>
-          <td><code>[count], [], or none</code></td>
-        </tr>
-        <tr>
-          <td>Cleanup Function</td>
-          <td>Runs before unmount or update</td>
-          <td><code>return () {`=>`} clearInterval()</code></td>
-        </tr>
-        <tr>
-          <td>Runs Once</td>
-          <td>On mount only</td>
-          <td><code>[]</code></td>
-        </tr>
-        <tr>
-          <td>Runs on Change</td>
-          <td>When dependency changes</td>
-          <td><code>[dependency]</code></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>✅ Summary</h2>
-    <ul className="bullet-points">
-      <li><b>useEffect</b> handles side effects in React.</li>
-      <li>Control when it runs using the <b>dependency array</b>.</li>
-      <li>Always include cleanup functions for safety.</li>
-      <li>You can use multiple effects for better code organization.</li>
-      <li>It replaces lifecycle methods like <b>componentDidMount</b>, <b>componentDidUpdate</b>, and <b>componentWillUnmount</b>.</li>
-    </ul>
-  </>
-)}
 {activeSection === "react-fetching-data" && (
   <>
     <h1>🌍 Fetching Data (API Integration)</h1>
@@ -2639,7 +2434,7 @@ function SearchUser() {
       (Application Programming Interface). React apps use this to display data such as:
     </p>
 
-    <ul>
+    <ul className='bullet-points'>
       <li>User data 👤</li>
       <li>Product lists 🛒</li>
       <li>Weather updates ☀️</li>
@@ -2651,11 +2446,11 @@ function SearchUser() {
       API (Application Programming Interface) allows two systems to communicate.
       In React, you can use API endpoints (URLs) to fetch backend data.
     </p>
-    <p><code>https://jsonplaceholder.typicode.com/users</code> → returns fake users (test API).</p>
+    <p className='subtitle'><code>https://jsonplaceholder.typicode.com/users</code> → returns fake users (test API).</p>
 
     <h2>🧩 2. Common Ways to Fetch Data</h2>
-    <p>There are two main methods:</p>
-    <ul>
+    <p className='subtitle'>There are two main methods:</p>
+    <ul className='bullet-points'>
       <li>Using <strong>Fetch API</strong> (built-in)</li>
       <li>Using <strong>Axios</strong> (external, simpler syntax)</li>
     </ul>
@@ -2873,7 +2668,7 @@ function WeatherApp() {
 }`}</pre>
 
     <h2>📘 Summary</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Concept</th>
@@ -2891,7 +2686,7 @@ function WeatherApp() {
       </tbody>
     </table>
 
-    <p className="tip">
+    <p className="subtitle">
       ✅ Always handle loading and error states.<br />
       ✅ Use async/await for clean syntax.<br />
       ✅ Use Axios for real-world projects.<br />
@@ -2945,9 +2740,9 @@ function Counter() {
 
 export default Counter;`}</pre>
 
-    <p className="tip">
-      ✅ Use <code>useReducer</code> for managing complex state logic or when
-      <code>useState</code> becomes messy.
+    <p className="subtitle">
+      ✅ Use <code>useReducer</code> for managing complex state logic or when 
+       <code>useState</code> becomes messy.
     </p>
 
     <h2>⚡ 2. useMemo (Performance Optimization)</h2>
@@ -2981,7 +2776,7 @@ function ExpensiveCalc() {
 
 export default ExpensiveCalc;`}</pre>
 
-    <p className="tip">
+    <p className="subtitle">
       ✅ Use <code>useMemo</code> for heavy computations like filtering or sorting.
     </p>
 
@@ -3015,7 +2810,7 @@ function Parent() {
 
 export default Parent;`}</pre>
 
-    <p className="tip">
+    <p className="subtitle">
       ✅ Use <code>useCallback</code> when passing functions to child components to prevent unnecessary re-renders.
     </p>
 
@@ -3067,7 +2862,7 @@ function RenderCounter() {
 export default RenderCounter;`}</pre>
 
     <h2>🧠 Summary Table</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Hook</th>
@@ -3084,7 +2879,7 @@ export default RenderCounter;`}</pre>
       </tbody>
     </table>
 
-    <p className="tip">
+    <p className="subtitle">
       ✅ <strong>useReducer</strong> → Manage complex state<br />
       ✅ <strong>useMemo</strong> → Optimize heavy computations<br />
       ✅ <strong>useCallback</strong> → Prevent child re-renders<br />
@@ -3103,8 +2898,8 @@ export default RenderCounter;`}</pre>
 
     <h2>🧩 1. React.memo (Prevent Unnecessary Re-renders)</h2>
     <p className="subtitle">
-      <strong>React.memo()</strong> is a higher-order component that prevents re-rendering if a component’s props haven’t changed.
-      It ensures that if the parent re-renders but the props remain the same, the memoized component won’t re-render. ✅
+      If your component’s props didn’t change, React.memo tells React —
+      “Don’t re-render this component, just reuse the last one.”
     </p>
 
     <pre className="code-block">{`import React, { useState } from "react";

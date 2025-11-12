@@ -236,7 +236,7 @@ Machine Code (runs on OS)
       Java is built on three main components that work together to run programs efficiently:
     </p>
 
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Component</th>
@@ -426,7 +426,7 @@ public class CommentsDemo {
     {/* 🧩 Identifiers and Keywords */}
     <h2>🧩 Identifiers and Keywords</h2>
     <h3>📘 Identifiers:</h3>
-    <p>Names given to classes, variables, methods, etc.</p>
+    <p>Identifier is a names given to classes, variables, methods, etc.</p>
     <ul className="bullet-points">
       <li>Must start with a letter, $, or _</li>
       <li>Cannot start with a number</li>
@@ -471,7 +471,7 @@ boolean isStudent = true;`}
     </pre>
 
     <h3>🧩 Common Data Types:</h3>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Type</th>
@@ -512,7 +512,7 @@ System.out.println("Java!");`}
 
     {/* 🧩 Escape Sequences */}
     <h2>🧩 Escape Sequences</h2>
-    <p>Used to format strings inside <code>System.out.println()</code>.</p>
+    <p>In Java, an escape sequence is a special character combination that starts with a backslash (\) and is used to represent characters that are hard to type or display directly — like newlines, tabs, or quotes inside strings.</p>
     <pre className="code-block">
 {`System.out.println("Hello\\nJava"); // New line
 System.out.println("Hello\\tWorld"); // Tab space
@@ -561,7 +561,7 @@ He said "Hi!"`}
     {/* ➕ 1. Arithmetic Operators */}
     <h2>➕ 1. Arithmetic Operators</h2>
     <p>Used for basic mathematical calculations.</p>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th>
@@ -590,7 +590,7 @@ System.out.println(a % b); // 1`}
     {/* ⚙️ 2. Assignment Operators */}
     <h2>⚙️ 2. Assignment Operators</h2>
     <p>Used to assign values to variables.</p>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Operator</th><th>Description</th><th>Example</th><th>Result</th>
@@ -618,7 +618,7 @@ x /= 4; // 6`}
     {/* 🔄 3. Relational Operators */}
     <h2>🔄 3. Relational Operators</h2>
     <p>Used to compare two values. Returns <b>true</b> or <b>false</b>.</p>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
       </thead>
@@ -644,7 +644,7 @@ System.out.println(a != b); // true`}
     {/* 🧠 4. Logical Operators */}
     <h2>🧠 4. Logical Operators</h2>
     <p>Used to combine multiple conditions.</p>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
       </thead>
@@ -667,7 +667,7 @@ System.out.println(!(a == 8));       // false`}
     {/* 🔢 5. Increment and Decrement */}
     <h2>🔢 5. Increment and Decrement Operators</h2>
     <p>Used to increase or decrease a variable by 1.</p>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
       </thead>
@@ -892,7 +892,7 @@ do {
 
     {/* 🔁 continue */}
     <h3>🔁 continue Statement</h3>
-    <p>Skips the current iteration and moves to the next one.</p>
+    <p className=''>Skips the current iteration and moves to the next one.</p>
     <pre className="code-block">
 {`for (int i = 1; i <= 5; i++) {
   if (i == 3) continue;
@@ -903,7 +903,7 @@ do {
 
     {/* 🔚 return */}
     <h3>🔚 return Statement</h3>
-    <p>Used to exit from a method and optionally return a value.</p>
+    <p className='subtitle'>Used to exit from a method and optionally return a value.</p>
     <pre className="code-block">
 {`public static int add(int a, int b) {
   return a + b;
@@ -914,7 +914,7 @@ do {
 
     {/* 🧩 Nested Control Statements */}
     <h2>🧩 5. Nested Control Statements</h2>
-    <p>Control statements can be placed inside one another (like an <b>if</b> inside a <b>for</b> loop).</p>
+    <p className='subtitle'>Control statements can be placed inside one another (like an <b>if</b> inside a <b>for</b> loop).</p>
     <pre className="code-block">
 {`for (int i = 1; i <= 3; i++) {
   if (i == 2) {
@@ -943,7 +943,7 @@ Number: 3`}
       <li>🧠 Combine them to create powerful logic and control program flow.</li>
     </ul>
 
-    <p className="highlight">
+    <p className="subtitle">
       🎉 Great work! You now understand how to control the flow of your Java program.  
       Next, we’ll explore <b>Arrays in Java</b> — a key concept for handling collections of data efficiently. 🧮
     </p>
@@ -997,7 +997,7 @@ marks[2] = 95;
 System.out.println("First mark: " + marks[0]);`}
     </pre>
 
-    <p>💡 You can also declare and initialize together:  
+    <p className='subtitle'>💡 You can also declare and initialize together:  
       <code>{`int[] marks = {85, 90, 95};`}</code>
     </p>
 
@@ -1005,7 +1005,7 @@ System.out.println("First mark: " + marks[0]);`}
 
     {/* 🧩 3. Accessing Array Elements */}
     <h2>🧩 3. Accessing Array Elements</h2>
-    <p>You can access each element using a <b>loop</b>.</p>
+    <p className='subtitle'>You can access each element using a <b>loop</b>.</p>
 
     <h3>Using a for loop 👇</h3>
     <pre className="code-block">
@@ -1025,7 +1025,7 @@ for (int num : arr) {
 }`}
     </pre>
 
-    <p>🧠 The enhanced <b>for-each</b> loop makes code simpler and avoids index handling.</p>
+    <p className='subtitle'>🧠 The enhanced <b>for-each</b> loop makes code simpler and avoids index handling.</p>
 
     <hr />
 
@@ -1038,7 +1038,7 @@ numbers[2] = 99; // Change value at index 2
 System.out.println(numbers[2]); // Output: 99`}
     </pre>
 
-    <p>⚙️ Arrays are mutable — you can change values, but the **size is fixed** after creation.</p>
+    <p className='subtitle'>⚙️ Arrays are mutable — you can change values, but the **size is fixed** after creation.</p>
 
     <hr />
 
@@ -1057,7 +1057,7 @@ for (int i = 1; i < arr.length; i++) {
 System.out.println("Largest element: " + max);`}
     </pre>
 
-    <p>✅ You can use a similar logic to find the smallest element by changing the comparison.</p>
+    <p className='subtotle'>✅ You can use a similar logic to find the smallest element by changing the comparison.</p>
 
     <hr />
 
@@ -1081,7 +1081,7 @@ System.out.println("Average: " + average);`}
 
     {/* 🧱 7. Multi-Dimensional Arrays */}
     <h2>🧱 7. Multi-Dimensional Arrays</h2>
-    <p>
+    <p className='sibtitle'>
       Java allows arrays with more than one dimension — often used to represent **matrices or tables**.
     </p>
 
@@ -1101,7 +1101,7 @@ for (int i = 0; i < 3; i++) {
 }`}
     </pre>
 
-    <p>🧠 Output:</p>
+    <p className='subtitle'>🧠 Output:</p>
     <pre className="code-block">
 {`1 2 3
 4 5 6
@@ -1112,7 +1112,7 @@ for (int i = 0; i < 3; i++) {
 
     {/* ⚙️ 8. Arrays Utility Methods */}
     <h2>⚙️ 8. Arrays Utility Methods</h2>
-    <p>Java provides useful methods in the <code>java.util.Arrays</code> class.</p>
+    <p className='subtitle'>Java provides useful methods in the <code>java.util.Arrays</code> class.</p>
 
     <pre className="code-block">
 {`import java.util.Arrays;
@@ -1141,7 +1141,7 @@ System.out.println("Found at index: " + index);`}
       <li>⚡ Use <code>Arrays</code> class for sorting, searching, and printing.</li>
     </ul>
 
-    <p className="highlight">
+    <p className="subtitle">
       🎉 Great job! You’ve mastered Arrays in Java.  
       Next, let’s explore **Strings in Java** — where we learn how to handle and manipulate text efficiently. ✨
     </p>
@@ -1160,7 +1160,7 @@ System.out.println("Found at index: " + index);`}
 
     {/* 🔹 1. What is a String? */}
     <h2>🔹 1. What is a String?</h2>
-    <p>
+    <p className='subtitle'>
       A <b>String</b> is an object in Java that represents a sequence of characters.  
       It is **immutable**, meaning once created, it cannot be changed.
     </p>
@@ -1171,7 +1171,7 @@ System.out.println("Found at index: " + index);`}
 System.out.println("Hello, " + name + "!");`}
     </pre>
 
-    <p>Output: <code>Hello, Sofia!</code></p>
+    <p className='subtitle'>Output: <code>Hello, Sofia!</code></p>
 
     <hr />
 
@@ -1190,13 +1190,13 @@ System.out.println(s1);
 System.out.println(s2);`}
     </pre>
 
-    <p>💡 Both look similar, but <b>string literals</b> are stored in the <b>String Pool</b> for memory efficiency.</p>
+    <p className='subtitle'>💡 Both look similar, but <b>string literals</b> are stored in the <b>String Pool</b> for memory efficiency.</p>
 
     <hr />
 
     {/* 🧩 3. String Immutability */}
     <h2>🧩 3. String Immutability</h2>
-    <p>
+    <p className='subtitle'>
       Once a String is created, it cannot be modified.  
       Any change creates a new String object in memory.
     </p>
@@ -1208,13 +1208,13 @@ str.concat(" Programming");
 System.out.println(str); // Output: Java`}
     </pre>
 
-    <p>🧠 The original string <code>"Java"</code> remains unchanged because Strings are immutable.</p>
+    <p className='subtitle'>🧠 The original string <code>"Java"</code> remains unchanged because Strings are immutable.</p>
 
     <hr />
 
     {/* 🔄 4. String Methods */}
     <h2>🔄 4. Common String Methods</h2>
-    <p>Java provides many useful methods to manipulate strings.</p>
+    <p className='subtitle'>Java provides many useful methods to manipulate strings.</p>
 
     <pre className="code-block">
 {`String text = "Hello World";
@@ -1241,7 +1241,7 @@ System.out.println(text.replace("World", "Java")); // Hello Java`}
 
     {/* ⚖️ 5. String Comparison */}
     <h2>⚖️ 5. String Comparison</h2>
-    <p>There are two main ways to compare strings:</p>
+    <p className='subtitle'>There are two main ways to compare strings:</p>
 
     <pre className="code-block">
 {`String a = "Hello";
@@ -1258,13 +1258,13 @@ System.out.println(a.equals(c)); // true (same content)`}
       <li>✅ <code>equals()</code> → compares actual content (value)</li>
     </ul>
 
-    <p>💡 Always use <code>equals()</code> for content comparison.</p>
+    <p className='subtitle'>💡 Always use <code>equals()</code> for content comparison.</p>
 
     <hr />
 
     {/* 🔁 6. String Concatenation */}
     <h2>🔁 6. String Concatenation</h2>
-    <p>Strings can be combined using the <code>+</code> operator or the <code>concat()</code> method.</p>
+    <p className='subtitle'>Strings can be combined using the <code>+</code> operator or the <code>concat()</code> method.</p>
 
     <pre className="code-block">
 {`String first = "Java";
@@ -1277,7 +1277,7 @@ System.out.println(result1);
 System.out.println(result2);`}
     </pre>
 
-    <p>Output:</p>
+    <p className='subtitle'>Output:</p>
     <pre className="code-block">
 {`Java Programming
 Java Programming`}
@@ -1287,9 +1287,15 @@ Java Programming`}
 
     {/* 🧠 7. StringBuilder and StringBuffer */}
     <h2>🧠 7. StringBuilder and StringBuffer</h2>
-    <p>
-      Since Strings are immutable, frequent modifications create new objects.  
-      To avoid this, use <b>StringBuilder</b> or <b>StringBuffer</b> for mutable strings.
+    <p className='subtitle'>
+      A normal String is immutable → once created, it cannot be changed.
+      So if you keep modifying a String (like in loops), Java actually creates new String objects each time → slower and uses more memory.
+
+<p className='subtitle'>To solve this, Java provides:</p>
+<ul className='bullet-points'>
+  <li>✅ StringBuilder and</li>
+  <li>✅ StringBuffer — both are mutable (can be changed).</li>
+</ul>
     </p>
 
     <pre className="code-block">
@@ -1298,10 +1304,48 @@ sb.append(" Java");
 System.out.println(sb); // Output: Hello Java`}
     </pre>
 
-    <ul className="bullet-points">
-      <li>⚡ <b>StringBuilder</b> → Faster, not thread-safe</li>
-      <li>🧩 <b>StringBuffer</b> → Slower, thread-safe</li>
-    </ul>
+    <table className="style-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Mutable?</th>
+      <th>Thread-Safe?</th>
+      <th>Speed</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+      <td>❌ No</td>
+      <td>✅ Yes</td>
+      <td>Slowest</td>
+      <td>When content never changes</td>
+    </tr>
+    <tr>
+      <td>StringBuilder</td>
+      <td>✅ Yes</td>
+      <td>❌ No</td>
+      <td>Fastest</td>
+      <td>Single-threaded</td>
+    </tr>
+    <tr>
+      <td>StringBuffer</td>
+      <td>✅ Yes</td>
+      <td>✅ Yes</td>
+      <td>Moderate</td>
+      <td>Multi-threaded</td>
+    </tr>
+  </tbody>
+</table>
+<h2>🧩 What is a Thread?</h2>
+<p className='subtitle'>
+  A thread is like a small, lightweight unit of a program that runs independently inside your application.
+It’s a path of execution — meaning, what your program is currently doing.
+
+So,
+🧠 A thread = a separate flow of execution inside a program.
+</p>
 
     <hr />
 
@@ -1334,11 +1378,7 @@ System.out.println(str + "45"); // Output: 12345`}
       <li>🔁 Strings can be converted to and from other data types.</li>
     </ul>
 
-    <p className="highlight">
-      🎉 Excellent work! You’ve mastered Strings in Java.  
-      Next, let’s move to **☕ Object-Oriented Programming (OOP) Concepts in Java** —  
-      the foundation of writing real-world Java applications.
-    </p>
+
   </>
 )}
 {/* 🧱 Methods (Functions) */}

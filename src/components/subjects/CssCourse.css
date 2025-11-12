@@ -147,3 +147,27 @@
   color: #c9d1d9;
   margin-top: 8px;
 }
+.offcanvas {
+  width: 280px;
+}
+/* ========== Fix for Mobile Offcanvas Sidebar ========== */
+.offcanvas-body ul li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  color: #c9d1d9;
+  text-align: left;
+}
+
+.offcanvas-body ul li:hover {
+  background: #21262d;
+  color: #58a6ff;
+}
+
+.offcanvas-body ul li.active {
+  background: #238636;
+  color: #fff;
+  font-weight: 500;
+}
