@@ -255,6 +255,9 @@ const SqlCourse = () => {
     <p>
       A <b>schema</b> defines the structure of the database — how tables are related and what fields they contain.
     </p>
+    <h4>In simple words —</h4>
+    <p>A schema in SQL is like a folder inside a database.
+     It helps you organize tables and other database objects neatly.</p>
     <p className="subtitle">Example Schema (for a School Database):</p>
     <ul className="bullet-points">
       <li>Students → student_id, name, age, class</li>
@@ -472,7 +475,7 @@ const SqlCourse = () => {
       SQL commands are divided into five main categories, based on the type of work they perform in a database.
     </p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -512,7 +515,7 @@ const SqlCourse = () => {
     <h2>🧱 1️⃣ DDL (Data Definition Language)</h2>
     <p>Used to define or change the structure of the database — like creating or deleting tables.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -555,44 +558,58 @@ const SqlCourse = () => {
     </ul>
 
     <h2>✏️ 2️⃣ DML (Data Manipulation Language)</h2>
-    <p>Used to manipulate (change) data stored in tables.</p>
+<p>Used to manipulate (change) data stored in tables.</p>
 
-    <table className="info-table">
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Description</th>
-          <th>Example</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>INSERT</td>
-          <td>Adds new records into a table</td>
-          <td><code>INSERT INTO students VALUES (1, 'John', 22);</code></td>
-        </tr>
-        <tr>
-          <td>UPDATE</td>
-          <td>Modifies existing records</td>
-          <td><code>UPDATE students SET age = 23 WHERE id = 1;</code></td>
-        </tr>
-        <tr>
-          <td>DELETE</td>
-          <td>Removes records from a table</td>
-          <td><code>DELETE FROM students WHERE id = 1;</code></td>
-        </tr>
-      </tbody>
-    </table>
+<table className="style-table">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INSERT</td>
+      <td>Adds new records into a table</td>
+      <td><code>INSERT INTO students VALUES (1, 'John', 22);</code></td>
+    </tr>
+    <tr>
+      <td>UPDATE</td>
+      <td>Modifies existing records</td>
+      <td><code>UPDATE students SET age = 23 WHERE id = 1;</code></td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>Removes records from a table</td>
+      <td><code>DELETE FROM students WHERE id = 1;</code></td>
+    </tr>
+    <tr>
+      <td>MERGE</td>
+      <td>Combines insert, update, and delete operations in one statement</td>
+      <td>
+        <code>
+          MERGE INTO students AS s<br />
+          USING new_data AS n<br />
+          ON s.id = n.id<br />
+          WHEN MATCHED THEN UPDATE SET s.age = n.age<br />
+          WHEN NOT MATCHED THEN INSERT (id, name, age) VALUES (n.id, n.name, n.age);
+        </code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-    <p className="subtitle">🧠 Note:</p>
-    <ul className="bullet-points">
-      <li>DML changes can be rolled back (undone) using TCL commands.</li>
-    </ul>
+<p className="subtitle">🧠 Note:</p>
+<ul className="bullet-points">
+  <li>DML changes can be rolled back (undone) using TCL commands.</li>
+</ul>
+
 
     <h2>🔍 3️⃣ DQL (Data Query Language)</h2>
     <p>Used to fetch (retrieve) data from the database.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -623,7 +640,7 @@ WHERE city = 'Delhi';`}
     <h2>🔒 4️⃣ DCL (Data Control Language)</h2>
     <p>Used to control access and permissions in the database.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -652,7 +669,7 @@ WHERE city = 'Delhi';`}
     <h2>🔁 5️⃣ TCL (Transaction Control Language)</h2>
     <p>Used to manage transactions — a group of SQL operations that run as one unit.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -692,7 +709,7 @@ COMMIT;`}
     </ul>
 
     <h2>🧠 Summary Table</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -704,12 +721,12 @@ COMMIT;`}
         <tr>
           <td>DDL</td>
           <td>Defines database structure</td>
-          <td>CREATE, ALTER, DROP</td>
+          <td>CREATE, ALTER, DROP, TRUNCATE, RENAME</td>
         </tr>
         <tr>
           <td>DML</td>
-          <td>Modifies data</td>
-          <td>INSERT, UPDATE, DELETE</td>
+          <td>Handle data</td>
+          <td>INSERT, UPDATE, DELETE, MERGE</td>
         </tr>
         <tr>
           <td>DQL</td>
@@ -749,7 +766,7 @@ COMMIT;`}
     <h2>🧮 Main Categories of SQL Data Types</h2>
     <p>SQL data types are generally grouped into five main categories 👇</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -783,7 +800,7 @@ COMMIT;`}
     <h2>🔢 1️⃣ Numeric Data Types</h2>
     <p>Used to store numbers — either whole numbers or decimal values.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Data Type</th>
@@ -838,7 +855,7 @@ COMMIT;`}
     <h2>🧾 2️⃣ Character / String Data Types</h2>
     <p>Used to store text, characters, and words.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Data Type</th>
@@ -873,7 +890,7 @@ COMMIT;`}
     <h2>📅 3️⃣ Date and Time Data Types</h2>
     <p>Used to store dates, times, and timestamps.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Data Type</th>
@@ -917,7 +934,7 @@ COMMIT;`}
     <h2>💾 4️⃣ Binary Data Types</h2>
     <p>Used to store raw binary data such as images, videos, or files.</p>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Data Type</th>
@@ -946,7 +963,7 @@ COMMIT;`}
 
     <h2>🧩 5️⃣ Other / Special Data Types</h2>
 
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Data Type</th>
@@ -1000,7 +1017,7 @@ COMMIT;`}
     </ul>
 
     <h2>🧠 Summary Table</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -1054,7 +1071,7 @@ COMMIT;`}
     <p>These operations are the foundation of working with databases using SQL.</p>
 
     <h2>🧱 Sample Table: Students</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>student_id</th>
@@ -1163,7 +1180,7 @@ WHERE student_id = 3;`}
     </ul>
 
     <h2>⚙️ 5️⃣ TRUNCATE vs DELETE (Quick Note)</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -1186,7 +1203,7 @@ WHERE student_id = 3;`}
     </table>
 
     <h2>💡 Real-Life Analogy</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Action</th>
@@ -1203,7 +1220,7 @@ WHERE student_id = 3;`}
     </table>
 
     <h2>🧠 Summary</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Operation</th>
@@ -1244,7 +1261,7 @@ WHERE student_id = 3;`}
     </ul>
 
     <h2>🧩 Types of SQL Constraints</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Constraint</th>
@@ -1374,7 +1391,7 @@ CREATE TABLE Enrollments (
     </ul>
 
     <h2>🧠 Summary Table</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Constraint</th>
@@ -1393,7 +1410,7 @@ CREATE TABLE Enrollments (
     </table>
 
     <h2>💡 Real-Life Analogy</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Constraint</th>
