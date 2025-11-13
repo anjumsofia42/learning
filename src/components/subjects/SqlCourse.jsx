@@ -1438,7 +1438,7 @@ CREATE TABLE Enrollments (
     <p>They make SQL queries more powerful and flexible.</p>
 
     <h2>🧱 Main Types of SQL Operators</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -1459,7 +1459,7 @@ CREATE TABLE Enrollments (
 
     <h2>🔢 1️⃣ Arithmetic Operators</h2>
     <p>Used to perform math calculations in SQL queries.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
       </thead>
@@ -1478,7 +1478,7 @@ CREATE TABLE Enrollments (
 
     <h2>⚖️ 2️⃣ Comparison Operators</h2>
     <p>Used to compare values — often in WHERE conditions.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
       </thead>
@@ -1497,7 +1497,7 @@ CREATE TABLE Enrollments (
 
     <h2>🧠 3️⃣ Logical Operators</h2>
     <p>Used to combine multiple conditions in queries.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
       </thead>
@@ -1528,7 +1528,7 @@ SELECT * FROM Students WHERE city NOT IN ('Delhi', 'Chennai');`}
 
     <h2>🔍 6️⃣ LIKE & NOT LIKE Operators</h2>
     <p>Used for pattern matching in text columns.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Wildcard</th><th>Meaning</th></tr>
       </thead>
@@ -1561,7 +1561,7 @@ SELECT * FROM Students WHERE city IS NOT NULL;`}
 
     <h2>🧩 8️⃣ Set Operators</h2>
     <p>Used to combine results from multiple SELECT statements.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Operator</th><th>Description</th></tr>
       </thead>
@@ -1594,7 +1594,7 @@ SELECT name, salary * 1.10 AS NewSalary FROM Employees;`}
     </pre>
 
     <h2>🧠 Summary Table</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Type</th><th>Common Operators</th><th>Example</th></tr>
       </thead>
@@ -1622,7 +1622,7 @@ SELECT name, salary * 1.10 AS NewSalary FROM Employees;`}
     <p>Every clause has a purpose — and most queries are built by combining them.</p>
 
     <h2>🧩 Common SQL Clauses</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Clause</th><th>Description</th></tr>
       </thead>
@@ -1774,7 +1774,7 @@ LIMIT 3;`}
     </ul>
 
     <h2>🧩 Summary Table</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Clause</th><th>Purpose</th><th>Used With</th></tr>
       </thead>
@@ -1834,7 +1834,7 @@ SELECT name, salary FROM Employees ORDER BY salary DESC LIMIT 5;`}
     </ul>
 
     <h2>🧮 1️⃣ Aggregate Functions</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   COUNT(*) AS TotalStudents,
   AVG(marks) AS AverageMarks,
@@ -1842,10 +1842,10 @@ SELECT name, salary FROM Employees ORDER BY salary DESC LIMIT 5;`}
   MIN(marks) AS LowestMarks
 FROM Students;`}
     </pre>
-    <p className="note">✅ Returns total number, average, highest, and lowest marks of students.</p>
+    <p className="subtitle">✅ Returns total number, average, highest, and lowest marks of students.</p>
 
     <h2>🔤 2️⃣ String (Text) Functions</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   UPPER(name) AS UpperName,
   LENGTH(name) AS NameLength,
@@ -1854,7 +1854,7 @@ FROM Students;`}
     </pre>
 
     <h2>🗓️ 3️⃣ Date & Time Functions</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   NOW() AS CurrentDateTime,
   YEAR(NOW()) AS CurrentYear,
@@ -1863,14 +1863,14 @@ FROM Students;`}
     </pre>
 
     <h2>🧠 4️⃣ Conversion Functions</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   CAST('2025-11-03' AS DATE) AS ConvertedDate,
   FORMAT(45000.789, 2) AS FormattedSalary;`}
     </pre>
 
     <h2>⚙️ 5️⃣ System Functions</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   USER() AS CurrentUser,
   DATABASE() AS CurrentDatabase,
@@ -1878,7 +1878,7 @@ FROM Students;`}
     </pre>
 
     <h2>🧩 6️⃣ Using Functions Together</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT 
   CONCAT(UPPER(first_name), ' ', LOWER(last_name)) AS FullName,
   YEAR(NOW()) - YEAR(date_of_birth) AS Age,
@@ -1887,7 +1887,7 @@ FROM Employees;`}
     </pre>
 
     <h2>🧮 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Find average marks and highest marks of students
 SELECT AVG(marks) AS Average, MAX(marks) AS Highest FROM Students;
 
@@ -1905,7 +1905,7 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
     </pre>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Category</th>
@@ -1942,7 +1942,7 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
       </tbody>
     </table>
 
-    <p className="note">
+    <p className="subtitle">
       💡 <strong>Key Notes:</strong><br />
       ✅ Aggregate functions often use GROUP BY.<br />
       ✅ Scalar functions work on individual rows.<br />
@@ -1961,10 +1961,10 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
     </p>
 
     <h2>🧱 Example Setup</h2>
-    <p>Let’s take two example tables 👇</p>
+    <p className='subtitle'>Let’s take two example tables 👇</p>
 
     <h3>🎓 Students Table</h3>
-    <pre>
+    <pre className="code-block" >
 {`student_id | name  | dept_id
 1           | Aisha | 101
 2           | Rahul | 102
@@ -1973,7 +1973,7 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
     </pre>
 
     <h3>🏢 Departments Table</h3>
-    <pre>
+    <pre className="code-block">
 {`dept_id | dept_name
 101     | Computer Science
 102     | Mechanical
@@ -1981,7 +1981,7 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
     </pre>
 
     <h2>🧩 Types of SQL Joins</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>🔹 <strong>INNER JOIN</strong> – Only matching rows in both tables</li>
       <li>🔹 <strong>LEFT JOIN</strong> – All rows from left + matching right</li>
       <li>🔹 <strong>RIGHT JOIN</strong> – All rows from right + matching left</li>
@@ -1991,71 +1991,71 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
     </ul>
 
     <h2>1️⃣ INNER JOIN</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT Students.name, Departments.dept_name
 FROM Students
 INNER JOIN Departments
 ON Students.dept_id = Departments.dept_id;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Returns only students whose department exists in both tables.
     </p>
 
     <h2>2️⃣ LEFT JOIN (LEFT OUTER JOIN)</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT Students.name, Departments.dept_name
 FROM Students
 LEFT JOIN Departments
 ON Students.dept_id = Departments.dept_id;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Shows all students even if no department match — unmatched rows show <code>NULL</code>.
     </p>
 
     <h2>3️⃣ RIGHT JOIN (RIGHT OUTER JOIN)</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT Students.name, Departments.dept_name
 FROM Students
 RIGHT JOIN Departments
 ON Students.dept_id = Departments.dept_id;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Shows all departments, even if no students belong to them.
     </p>
 
     <h2>4️⃣ FULL JOIN (FULL OUTER JOIN)</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT Students.name, Departments.dept_name
 FROM Students
 FULL JOIN Departments
 ON Students.dept_id = Departments.dept_id;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Combines results of LEFT and RIGHT JOIN — includes unmatched rows from both sides.
     </p>
 
     <h2>5️⃣ CROSS JOIN</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT Students.name, Departments.dept_name
 FROM Students
 CROSS JOIN Departments;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Produces all possible combinations (Cartesian product) of rows from both tables.
     </p>
 
     <h2>6️⃣ SELF JOIN</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT A.name AS Student, B.name AS Buddy
 FROM Students A, Students B
 WHERE A.dept_id = B.dept_id AND A.name <> B.name;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Compares rows within the same table — finds students in the same department.
     </p>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Join Type</th>
@@ -2098,7 +2098,7 @@ WHERE A.dept_id = B.dept_id AND A.name <> B.name;`}
     </table>
 
     <h2>🧮 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Get student names and their department names
 SELECT s.name, d.dept_name
 FROM Students s
@@ -2129,7 +2129,7 @@ FROM Students A, Students B
 WHERE A.dept_id = B.dept_id AND A.name <> B.name;`}
     </pre>
 
-    <p className="note">
+    <p className="subtitle">
       💡 <strong>Key Notes:</strong><br />
       ✅ Joins connect related data across tables.<br />
       ✅ Use aliases (A, B, s, d) for clarity.<br />
@@ -2149,28 +2149,28 @@ WHERE A.dept_id = B.dept_id AND A.name <> B.name;`}
     </p>
 
     <p>🧠 Think of it like this:</p>
-    <p className="example">
+    <p className="subtitle">
       “Find students whose marks are greater than the average marks of all students.”<br />
       The average marks must be calculated first — that’s your subquery.
     </p>
 
     <h2>🧩 Basic Syntax</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT column_name
 FROM table_name
 WHERE column_name operator (SELECT column_name FROM another_table WHERE condition);`}
     </pre>
 
     <h3>Example:</h3>
-    <pre>
+    <pre className="code-block">
 {`SELECT name, marks
 FROM Students
 WHERE marks > (SELECT AVG(marks) FROM Students);`}
     </pre>
-    <p className="note">✅ Finds students who scored above the average marks.</p>
+    <p className="subtitle">✅ Finds students who scored above the average marks.</p>
 
     <h2>🧱 1️⃣ Types of Subqueries</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Type</th>
@@ -2187,7 +2187,7 @@ WHERE marks > (SELECT AVG(marks) FROM Students);`}
     </table>
 
     <h2>🧩 2️⃣ Single-row Subquery</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT name, marks
 FROM Students
 WHERE marks = (SELECT MAX(marks) FROM Students);`}
@@ -2195,34 +2195,34 @@ WHERE marks = (SELECT MAX(marks) FROM Students);`}
     <p className="note">✅ Shows the student(s) who got the highest marks.</p>
 
     <h2>🧮 3️⃣ Multiple-row Subquery</h2>
-    <p>Used when the subquery returns multiple values — use operators like <code>IN</code>, <code>ANY</code>, or <code>ALL</code>.</p>
+    <p className='subtitle'>Used when the subquery returns multiple values — use operators like <code>IN</code>, <code>ANY</code>, or <code>ALL</code>.</p>
 
-    <pre>
+    <pre className="code-block">
 {`-- Using IN
 SELECT name
 FROM Students
 WHERE dept_id IN (SELECT dept_id FROM Departments WHERE dept_name='Computer Science');`}
     </pre>
-    <p className="note">✅ Finds students in the “Computer Science” department.</p>
+    <p className="subtitle">✅ Finds students in the “Computer Science” department.</p>
 
-    <pre>
+    <pre className="code-block">
 {`-- Using ANY
 SELECT name, salary
 FROM Employees
 WHERE salary > ANY (SELECT salary FROM Employees WHERE dept_id = 102);`}
     </pre>
-    <p className="note">✅ Employees earning more than at least one person in department 102.</p>
+    <p className="subtitle">✅ Employees earning more than at least one person in department 102.</p>
 
-    <pre>
+    <pre className="code-block">
 {`-- Using ALL
 SELECT name, salary
 FROM Employees
 WHERE salary > ALL (SELECT salary FROM Employees WHERE dept_id = 102);`}
     </pre>
-    <p className="note">✅ Employees earning more than everyone in department 102.</p>
+    <p className="subtitle">✅ Employees earning more than everyone in department 102.</p>
 
     <h2>🧩 4️⃣ Multiple-column Subquery</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT name, dept_id, marks
 FROM Students
 WHERE (dept_id, marks) IN (
@@ -2231,10 +2231,10 @@ WHERE (dept_id, marks) IN (
   GROUP BY dept_id
 );`}
     </pre>
-    <p className="note">✅ Finds the top-scoring student in each department.</p>
+    <p className="subtitle">✅ Finds the top-scoring student in each department.</p>
 
     <h2>🔁 5️⃣ Correlated Subquery</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT name, marks
 FROM Students s1
 WHERE marks > (
@@ -2243,10 +2243,10 @@ WHERE marks > (
   WHERE s1.dept_id = s2.dept_id
 );`}
     </pre>
-    <p className="note">✅ Finds students who scored above the average marks in their department.</p>
+    <p className="subtitle">✅ Finds students who scored above the average marks in their department.</p>
 
     <h2>🧩 6️⃣ Nested Subquery</h2>
-    <pre>
+    <pre className="code-block">
 {`SELECT name
 FROM Students
 WHERE dept_id = (
@@ -2259,10 +2259,10 @@ WHERE dept_id = (
   )
 );`}
     </pre>
-    <p className="note">✅ Example of a 2-level nested subquery.</p>
+    <p className="subtitle">✅ Example of a 2-level nested subquery.</p>
 
     <h2>⚙️ 7️⃣ Using Subqueries in Different Clauses</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Clause</th>
@@ -2277,22 +2277,22 @@ WHERE dept_id = (
     </table>
 
     <h3>Example in SELECT:</h3>
-    <pre>
+    <pre className="code-block">
 {`SELECT name,
   (SELECT dept_name FROM Departments d WHERE d.dept_id = s.dept_id) AS Department
 FROM Students s;`}
     </pre>
 
     <h3>Example in FROM:</h3>
-    <pre>
+    <pre className="code-block">
 {`SELECT dept_id, AVG(marks) AS AvgMarks
 FROM (SELECT * FROM Students WHERE marks > 50) AS PassedStudents
 GROUP BY dept_id;`}
     </pre>
-    <p className="note">✅ Uses a subquery as a temporary (derived) table.</p>
+    <p className="subtitle">✅ Uses a subquery as a temporary (derived) table.</p>
 
     <h2>🧮 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Students who scored above class average
 SELECT name, marks
 FROM Students
@@ -2322,7 +2322,7 @@ WHERE (dept_id, marks) IN (
 );`}
     </pre>
 
-    <p className="note">
+    <p className="subtitle">
       💡 <strong>Key Notes:</strong><br />
       ✅ Subquery runs first; outer query uses its result.<br />
       ✅ Single-row → use =, &lt;, &gt;.<br />
@@ -2333,7 +2333,7 @@ WHERE (dept_id, marks) IN (
     </p>
 
     <h2>🧩 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Type</th>
@@ -2380,7 +2380,7 @@ WHERE (dept_id, marks) IN (
       When used, it behaves just like a real table.
     </p>
 
-    <ul>
+    <ul className='bullet-points'>
       <li>You can <strong>SELECT</strong> data from it.</li>
       <li>You can sometimes <strong>UPDATE</strong>, <strong>INSERT</strong>, or <strong>DELETE</strong> through it.</li>
     </ul>
@@ -2389,7 +2389,7 @@ WHERE (dept_id, marks) IN (
     <p>Let’s say you have two tables 👇</p>
 
     <h3>🎓 Students</h3>
-    <pre>
+    <pre className="code-block">
 {`student_id | name | dept_id | marks
 1 | Alex | 101 | 85
 2 | Sara | 102 | 90
@@ -2397,85 +2397,85 @@ WHERE (dept_id, marks) IN (
     </pre>
 
     <h3>🏢 Departments</h3>
-    <pre>
+    <pre className="code-block">
 {`dept_id | dept_name
 101 | Computer Science
 102 | Electronics`}
     </pre>
 
-    <p>
+    <p className='subtitle'>
       You often need to see <strong>student name</strong>, <strong>department name</strong>, and <strong>marks</strong>.
       Instead of writing a long join every time, you can create a <strong>view</strong>.
     </p>
 
     <h2>🧱 Creating a View</h2>
-    <pre>
+    <pre className="code-block">
 {`CREATE VIEW StudentDetails AS
 SELECT s.name, d.dept_name, s.marks
 FROM Students s
 JOIN Departments d ON s.dept_id = d.dept_id;`}
     </pre>
 
-    <p className="note">
+    <p className="subtitle">
       ✅ <strong>StudentDetails</strong> is now a virtual table (a view).  
       ✅ You can use it like a real table.
     </p>
 
     <h2>🔍 Using a View</h2>
-    <pre>{`SELECT * FROM StudentDetails;`}</pre>
-    <p className="note">
+    <pre className="code-block">{`SELECT * FROM StudentDetails;`}</pre>
+    <p className="subtitle">
       ✅ Shows name, department name, and marks — without writing the join again.
     </p>
 
     <h2>⚙️ Updating a View</h2>
-    <p>
+    <p className='subtitle'>
       You can update a view if it’s based on a single table and doesn’t use <code>GROUP BY</code>,
       <code>DISTINCT</code>, or <code>JOIN</code>.
     </p>
 
-    <pre>
+    <pre className="code-block">
 {`CREATE VIEW HighScorers AS
 SELECT name, marks
 FROM Students
 WHERE marks > 80;`}
     </pre>
 
-    <pre>
+    <pre className="code-block">
 {`UPDATE HighScorers
 SET marks = 95
 WHERE name = 'Alex';`}
     </pre>
 
-    <p className="note">✅ This change also reflects in the original <strong>Students</strong> table.</p>
+    <p className="subtitle">✅ This change also reflects in the original <strong>Students</strong> table.</p>
 
     <h2>🧩 Read-only View</h2>
-    <p>To prevent changes, create a view with <code>WITH CHECK OPTION</code>:</p>
-    <pre>
+    <p className='subtitle'>To prevent changes, create a view with <code>WITH CHECK OPTION</code>:</p>
+    <pre className="code-block">
 {`CREATE VIEW ReadOnlyView AS
 SELECT name, marks
 FROM Students
 WITH CHECK OPTION;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Ensures only valid rows (as per view condition) can be updated.  
       ✅ Can also use database permissions to make it read-only.
     </p>
 
     <h2>🧱 Modifying a View</h2>
-    <pre>
+    <pre className="code-block">
 {`CREATE OR REPLACE VIEW StudentDetails AS
 SELECT name, marks
 FROM Students
 WHERE marks >= 75;`}
     </pre>
-    <p className="note">✅ Updates the view with a new definition.</p>
+    <p className="subtitle">✅ Updates the view with a new definition.</p>
 
     <h2>🧱 Deleting a View</h2>
-    <pre>{`DROP VIEW StudentDetails;`}</pre>
-    <p className="note">✅ Removes the view from the database (not the underlying tables).</p>
+    <pre className="code-block">{`DROP VIEW StudentDetails;`}</pre>
+    <p className="subtitle">✅ Removes the view from the database (not the underlying tables).</p>
 
     <h2>💡 Advantages of Views</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Benefit</th>
@@ -2508,7 +2508,7 @@ WHERE marks >= 75;`}
     </table>
 
     <h2>🧮 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Create a view of students with high marks
 CREATE VIEW HighScorers AS
 SELECT name, marks
@@ -2537,7 +2537,7 @@ SELECT * FROM StudentInfo;`}
     </pre>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Command</th>
@@ -2585,7 +2585,7 @@ SELECT * FROM StudentInfo;`}
     </p>
 
     <h2>⚙️ 1️⃣ Creating an Index</h2>
-    <pre>
+    <pre className="code-block">
 {`CREATE INDEX index_name
 ON table_name (column_name);
 
@@ -2593,14 +2593,14 @@ ON table_name (column_name);
 CREATE INDEX idx_student_name
 ON Students(name);`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ Creates an index named <strong>idx_student_name</strong> on the <strong>name</strong> column.  
       ✅ Queries like <code>WHERE name = 'Alex'</code> execute faster.
     </p>
 
     <h2>⚙️ 2️⃣ Creating a Unique Index</h2>
-    <p>A <strong>Unique Index</strong> ensures no duplicate values exist in a column.</p>
-    <pre>
+    <p className="subtitle">A <strong>Unique Index</strong> ensures no duplicate values exist in a column.</p>
+    <pre className="code-block">
 {`CREATE UNIQUE INDEX index_name
 ON table_name (column_name);
 
@@ -2608,11 +2608,11 @@ ON table_name (column_name);
 CREATE UNIQUE INDEX idx_unique_email
 ON Employees(email);`}
     </pre>
-    <p className="note">✅ Prevents duplicate email addresses in the Employees table.</p>
+    <p className="subtitle">✅ Prevents duplicate email addresses in the Employees table.</p>
 
     <h2>⚙️ 3️⃣ Creating a Composite (Multi-Column) Index</h2>
-    <p>Used when you frequently search using multiple columns together.</p>
-    <pre>
+    <p className="subtitle">Used when you frequently search using multiple columns together.</p>
+    <pre className="code-block">
 {`CREATE INDEX index_name
 ON table_name (column1, column2);
 
@@ -2620,11 +2620,11 @@ ON table_name (column1, column2);
 CREATE INDEX idx_name_dept
 ON Students(name, dept_id);`}
     </pre>
-    <p className="note">✅ Useful for queries like:  
+    <p className="subtitle">✅ Useful for queries like:  
     <code>SELECT * FROM Students WHERE name='Alex' AND dept_id=101;</code></p>
 
     <h2>⚙️ 4️⃣ Deleting (Dropping) an Index</h2>
-    <pre>
+    <pre className="code-block">
 {`DROP INDEX index_name;
 
 -- Example:
@@ -2633,11 +2633,11 @@ DROP INDEX idx_student_name;`}
     <p className="note">✅ Removes the index — data remains unchanged.</p>
 
     <h2>🧮 5️⃣ Viewing Existing Indexes</h2>
-    <pre>{`SHOW INDEX FROM Students;`}</pre>
-    <p className="note">✅ Displays all indexes for the Students table (MySQL).</p>
+    <pre className="code-block">{`SHOW INDEX FROM Students;`}</pre>
+    <p className="subtitle">✅ Displays all indexes for the Students table (MySQL).</p>
 
     <h2>⚙️ 6️⃣ How Indexes Work</h2>
-    <p>
+    <p className='subtitle'>
       Indexes are often implemented using <strong>B-trees (balanced trees)</strong>.  
       Data is stored in a sorted structure (like a phone book).  
       Searching becomes <strong>logarithmic (fast)</strong>, not linear.  
@@ -2645,7 +2645,7 @@ DROP INDEX idx_student_name;`}
     </p>
 
     <h2>📊 7️⃣ When to Use Indexes</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>✅ Use Indexes When</th>
@@ -2669,7 +2669,7 @@ DROP INDEX idx_student_name;`}
     </table>
 
     <h2>⚡ 8️⃣ Types of Indexes</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Type</th>
@@ -2688,7 +2688,7 @@ DROP INDEX idx_student_name;`}
     </table>
 
     <h2>🧱 Clustered vs Non-Clustered Index</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Feature</th>
@@ -2705,7 +2705,7 @@ DROP INDEX idx_student_name;`}
     </table>
 
     <h2>🧮 9️⃣ Examples of Usage</h2>
-    <pre>
+    <pre className="code-block">
 {`-- Example 1: Single-column index
 CREATE INDEX idx_marks ON Students(marks);
 
@@ -2720,7 +2720,7 @@ DROP INDEX idx_dept_marks;`}
     </pre>
 
     <h2>💡 10️⃣ Advantages of Indexes</h2>
-    <table>
+    <table className="style-table">
       <thead>
         <tr>
           <th>Advantage</th>
@@ -2736,7 +2736,7 @@ DROP INDEX idx_dept_marks;`}
     </table>
 
     <h2>⚠️ Limitations of Indexes</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Limitation</th>
@@ -2770,7 +2770,7 @@ DROP INDEX idx_dept_marks;`}
     </table>
 
     <h2>🧩 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Create an index on 'name'
 CREATE INDEX idx_name ON Students(name);
 
@@ -2787,7 +2787,7 @@ DROP INDEX idx_email_unique;
 SHOW INDEX FROM Students;`}
     </pre>
 
-    <p className="note">
+    <p className="subtitle">
       ✅ In short: Indexes make reading data fast but writing slower.  
       Use them wisely — only on columns that are searched often!
     </p>
@@ -2801,13 +2801,13 @@ SHOW INDEX FROM Students;`}
       uniquely or establish relationships between tables.
     </p>
 
-    <ul>
+    <ul className='bullet-points'>
       <li>👉 Keys maintain data integrity (no duplicates or wrong relationships).</li>
       <li>👉 They connect tables and enforce rules in relational databases.</li>
     </ul>
 
     <h2>🧩 Why Are Keys Important?</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>✅ Prevent duplicate data</li>
       <li>✅ Maintain relationships between tables</li>
       <li>✅ Ensure each record can be uniquely identified</li>
@@ -2815,7 +2815,7 @@ SHOW INDEX FROM Students;`}
     </ul>
 
     <h2>⚙️ Types of Keys in SQL</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Key Type</th>
@@ -2834,24 +2834,24 @@ SHOW INDEX FROM Students;`}
     </table>
 
     <h2>🔑 1️⃣ Primary Key</h2>
-    <p>A <strong>Primary Key</strong> uniquely identifies each record in a table.</p>
-    <ul>
+    <p className="subtitle">A <strong>Primary Key</strong> uniquely identifies each record in a table.</p>
+    <ul className='bullet-points'>
       <li>Cannot contain NULL values</li>
       <li>Must be unique</li>
       <li>Each table can have only one Primary Key</li>
     </ul>
-    <pre>
+    <pre className="code-block">
 {`CREATE TABLE Students (
   student_id INT PRIMARY KEY,
   name VARCHAR(50),
   marks INT
 );`}
     </pre>
-    <p className="note">✅ Here, <strong>student_id</strong> is the Primary Key — no two students can have the same ID.</p>
+    <p className="subtitle">✅ Here, <strong>student_id</strong> is the Primary Key — no two students can have the same ID.</p>
 
     <h2>🧩 2️⃣ Foreign Key</h2>
-    <p>A <strong>Foreign Key</strong> links two tables. It references a Primary Key in another table.</p>
-    <pre>
+    <p className="subtitle">A <strong>Foreign Key</strong> links two tables. It references a Primary Key in another table.</p>
+    <pre className="code-block">
 {`CREATE TABLE Departments (
   dept_id INT PRIMARY KEY,
   dept_name VARCHAR(50)
@@ -2864,29 +2864,29 @@ CREATE TABLE Students (
   FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
 );`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ The <strong>dept_id</strong> in Students refers to <strong>dept_id</strong> in Departments.  
       ✅ A student must belong to an existing department.
     </p>
 
     <h2>⚙️ 3️⃣ Unique Key</h2>
-    <p>
+    <p className="subtitle">
       A <strong>Unique Key</strong> ensures that all values in a column are different, just like a Primary Key,
       but it <strong>can have one NULL value</strong>.
     </p>
-    <pre>
+    <pre className="code-block">
 {`CREATE TABLE Employees (
   emp_id INT PRIMARY KEY,
   email VARCHAR(100) UNIQUE
 );`}
     </pre>
-    <p className="note">✅ <strong>email</strong> must be unique but can have one NULL.</p>
+    <p className="subtitle">✅ <strong>email</strong> must be unique but can have one NULL.</p>
 
     <h2>🧱 4️⃣ Composite Key</h2>
-    <p>
+    <p className="subtitle">
       A <strong>Composite Key</strong> is made up of two or more columns that together uniquely identify a record.
     </p>
-    <pre>
+    <pre className="code-block">
 {`CREATE TABLE ExamResults (
   student_id INT,
   subject_id INT,
@@ -2894,14 +2894,14 @@ CREATE TABLE Students (
   PRIMARY KEY (student_id, subject_id)
 );`}
     </pre>
-    <p className="note">✅ Combination of student_id and subject_id uniquely identifies each record.</p>
+    <p className="subtitle">✅ Combination of student_id and subject_id uniquely identifies each record.</p>
 
     <h2>🧮 5️⃣ Candidate Key</h2>
-    <p>
+    <p className="subtitle">
       A <strong>Candidate Key</strong> is a column (or set of columns) that can uniquely identify a record.  
       Out of all candidate keys, one is chosen as the Primary Key; others are Alternate Keys.
     </p>
-    <pre>
+    <pre className="code-block">
 {`CREATE TABLE Employees (
   emp_id INT,
   email VARCHAR(100),
@@ -2909,35 +2909,35 @@ CREATE TABLE Students (
   PRIMARY KEY (emp_id)
 );`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ emp_id, email, and phone can all uniquely identify an employee —  
       they are candidate keys, but only one (emp_id) is chosen as the Primary Key.
     </p>
 
     <h2>🧠 6️⃣ Super Key</h2>
-    <p>
+    <p className="subtitle">
       A <strong>Super Key</strong> is any combination of columns that can uniquely identify a record.  
       Every Candidate Key is a Super Key, but not every Super Key is a Candidate Key.
     </p>
-    <p className="note">✅ Minimal (smallest) Super Keys are Candidate Keys.</p>
+    <p className="subtitle">✅ Minimal (smallest) Super Keys are Candidate Keys.</p>
 
     <h2>🧰 7️⃣ Alternate Key</h2>
-    <p>
+    <p className="subtitle">
       When a table has multiple candidate keys, the one not chosen as the primary key is called an <strong>Alternate Key</strong>.
     </p>
-    <pre>
+    <pre className="code-block">
 {`CREATE TABLE Employees (
   emp_id INT PRIMARY KEY,
   email VARCHAR(100) UNIQUE
 );`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ✅ emp_id → Primary Key  
       ✅ email → Alternate Key
     </p>
 
     <h2>🧩 Relationships Between Keys</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Concept</th>
@@ -2957,7 +2957,7 @@ CREATE TABLE Students (
     </table>
 
     <h2>💡 Key Rules Summary</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Rule</th>
@@ -2976,7 +2976,7 @@ CREATE TABLE Students (
     </table>
 
     <h2>🧮 Practice Queries</h2>
-    <pre>
+    <pre className="code-block">
 {`-- 1️⃣ Create tables with primary and foreign keys
 CREATE TABLE Departments (
   dept_id INT PRIMARY KEY,
@@ -3006,7 +3006,7 @@ CREATE TABLE ExamResults (
     </pre>
 
     <h2>🧠 Quick Recap</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>✅ Primary Key → Uniquely identifies each row</li>
       <li>✅ Foreign Key → Connects tables</li>
       <li>✅ Unique Key → Ensures uniqueness (allows NULL)</li>
@@ -3016,7 +3016,7 @@ CREATE TABLE ExamResults (
       <li>✅ Super Key → Any combination that uniquely identifies a row</li>
     </ul>
 
-    <p className="note">
+    <p className="subtitle">
       ✅ In short: Keys are the backbone of relational databases — ensuring data accuracy, uniqueness, and relationships.
     </p>
   </>
@@ -3046,13 +3046,13 @@ CREATE TABLE ExamResults (
 2 | Sara | IT | Dr. Smith
 3 | John | CS | Dr. John`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       ⚠️ DeptHead is repeated multiple times. If the CS head changes, many rows must be updated → leads to inconsistency.
     </p>
-    <p className="note">✅ Solution → Apply Normalization</p>
+    <p className="subtitle">✅ Solution → Apply Normalization</p>
 
     <h2>🧩 Normal Forms Overview</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Normal Form</th>
@@ -3071,7 +3071,7 @@ CREATE TABLE ExamResults (
 
     <h2>🧱 1️⃣ First Normal Form (1NF)</h2>
     <p><strong>Rule:</strong> Each cell should have a single value only; no repeating groups.</p>
-    <pre>
+    <pre className='block-code'>
 {`Not in 1NF:
 StudentID | Name | Subjects
 1 | Alex | Math, English

@@ -1627,23 +1627,85 @@ function Navbar() {
 
     <p className='subtitle'>✅ Use <code>&lt;Link&gt;</code> instead of <code>&lt;a&gt;</code> for smooth in-app navigation.</p>
 
-    <h2>⚡ 4. Using useNavigate() Hook (Programmatic Navigation)</h2>
-    <pre className="code-block">
+    <h2>🧭 4. useNavigate in React Router</h2>
+<p>
+  The <b>useNavigate</b> hook (React Router v6+) lets you <b>navigate between pages programmatically</b> — 
+  meaning you can change routes using JavaScript, not just by clicking a <code>&lt;Link&gt;</code>.
+</p>
+
+<h3>🧩 Syntax</h3>
+<pre className="code-block">
+{`import { useNavigate } from "react-router-dom";
+
+const MyComponent = () => {
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate("/home"); // 👈 navigate to /home route
+  };
+
+  return <button onClick={goToHome}>Go Home</button>;
+};`}
+</pre>
+
+<h3>💡 When to Use useNavigate</h3>
+<p>Use it when you want to change routes <b>without</b> user clicking a link, such as:</p>
+
+<table className="style-table">
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>✅ After a form submission</td>
+      <td>After user logs in → navigate to dashboard</td>
+    </tr>
+    <tr>
+      <td>✅ After a certain event</td>
+      <td>After clicking a button → go to another page</td>
+    </tr>
+    <tr>
+      <td>✅ Conditional redirects</td>
+      <td>If user not logged in → navigate to login page</td>
+    </tr>
+    <tr>
+      <td>✅ Logout</td>
+      <td>After logout → navigate to home/login page</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>⚙️ Extra Options</h3>
+<pre className="code-block">
+{`navigate(-1); // 👈 Go back one page
+navigate(1);  // 👈 Go forward one page
+navigate("/login", { replace: true }); // 👈 Replaces current route (no back button)`}
+</pre>
+
+<h3>🧠 Example (Login Redirect)</h3>
+<pre className="code-block">
 {`import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
 
-  function handleLogin() {
-    alert("Login Successful!");
-    navigate("/home");
-  }
+  const handleLogin = () => {
+    // ✅ after successful login
+    navigate("/dashboard");
+  };
 
-  return <button onClick={handleLogin}>Login</button>;
+  return (
+    <button onClick={handleLogin}>Login</button>
+  );
 }`}
-    </pre>
+</pre>
 
-    <p className='subtitle'>✅ After login, it redirects to <code>/home</code> automatically.</p>
+<p className="subtitle">
+  🔍 In short: <b>useNavigate()</b> lets you navigate between routes using JavaScript logic instead of user actions like clicking <code>&lt;Link&gt;</code>.
+</p>
 
     <h2>🧠 5. Dynamic Routing (URL Parameters)</h2>
     <pre className="code-block">

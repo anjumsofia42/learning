@@ -38,6 +38,9 @@ export default function Navbar() {
           <NavLink to="/java" className="subject-btn">
             Java
           </NavLink>
+          <NavLink to="/mysql" className="subject-btn">
+          MySql
+          </NavLink>
         </div>
       </nav>
     </div>

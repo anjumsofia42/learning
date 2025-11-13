@@ -48,6 +48,11 @@ export default function Home() {
           <p>Master backend development and APIs using Java.</p>
           <Link to="/java" className="start-btn">Start Learning</Link>
         </div>
+        <div className="course-card">
+          <h3>MySql</h3>
+          <p>MySQL is an open-source relational database management system (RDBMS).</p>
+          <Link to="/mysql" className="start-btn">Start Learning</Link>
+        </div>
       </section>
 
       <section className="about-section">
