@@ -200,7 +200,7 @@ const HtmlCourse = () => {
     {/* Mini Projects */}
     <li
       className={activeSection === "html-mini-projects" ? "active" : ""}
-      onClick={() => setActiveSection("html-mini-projects")}
+      onClick={() => setActiveSection("html-mini-projects")}npm rub
     >
       🚀 Mini Projects
     </li>
