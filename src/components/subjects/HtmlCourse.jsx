@@ -12,40 +12,202 @@ const HtmlCourse = () => {
   return (
     <div className="html-course-container d-flex">
       {/* ======= Sidebar (Desktop) ======= */}
-      <aside className="sidebar d-none d-md-block p-3">
-        <h4 className="sidebar-title">HTML Tutorial</h4>
-        <ul className="list-unstyled mt-3">
-          <li onClick={() => navigate("/")}>🏠 Home</li>
-          <li
-            className={activeSection === "getting-started" ? "active" : ""}
-            onClick={() => setActiveSection("getting-started")}
-          >
-            📚 Getting Started
-          </li>
-          <li onClick={() => setActiveSection("html-elements")}>📄 HTML Elements</li>
-          <li onClick={() => setActiveSection("html-attributes")}>🔧 HTML Attributes</li>
-          <li onClick={() => setActiveSection("html-style")}>🎨 HTML Style</li>
-          <li onClick={() => setActiveSection("html-formatting")}>📝 HTML Formatting</li>
-          <li onClick={() => setActiveSection("html-quotations")}>💬 HTML Quotations</li>
-          <li onClick={() => setActiveSection("html-comments")}>💬 HTML Comments</li>
-          <li onClick={() => setActiveSection("html-colors")}>🎨 HTML Colors</li>
-          <li onClick={() => setActiveSection("html-favicon")}>🔧 HTML Favicon</li>
-          <li onClick={() => setActiveSection("html-table")}>📄 HTML Table</li>
-          <li onClick={() => setActiveSection("html-headings")}>🔧 HTML Headings</li>
-          <li onClick={() => setActiveSection("html-paragraphs")}>📄 HTML Paragraphs</li>
-          <li onClick={() => setActiveSection("html-lists")}>📄 HTML Lists</li>
-          <li onClick={() => setActiveSection("html-block-inline-elements")}>📄 Block & Inline</li>
-          <li onClick={() => setActiveSection("html-forms")}>🧱 Forms</li>
-          <li onClick={() => setActiveSection("html-semantic")}>🧩 Semantic HTML</li>
-          <li onClick={() => setActiveSection("html-multimedia")}>🎨 Multimedia</li>
-          <li onClick={() => setActiveSection("html-iframes")}>🧭 Iframes & Embedding</li>
-          <li onClick={() => setActiveSection("html-div-span")}>🧱 Div and Span</li>
-          <li onClick={() => setActiveSection("html-meta-seo")}>⚙️ Meta Tags & SEO</li>
-          <li onClick={() => setActiveSection("html-entities-symbols")}>🧰 Entities & Symbols</li>
-          <li onClick={() => setActiveSection("html-layouts")}>🗂️ Layouts</li>
-          <li onClick={() => setActiveSection("html-mini-projects")}>🚀 Mini Projects</li>
-        </ul>
-      </aside>
+      {/* ======= Sidebar (Desktop) ======= */}
+<aside className="sidebar d-none d-md-block p-3">
+  <h4 className="sidebar-title">HTML Tutorial</h4>
+
+  <ul className="list-unstyled mt-3">
+
+    {/* Home */}
+    <li onClick={() => navigate("/")}>🏠 Home</li>
+
+    {/* Getting Started */}
+    <li
+      className={activeSection === "getting-started" ? "active" : ""}
+      onClick={() => setActiveSection("getting-started")}
+    >
+      📚 Getting Started
+    </li>
+
+    {/* HTML Elements */}
+    <li
+      className={activeSection === "html-elements" ? "active" : ""}
+      onClick={() => setActiveSection("html-elements")}
+    >
+      📄 HTML Elements
+    </li>
+
+    {/* HTML Attributes */}
+    <li
+      className={activeSection === "html-attributes" ? "active" : ""}
+      onClick={() => setActiveSection("html-attributes")}
+    >
+      🔧 HTML Attributes
+    </li>
+
+    {/* HTML Style */}
+    <li
+      className={activeSection === "html-style" ? "active" : ""}
+      onClick={() => setActiveSection("html-style")}
+    >
+      🎨 HTML Style
+    </li>
+
+    {/* HTML Formatting */}
+    <li
+      className={activeSection === "html-formatting" ? "active" : ""}
+      onClick={() => setActiveSection("html-formatting")}
+    >
+      📝 HTML Formatting
+    </li>
+
+    {/* HTML Quotations */}
+    <li
+      className={activeSection === "html-quotations" ? "active" : ""}
+      onClick={() => setActiveSection("html-quotations")}
+    >
+      💬 HTML Quotations
+    </li>
+
+    {/* HTML Comments */}
+    <li
+      className={activeSection === "html-comments" ? "active" : ""}
+      onClick={() => setActiveSection("html-comments")}
+    >
+      💬 HTML Comments
+    </li>
+
+    {/* HTML Colors */}
+    <li
+      className={activeSection === "html-colors" ? "active" : ""}
+      onClick={() => setActiveSection("html-colors")}
+    >
+      🎨 HTML Colors
+    </li>
+
+    {/* HTML Favicon */}
+    <li
+      className={activeSection === "html-favicon" ? "active" : ""}
+      onClick={() => setActiveSection("html-favicon")}
+    >
+      🔧 HTML Favicon
+    </li>
+
+    {/* HTML Table */}
+    <li
+      className={activeSection === "html-table" ? "active" : ""}
+      onClick={() => setActiveSection("html-table")}
+    >
+      📄 HTML Table
+    </li>
+
+    {/* HTML Headings */}
+    <li
+      className={activeSection === "html-headings" ? "active" : ""}
+      onClick={() => setActiveSection("html-headings")}
+    >
+      🔧 HTML Headings
+    </li>
+
+    {/* HTML Paragraphs */}
+    <li
+      className={activeSection === "html-paragraphs" ? "active" : ""}
+      onClick={() => setActiveSection("html-paragraphs")}
+    >
+      📄 HTML Paragraphs
+    </li>
+
+    {/* HTML Lists */}
+    <li
+      className={activeSection === "html-lists" ? "active" : ""}
+      onClick={() => setActiveSection("html-lists")}
+    >
+      📄 HTML Lists
+    </li>
+
+    {/* Block & Inline */}
+    <li
+      className={activeSection === "html-block-inline-elements" ? "active" : ""}
+      onClick={() => setActiveSection("html-block-inline-elements")}
+    >
+      📄 Block & Inline
+    </li>
+
+    {/* Forms */}
+    <li
+      className={activeSection === "html-forms" ? "active" : ""}
+      onClick={() => setActiveSection("html-forms")}
+    >
+      🧱 Forms
+    </li>
+
+    {/* Semantic */}
+    <li
+      className={activeSection === "html-semantic" ? "active" : ""}
+      onClick={() => setActiveSection("html-semantic")}
+    >
+      🧩 Semantic HTML
+    </li>
+
+    {/* Multimedia */}
+    <li
+      className={activeSection === "html-multimedia" ? "active" : ""}
+      onClick={() => setActiveSection("html-multimedia")}
+    >
+      🎨 Multimedia
+    </li>
+
+    {/* Iframes */}
+    <li
+      className={activeSection === "html-iframes" ? "active" : ""}
+      onClick={() => setActiveSection("html-iframes")}
+    >
+      🧭 Iframes & Embedding
+    </li>
+
+    {/* Div and Span */}
+    <li
+      className={activeSection === "html-div-span" ? "active" : ""}
+      onClick={() => setActiveSection("html-div-span")}
+    >
+      🧱 Div and Span
+    </li>
+
+    {/* Meta SEO */}
+    <li
+      className={activeSection === "html-meta-seo" ? "active" : ""}
+      onClick={() => setActiveSection("html-meta-seo")}
+    >
+      ⚙️ Meta Tags & SEO
+    </li>
+
+    {/* Entities */}
+    <li
+      className={activeSection === "html-entities-symbols" ? "active" : ""}
+      onClick={() => setActiveSection("html-entities-symbols")}
+    >
+      🧰 Entities & Symbols
+    </li>
+
+    {/* Layouts */}
+    <li
+      className={activeSection === "html-layouts" ? "active" : ""}
+      onClick={() => setActiveSection("html-layouts")}
+    >
+      🗂️ Layouts
+    </li>
+
+    {/* Mini Projects */}
+    <li
+      className={activeSection === "html-mini-projects" ? "active" : ""}
+      onClick={() => setActiveSection("html-mini-projects")}
+    >
+      🚀 Mini Projects
+    </li>
+
+  </ul>
+</aside>
+
 
       {/* ======= Sidebar Toggle (Mobile only, beside content) ======= */}
       <button

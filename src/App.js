@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -10,19 +10,20 @@ import JavascriptCourse from "./components/subjects/JavascriptCourse";
 import ReactCourse from "./components/subjects/ReactCourse";
 import SqlCourse from "./components/subjects/SqlCourse";
 import JavaCourse from "./components/subjects/JavaCourse";
-import MySql from "./components/subjects/MySql"
+import MySql from "./components/subjects/MySql";
 import usePageTracking from "./usePageTracking";
+
 function App() {
   usePageTracking();
 
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/html" element={<HtmlCourse />} />
         <Route path="/css" element={<CssCourse />} />
-        <Route path="/bootstrap" element={<BootstrapCourse/>} />
+        <Route path="/bootstrap" element={<BootstrapCourse />} />
         <Route path="/javascript" element={<JavascriptCourse />} />
         <Route path="/react" element={<ReactCourse />} />
         <Route path="/sql" element={<SqlCourse />} />
@@ -30,7 +31,7 @@ function App() {
         <Route path="/mysql" element={<MySql />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
