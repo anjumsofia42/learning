@@ -165,7 +165,7 @@
 
 /* ========== Responsive Design ========== */
 @media (max-width: 900px) {
-  .javascript-course-container {
+  .java-course-container {
     flex-direction: column;
     height: auto;
   }

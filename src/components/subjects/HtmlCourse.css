@@ -1,26 +1,16 @@
 /* ========== Layout ========== */
-.header {
-  text-align: center;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
 .html-course-container {
   display: flex;
-  flex-wrap: nowrap; /* ensures sidebar and content stay side-by-side */
   height: 100vh;
   background-color: #0d1117;
   color: #e6edf3;
   font-family: "Poppins", sans-serif;
-  overflow: hidden; /* remove or replace with: */
-  overflow: hidden; /* optional if you want only sidebar/content to scroll separately */
+  overflow: hidden;
 }
-
 
 /* ========== Sidebar ========== */
 .sidebar {
   width: 280px;
-  min-height: 100vh;
   background: #161b22;
   border-right: 1px solid #30363d;
   padding: 20px 15px;
@@ -69,20 +59,15 @@
 }
 
 /* ========== Main Content ========== */
-@media (max-width: 900px){
-.html-course-container {
-  padding: 10px;
-}
-}
 .course-content {
   flex: 1;
-  padding: 30px 60px;
-  overflow-y: auto; /* ✅ scrolling enabled */
+  padding: 30px 60px; /* ✅ More left padding for better readability */
+  overflow-y: auto;
   scroll-behavior: smooth;
   max-width: 100%;
   box-sizing: border-box;
+   
 }
-
 
 .course-content h1 {
   font-size: 28px;
@@ -187,7 +172,6 @@
 
   .sidebar {
     width: 100%;
-    min-height: auto;
     border-right: none;
     border-bottom: 1px solid #30363d;
     height: auto;
@@ -221,3 +205,4 @@
   color: #fff;
   font-weight: 500;
 }
+
