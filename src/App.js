@@ -11,8 +11,10 @@ import ReactCourse from "./components/subjects/ReactCourse";
 import SqlCourse from "./components/subjects/SqlCourse";
 import JavaCourse from "./components/subjects/JavaCourse";
 import MySql from "./components/subjects/MySql"
-
+import usePageTracking from "./usePageTracking";
 function App() {
+  usePageTracking();
+
   return (
     <Router>
       <Navbar />

@@ -4,6 +4,7 @@ import Layout from "../Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './MySql.css';
+import { Helmet } from 'react-helmet-async';
 
 const MySql = () => {
     const [activeSection, setActiveSection] = useState('mysql-intro');

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JavascriptCourse.css";
-
+import { Helmet } from 'react-helmet-async';
 const JavascriptCourse = () => {
   const [activeSection, setActiveSection] = useState("getting-started");
   const navigate = useNavigate();

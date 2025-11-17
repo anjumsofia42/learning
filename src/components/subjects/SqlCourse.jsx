@@ -4,7 +4,7 @@ import Layout from "../Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './SqlCourse.css';
-
+import { Helmet } from 'react-helmet-async';
 const SqlCourse = () => {
   const [activeSection, setActiveSection] = useState('sql-introduction');
   const navigate = useNavigate();

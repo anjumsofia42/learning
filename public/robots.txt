@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://javafullstack-by-sofia.netlify.app/sitemap.xml

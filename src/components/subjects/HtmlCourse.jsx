@@ -4,7 +4,7 @@ import Layout from "../Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./HtmlCourse.css";
-
+import { Helmet } from 'react-helmet-async';
 const HtmlCourse = () => {
   const [activeSection, setActiveSection] = useState("getting-started");
   const navigate = useNavigate();
