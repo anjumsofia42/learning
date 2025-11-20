@@ -1819,93 +1819,112 @@ SELECT name, salary FROM Employees ORDER BY salary DESC LIMIT 5;`}
   <>
     <h1>🧮 SQL Functions</h1>
     <p className="subtitle">
-      SQL Functions are built-in methods provided by SQL to perform operations on data — 
-      such as calculations, string manipulations, and date/time formatting. They take input values 
-      and return a single value or result.
+      SQL Functions are predefined methods in SQL used to perform operations on data. 
+      They return a single value after processing input values.
     </p>
 
-    <h2>🧩 Types of SQL Functions</h2>
+    <h2>⭐ Types of SQL Functions</h2>
     <ul>
-      <li>🧮 <strong>Aggregate Functions</strong> – Work on multiple rows (e.g., <code>SUM()</code>, <code>AVG()</code>)</li>
-      <li>🔤 <strong>Scalar Functions</strong> – Work on single values (e.g., <code>UCASE()</code>, <code>LCASE()</code>)</li>
-      <li>🗓️ <strong>Date & Time Functions</strong> – Handle date/time data (e.g., <code>NOW()</code>, <code>YEAR()</code>)</li>
-      <li>🧠 <strong>Conversion Functions</strong> – Convert data types (e.g., <code>CAST()</code>, <code>CONVERT()</code>)</li>
-      <li>⚙️ <strong>System Functions</strong> – Provide database/system info (e.g., <code>USER()</code>, <code>DATABASE()</code>)</li>
+      <li>🔤 <strong>String Functions</strong> – Work on text values (e.g., <code>UPPER()</code>, <code>LENGTH()</code>)</li>
+      <li>🔢 <strong>Numeric Functions</strong> – Work on numeric data (e.g., <code>ABS()</code>, <code>ROUND()</code>)</li>
+      <li>🗓️ <strong>Date Functions</strong> – Work with date/time values (e.g., <code>NOW()</code>, <code>DATEDIFF()</code>)</li>
+      <li>🔄 <strong>Conversion Functions</strong> – Convert data types (e.g., <code>CAST()</code>, <code>CONVERT()</code>)</li>
+      <li>🧮 <strong>Aggregate Functions</strong> – Work on multiple rows (e.g., <code>SUM()</code>, <code>COUNT()</code>)</li>
     </ul>
 
-    <h2>🧮 1️⃣ Aggregate Functions</h2>
-    <pre className="code-block">
-{`SELECT 
-  COUNT(*) AS TotalStudents,
-  AVG(marks) AS AverageMarks,
-  MAX(marks) AS HighestMarks,
-  MIN(marks) AS LowestMarks
-FROM Students;`}
-    </pre>
-    <p className="subtitle">✅ Returns total number, average, highest, and lowest marks of students.</p>
+    {/* ⭐ 1. STRING FUNCTIONS */}
+    <h2>⭐ 1️⃣ String Functions</h2>
 
-    <h2>🔤 2️⃣ String (Text) Functions</h2>
-    <pre className="code-block">
-{`SELECT 
-  UPPER(name) AS UpperName,
-  LENGTH(name) AS NameLength,
-  CONCAT(first_name, ' ', last_name) AS FullName
-FROM Students;`}
-    </pre>
+    <h3>🔹 1) UPPER() – Convert text to uppercase</h3>
+    <pre className="code-block">{`SELECT UPPER('hello world');`}</pre>
 
-    <h2>🗓️ 3️⃣ Date & Time Functions</h2>
-    <pre className="code-block">
-{`SELECT 
-  NOW() AS CurrentDateTime,
-  YEAR(NOW()) AS CurrentYear,
-  MONTH(CURDATE()) AS CurrentMonth,
-  DAY(CURDATE()) AS CurrentDay;`}
-    </pre>
+    <h3>🔹 2) LOWER() – Convert text to lowercase</h3>
+    <pre className="code-block">{`SELECT LOWER('SQL FUNCTIONS');`}</pre>
 
-    <h2>🧠 4️⃣ Conversion Functions</h2>
-    <pre className="code-block">
-{`SELECT 
-  CAST('2025-11-03' AS DATE) AS ConvertedDate,
-  FORMAT(45000.789, 2) AS FormattedSalary;`}
-    </pre>
+    <h3>🔹 3) LENGTH() – Get number of characters</h3>
+    <pre className="code-block">{`SELECT LENGTH('Database');`}</pre>
 
-    <h2>⚙️ 5️⃣ System Functions</h2>
-    <pre className="code-block">
-{`SELECT 
-  USER() AS CurrentUser,
-  DATABASE() AS CurrentDatabase,
-  VERSION() AS SQLVersion;`}
-    </pre>
+    <h3>🔹 4) SUBSTRING() – Extract part of a string</h3>
+    <pre className="code-block">{`SELECT SUBSTRING('SQL TUTORIAL', 1, 3);`}</pre>
 
-    <h2>🧩 6️⃣ Using Functions Together</h2>
-    <pre className="code-block">
-{`SELECT 
-  CONCAT(UPPER(first_name), ' ', LOWER(last_name)) AS FullName,
-  YEAR(NOW()) - YEAR(date_of_birth) AS Age,
-  FORMAT(salary * 1.10, 2) AS NewSalary
-FROM Employees;`}
-    </pre>
+    <h3>🔹 5) CONCAT() – Join strings</h3>
+    <pre className="code-block">{`SELECT CONCAT('Hello ', 'Students');`}</pre>
 
-    <h2>🧮 Practice Queries</h2>
-    <pre className="code-block">
-{`-- 1️⃣ Find average marks and highest marks of students
-SELECT AVG(marks) AS Average, MAX(marks) AS Highest FROM Students;
+    {/* ⭐ 2. NUMERIC FUNCTIONS */}
+    <h2>⭐ 2️⃣ Numeric Functions</h2>
 
--- 2️⃣ Display student names in uppercase
-SELECT UPPER(name) FROM Students;
+    <h3>🔹 1) ABS() – Absolute value</h3>
+    <pre className="code-block">{`SELECT ABS(-50);`}</pre>
 
--- 3️⃣ Show today’s date and time
-SELECT NOW() AS CurrentDateTime;
+    <h3>🔹 2) ROUND() – Round a number</h3>
+    <pre className="code-block">{`SELECT ROUND(12.567, 2);`}</pre>
 
--- 4️⃣ Calculate total salary of all employees
-SELECT SUM(salary) AS TotalSalary FROM Employees;
+    <h3>🔹 3) CEIL() – Next highest integer</h3>
+    <pre className="code-block">{`SELECT CEIL(4.2);`}</pre>
 
--- 5️⃣ Find number of students in each city
-SELECT city, COUNT(*) FROM Students GROUP BY city;`}
-    </pre>
+    <h3>🔹 4) FLOOR() – Next lowest integer</h3>
+    <pre className="code-block">{`SELECT FLOOR(4.9);`}</pre>
+
+    {/* ⭐ 3. DATE FUNCTIONS */}
+    <h2>⭐ 3️⃣ Date Functions</h2>
+
+    <h3>🔹 1) NOW() – Current date and time</h3>
+    <pre className="code-block">{`SELECT NOW();`}</pre>
+
+    <h3>🔹 2) CURDATE() – Only current date</h3>
+    <pre className="code-block">{`SELECT CURDATE();`}</pre>
+
+    <h3>🔹 3) DATEDIFF() – Days between two dates</h3>
+    <pre className="code-block">{`SELECT DATEDIFF('2025-12-01', '2025-11-01');`}</pre>
+
+    <h3>🔹 4) DATE_ADD() – Add days/months/years</h3>
+    <pre className="code-block">{`SELECT DATE_ADD('2025-11-20', INTERVAL 10 DAY);`}</pre>
+
+    {/* ⭐ 4. CONVERSION FUNCTIONS */}
+    <h2>⭐ 4️⃣ Conversion Functions</h2>
+
+    <h3>🔹 1) CAST() – Convert datatype</h3>
+    <pre className="code-block">{`SELECT CAST('25' AS UNSIGNED);`}</pre>
+
+    <h3>🔹 2) CONVERT() – Convert to date</h3>
+    <pre className="code-block">{`SELECT CONVERT('2025-11-20', DATE);`}</pre>
+
+    {/* ⭐ 5. AGGREGATE FUNCTIONS */}
+    <h2>⭐ 5️⃣ Aggregate Functions (Multiple Rows)</h2>
+
+    <p>Assume a table <strong>students</strong>:</p>
+    <table className="style-table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>A</td><td>80</td></tr>
+        <tr><td>2</td><td>B</td><td>90</td></tr>
+        <tr><td>3</td><td>C</td><td>70</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 1) COUNT() – Count rows</h3>
+    <pre className="code-block">{`SELECT COUNT(*) AS total_students FROM students;`}</pre>
+
+    <h3>🔹 2) SUM() – Add values</h3>
+    <pre className="code-block">{`SELECT SUM(marks) AS total_marks FROM students;`}</pre>
+
+    <h3>🔹 3) AVG() – Average</h3>
+    <pre className="code-block">{`SELECT AVG(marks) AS average_marks FROM students;`}</pre>
+
+    <h3>🔹 4) MAX() – Highest value</h3>
+    <pre className="code-block">{`SELECT MAX(marks) AS highest_mark FROM students;`}</pre>
+
+    <h3>🔹 5) MIN() – Lowest value</h3>
+    <pre className="code-block">{`SELECT MIN(marks) AS lowest_mark FROM students;`}</pre>
 
     <h2>🧠 Summary Table</h2>
-    <table className='style-table'>
+    <table className="style-table">
       <thead>
         <tr>
           <th>Category</th>
@@ -1915,42 +1934,35 @@ SELECT city, COUNT(*) FROM Students GROUP BY city;`}
       </thead>
       <tbody>
         <tr>
-          <td>Aggregate</td>
-          <td>SUM(), COUNT(), AVG(), MIN(), MAX()</td>
-          <td>Work on multiple rows</td>
-        </tr>
-        <tr>
           <td>String</td>
-          <td>UPPER(), LOWER(), CONCAT(), LENGTH(), TRIM()</td>
-          <td>Work on text</td>
+          <td>UPPER(), LOWER(), CONCAT(), LENGTH()</td>
+          <td>Text operations</td>
         </tr>
         <tr>
-          <td>Date/Time</td>
-          <td>NOW(), CURDATE(), YEAR(), DATEDIFF()</td>
-          <td>Work on dates</td>
+          <td>Numeric</td>
+          <td>ABS(), ROUND(), CEIL(), FLOOR()</td>
+          <td>Number calculations</td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>NOW(), CURDATE(), DATEDIFF()</td>
+          <td>Work with dates</td>
         </tr>
         <tr>
           <td>Conversion</td>
-          <td>CAST(), CONVERT(), FORMAT()</td>
+          <td>CAST(), CONVERT()</td>
           <td>Change data types</td>
         </tr>
         <tr>
-          <td>System</td>
-          <td>USER(), DATABASE(), VERSION()</td>
-          <td>System info</td>
+          <td>Aggregate</td>
+          <td>SUM(), COUNT(), AVG()</td>
+          <td>Work on multiple rows</td>
         </tr>
       </tbody>
     </table>
-
-    <p className="subtitle">
-      💡 <strong>Key Notes:</strong><br />
-      ✅ Aggregate functions often use GROUP BY.<br />
-      ✅ Scalar functions work on individual rows.<br />
-      ✅ Functions can be nested for advanced queries.<br />
-      ✅ SQL dialects may include extra functions like IFNULL(), ROUND(), etc.
-    </p>
   </>
 )}
+
 {activeSection === "sql-joins" && (
   <>
     <h1>🧩 SQL Joins</h1>
