@@ -2387,169 +2387,95 @@ WHERE (dept_id, marks) IN (
   <>
     <h1>⚡ SQL Views</h1>
     <p className="subtitle">
-      A <strong>View</strong> is a <em>virtual table</em> based on the result of an SQL query.
-      It doesn’t store data physically — it only stores the query that retrieves data from one or more tables.
-      When used, it behaves just like a real table.
+      ⭐ A <strong>VIEW</strong> is a <strong>virtual table</strong> in SQL.  
+      It does <strong>not store data physically</strong>, but shows data from one or multiple tables 
+      based on a <strong>SELECT query</strong>.  
+      Think of a View as a <strong>saved SQL query</strong> that behaves like a table.
     </p>
 
-    <ul className='bullet-points'>
-      <li>You can <strong>SELECT</strong> data from it.</li>
-      <li>You can sometimes <strong>UPDATE</strong>, <strong>INSERT</strong>, or <strong>DELETE</strong> through it.</li>
+    <h2>💡 Why Use a View?</h2>
+    <table className="style-table">
+      <thead>
+        <tr>
+          <th>Reason</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>✔ Security</td><td>Hide sensitive columns like salary, password</td></tr>
+        <tr><td>✔ Simplifies queries</td><td>Save complex SELECT queries and reuse them</td></tr>
+        <tr><td>✔ Logical separation</td><td>Create clean and readable data outputs</td></tr>
+        <tr><td>✔ Data consistency</td><td>Always shows up-to-date data from original tables</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📌 Key Points About Views</h2>
+    <ul className="bullet-points">
+      <li>✔ Views do not store data, only the query.</li>
+      <li>✔ When selecting from a view, data comes from the base table.</li>
+      <li>✔ If the base table changes → View output changes too.</li>
+      <li>✔ Some views are updatable, some are read-only.</li>
     </ul>
 
-    <h2>🧩 Example to Understand</h2>
-    <p>Let’s say you have two tables 👇</p>
-
-    <h3>🎓 Students</h3>
+    <h2>🛠 How to CREATE a View</h2>
     <pre className="code-block">
-{`student_id | name | dept_id | marks
-1 | Alex | 101 | 85
-2 | Sara | 102 | 90
-3 | John | 101 | 78`}
+{`CREATE VIEW student_view AS
+SELECT name, marks
+FROM students
+WHERE marks > 70;`}
+    </pre>
+    <p className="subtitle">✔ Creates a view that shows students with marks above 70.</p>
+
+    <h2>📌 How to SELECT from a View</h2>
+    <pre className="code-block">{`SELECT * FROM student_view;`}</pre>
+
+    <h2>🛠 How to UPDATE a View</h2>
+    <pre className="code-block">
+{`CREATE OR REPLACE VIEW student_view AS
+SELECT name, marks, city
+FROM students
+WHERE marks > 60;`}
     </pre>
 
-    <h3>🏢 Departments</h3>
-    <pre className="code-block">
-{`dept_id | dept_name
-101 | Computer Science
-102 | Electronics`}
-    </pre>
+    <h2>🗑 How to DELETE (Drop) a View</h2>
+    <pre className="code-block">{`DROP VIEW student_view;`}</pre>
 
-    <p className='subtitle'>
-      You often need to see <strong>student name</strong>, <strong>department name</strong>, and <strong>marks</strong>.
-      Instead of writing a long join every time, you can create a <strong>view</strong>.
+    <h2>⭐ Example to Understand Easily</h2>
+    <p className="subtitle">
+      You have a table of students with salary details:
     </p>
 
-    <h2>🧱 Creating a View</h2>
     <pre className="code-block">
-{`CREATE VIEW StudentDetails AS
-SELECT s.name, d.dept_name, s.marks
-FROM Students s
-JOIN Departments d ON s.dept_id = d.dept_id;`}
+{`id | name | marks | salary
+1  | A    | 80    | 20000
+2  | B    | 70    | 15000
+3  | C    | 90    | 30000`}
     </pre>
 
     <p className="subtitle">
-      ✅ <strong>StudentDetails</strong> is now a virtual table (a view).  
-      ✅ You can use it like a real table.
+      You want to hide <strong>salary</strong> from normal users.
     </p>
 
-    <h2>🔍 Using a View</h2>
-    <pre className="code-block">{`SELECT * FROM StudentDetails;`}</pre>
+    <pre className="code-block">
+{`CREATE VIEW student_public AS
+SELECT name, marks
+FROM students;`}
+    </pre>
+
+    <p className="subtitle">Now users can run:</p>
+
+    <pre className="code-block">{`SELECT * FROM student_public;`}</pre>
+
+    <p className="subtitle">🔒 Salary is hidden — view protects sensitive data.</p>
+
+    <h2>🧠 Final Simple Definition</h2>
     <p className="subtitle">
-      ✅ Shows name, department name, and marks — without writing the join again.
+      👉 <strong>A VIEW is a virtual table created from a SELECT query.</strong><br />
+      It simplifies complex queries and increases security by hiding specific data.
     </p>
-
-    <h2>⚙️ Updating a View</h2>
-    <p className='subtitle'>
-      You can update a view if it’s based on a single table and doesn’t use <code>GROUP BY</code>,
-      <code>DISTINCT</code>, or <code>JOIN</code>.
-    </p>
-
-    <pre className="code-block">
-{`CREATE VIEW HighScorers AS
-SELECT name, marks
-FROM Students
-WHERE marks > 80;`}
-    </pre>
-
-    <pre className="code-block">
-{`UPDATE HighScorers
-SET marks = 95
-WHERE name = 'Alex';`}
-    </pre>
-
-    <p className="subtitle">✅ This change also reflects in the original <strong>Students</strong> table.</p>
-
-    <h2>🧩 Read-only View</h2>
-    <p className='subtitle'>To prevent changes, create a view with <code>WITH CHECK OPTION</code>:</p>
-    <pre className="code-block">
-{`CREATE VIEW ReadOnlyView AS
-SELECT name, marks
-FROM Students
-WITH CHECK OPTION;`}
-    </pre>
-    <p className="subtitle">
-      ✅ Ensures only valid rows (as per view condition) can be updated.  
-      ✅ Can also use database permissions to make it read-only.
-    </p>
-
-    <h2>🧱 Modifying a View</h2>
-    <pre className="code-block">
-{`CREATE OR REPLACE VIEW StudentDetails AS
-SELECT name, marks
-FROM Students
-WHERE marks >= 75;`}
-    </pre>
-    <p className="subtitle">✅ Updates the view with a new definition.</p>
-
-    <h2>🧱 Deleting a View</h2>
-    <pre className="code-block">{`DROP VIEW StudentDetails;`}</pre>
-    <p className="subtitle">✅ Removes the view from the database (not the underlying tables).</p>
-
-    <h2>💡 Advantages of Views</h2>
-    <table className='style-table'>
-      <thead>
-        <tr>
-          <th>Benefit</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>🔹 Simplifies Queries</td><td>Hide complex joins and subqueries behind a simple name</td></tr>
-        <tr><td>🔹 Enhances Security</td><td>Restrict users to see only specific columns/rows</td></tr>
-        <tr><td>🔹 Data Consistency</td><td>Shows up-to-date data from base tables</td></tr>
-        <tr><td>🔹 Reusability</td><td>Can be reused across queries</td></tr>
-        <tr><td>🔹 Logical Independence</td><td>Underlying tables can change without affecting users</td></tr>
-      </tbody>
-    </table>
-
-    <h2>⚠️ Limitations of Views</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Limitation</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>🚫 Cannot always update</td><td>If view uses joins, aggregates, DISTINCT, etc.</td></tr>
-        <tr><td>🚫 Slower performance</td><td>Each query executes the underlying SQL again</td></tr>
-        <tr><td>🚫 No physical storage</td><td>Data isn’t stored, just the query</td></tr>
-        <tr><td>🚫 Dependent on base tables</td><td>If base table is dropped, the view breaks</td></tr>
-      </tbody>
-    </table>
-
-    <h2>🧮 Practice Queries</h2>
-    <pre className="code-block">
-{`-- 1️⃣ Create a view of students with high marks
-CREATE VIEW HighScorers AS
-SELECT name, marks
-FROM Students
-WHERE marks > 80;
-
--- 2️⃣ Select data from the view
-SELECT * FROM HighScorers;
-
--- 3️⃣ Modify the view
-CREATE OR REPLACE VIEW HighScorers AS
-SELECT name, marks
-FROM Students
-WHERE marks > 85;
-
--- 4️⃣ Drop the view
-DROP VIEW HighScorers;
-
--- 5️⃣ Create a joined view
-CREATE VIEW StudentInfo AS
-SELECT s.name, s.marks, d.dept_name
-FROM Students s
-JOIN Departments d ON s.dept_id = d.dept_id;
-
-SELECT * FROM StudentInfo;`}
-    </pre>
 
     <h2>🧠 Summary Table</h2>
-    <table className='style-table'>
+    <table className="style-table">
       <thead>
         <tr>
           <th>Command</th>
@@ -2557,23 +2483,24 @@ SELECT * FROM StudentInfo;`}
         </tr>
       </thead>
       <tbody>
-        <tr><td>CREATE VIEW view_name AS SELECT ...;</td><td>Creates a new view</td></tr>
-        <tr><td>CREATE OR REPLACE VIEW view_name AS SELECT ...;</td><td>Updates an existing view</td></tr>
-        <tr><td>DROP VIEW view_name;</td><td>Deletes a view</td></tr>
-        <tr><td>WITH CHECK OPTION</td><td>Ensures updates match view condition</td></tr>
-        <tr><td>SELECT * FROM view_name;</td><td>Fetches data from a view</td></tr>
+        <tr><td>CREATE VIEW view_name AS SELECT ...;</td><td>Create a new view</td></tr>
+        <tr><td>CREATE OR REPLACE VIEW view_name AS SELECT ...;</td><td>Update an existing view</td></tr>
+        <tr><td>DROP VIEW view_name;</td><td>Delete a view</td></tr>
+        <tr><td>SELECT * FROM view_name;</td><td>Fetch data from a view</td></tr>
       </tbody>
     </table>
 
     <h2>⚡ Quick Recap</h2>
     <ul>
-      <li>✅ <strong>View = Virtual table</strong> (no physical data storage)</li>
-      <li>✅ Simplifies queries, improves security, enhances reusability</li>
-      <li>✅ You can <strong>SELECT</strong>, <strong>UPDATE</strong>, or <strong>DELETE</strong> (if simple view)</li>
-      <li>🚫 Cannot modify if view has joins, aggregates, or DISTINCT</li>
+      <li>✔ View = Virtual table</li>
+      <li>✔ No physical storage</li>
+      <li>✔ Used for security and simplification</li>
+      <li>✔ Always up-to-date with base table changes</li>
+      <li>🚫 Cannot update if view contains JOIN, GROUP BY, or DISTINCT</li>
     </ul>
   </>
 )}
+
 {activeSection === "sql-indexes" && (
   <>
     <h1>🧱 SQL Indexes</h1>
