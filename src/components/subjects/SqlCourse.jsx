@@ -2968,12 +2968,12 @@ CREATE TABLE ExamResults (
       (duplicate data) and improve data integrity.
     </p>
 
-    <p>
+    <p className="subtitle">
       👉 It divides large tables into smaller related tables and links them using keys (like primary and foreign keys).
     </p>
 
     <h2>🧠 Why Normalization?</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>❌ Without normalization → data duplication, inconsistency, and anomalies</li>
       <li>✅ With normalization → no redundancy, consistent updates, and efficient storage</li>
     </ul>
@@ -3009,7 +3009,7 @@ CREATE TABLE ExamResults (
     </table>
 
     <h2>🧱 1️⃣ First Normal Form (1NF)</h2>
-    <p><strong>Rule:</strong> Each cell should have a single value only; no repeating groups.</p>
+    <p className='bullet-points'><strong>Rule:</strong> Each cell should have a single value only; no repeating groups.</p>
     <pre className='block-code'>
 {`Not in 1NF:
 StudentID | Name | Subjects
@@ -3026,8 +3026,8 @@ StudentID | Name | Subjects
     <p className="note">✅ Each cell has a single value — table is now in 1NF.</p>
 
     <h2>⚙️ 2️⃣ Second Normal Form (2NF)</h2>
-    <p><strong>Rule:</strong> Must be in 1NF, and all non-key attributes depend on the full primary key.</p>
-    <p>👉 Applies to tables with <strong>composite keys</strong>.</p>
+    <p className="subtitle"><strong>Rule:</strong> Must be in 1NF, and all non-key attributes depend on the full primary key.</p>
+    <p className="subtitle">👉 Applies to tables with <strong>composite keys</strong>.</p>
     <pre>
 {`Not in 2NF:
 StudentID | Subject | StudentName | Dept
@@ -3045,7 +3045,7 @@ StudentID | Subject
 1 | Math
 1 | English`}
     </pre>
-    <p className="note">✅ Now every non-key depends on the full key — in 2NF.</p>
+    <p className="subtitle">✅ Now every non-key depends on the full key — in 2NF.</p>
 
     <h2>🧩 3️⃣ Third Normal Form (3NF)</h2>
     <p><strong>Rule:</strong> Must be in 2NF, and no non-key depends on another non-key column.</p>
@@ -3067,10 +3067,10 @@ DeptID | DeptName
 101 | Computer Science
 102 | Electronics`}
     </pre>
-    <p className="note">✅ DeptName now depends only on DeptID — table is in 3NF.</p>
+    <p className="subtitle">✅ DeptName now depends only on DeptID — table is in 3NF.</p>
 
     <h2>🧠 4️⃣ Boyce-Codd Normal Form (BCNF)</h2>
-    <p><strong>Rule:</strong> Must be in 3NF, and every determinant must be a candidate key.</p>
+    <p className="subtitle"><strong>Rule:</strong> Must be in 3NF, and every determinant must be a candidate key.</p>
     <pre>
 {`Not in BCNF:
 StudentID | Course | Instructor
@@ -3078,7 +3078,7 @@ StudentID | Course | Instructor
 2 | DBMS | Dr. John
 3 | AI | Dr. Smith`}
     </pre>
-    <p>Convert to BCNF 👇</p>
+    <p className='subtitle'>Convert to BCNF 👇</p>
     <pre>
 {`Courses
 Course | Instructor
@@ -3091,10 +3091,10 @@ StudentID | Course
 2 | DBMS
 3 | AI`}
     </pre>
-    <p className="note">✅ Each dependency has a candidate key — in BCNF.</p>
+    <p className="subtitle">✅ Each dependency has a candidate key — in BCNF.</p>
 
     <h2>🧩 Higher Normal Forms (Optional)</h2>
-    <table>
+    <table className="style-table">
       <thead>
         <tr>
           <th>Normal Form</th>
@@ -3109,7 +3109,7 @@ StudentID | Course
     </table>
 
     <h2>⚙️ Benefits of Normalization</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Benefit</th><th>Description</th></tr>
       </thead>
@@ -3123,7 +3123,7 @@ StudentID | Course
     </table>
 
     <h2>⚠️ Drawbacks of Over-Normalization</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Drawback</th><th>Description</th></tr>
       </thead>
@@ -3161,10 +3161,10 @@ StudentID | CourseID
 2 | 103
 2 | 104`}
     </pre>
-    <p className="note">✅ Now the database is in 3NF — clean and efficient.</p>
+    <p className="subtitle">✅ Now the database is in 3NF — clean and efficient.</p>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>Normal Form</th>
@@ -3181,7 +3181,7 @@ StudentID | CourseID
       </tbody>
     </table>
 
-    <p className="note">
+    <p className="subtitle">
       ✅ In short: <strong>Normalization = Clean, efficient, and reliable database design.</strong><br />
       Use 1NF → 2NF → 3NF → BCNF for most practical databases.
     </p>
@@ -3197,7 +3197,7 @@ StudentID | CourseID
       given condition. It allows you to retrieve only the rows that match
       specific criteria.
     </p>
-    <p>👉 Think of it like asking: “Show me only those records that meet these conditions.”</p>
+    <p className="subtitle">👉 Think of it like asking: “Show me only those records that meet these conditions.”</p>
 
     <h2>🧩 Syntax</h2>
     <pre>{`SELECT column1, column2, ...
@@ -3205,7 +3205,7 @@ FROM table_name
 WHERE condition;`}</pre>
 
     <h2>📊 Example Table: Employees</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>emp_id</th><th>name</th><th>department</th><th>salary</th><th>city</th>
@@ -3224,17 +3224,17 @@ WHERE condition;`}</pre>
     <pre>{`SELECT * FROM Employees
 WHERE department = 'IT';`}</pre>
 
-    <p>🧠 This query returns only employees whose department is ‘IT’.</p>
+    <p className="subtitle">🧠 This query returns only employees whose department is ‘IT’.</p>
 
     <h2>⚙️ Example 2: Use a Comparison Operator</h2>
     <pre>{`SELECT name, salary
 FROM Employees
 WHERE salary > 50000;`}</pre>
 
-    <p>🧠 The &gt; operator filters rows where salary is greater than 50,000.</p>
+    <p className="subtitle">🧠 The &gt; operator filters rows where salary is greater than 50,000.</p>
 
     <h2>🔢 Common Comparison Operators</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
       </thead>
@@ -3253,52 +3253,52 @@ WHERE salary > 50000;`}</pre>
 FROM Employees
 WHERE department = 'IT' AND city = 'Pune';`}</pre>
 
-    <p>🧠 AND means both conditions must be true.</p>
+    <p className="subtitle">🧠 AND means both conditions must be true.</p>
 
     <pre>{`SELECT name, department
 FROM Employees
 WHERE department = 'HR' OR city = 'Delhi';`}</pre>
-    <p>🧠 OR means any one of the conditions can be true.</p>
+    <p className="subtitle">🧠 OR means any one of the conditions can be true.</p>
 
     <h2>⚙️ Example 4: Use BETWEEN for Range</h2>
     <pre>{`SELECT name, salary
 FROM Employees
 WHERE salary BETWEEN 45000 AND 60000;`}</pre>
-    <p>🧠 BETWEEN includes both boundary values (45000 and 60000).</p>
+    <p className="subtitle">🧠 BETWEEN includes both boundary values (45000 and 60000).</p>
 
     <h2>🧩 Example 5: Use IN for Multiple Values</h2>
     <pre>{`SELECT name, department
 FROM Employees
 WHERE department IN ('HR', 'Sales');`}</pre>
-    <p>🧠 IN acts like multiple OR conditions — it checks if a value matches any in the list.</p>
+    <p className='subtitle'>🧠 IN acts like multiple OR conditions — it checks if a value matches any in the list.</p>
 
     <h2>🎯 Example 6: Use LIKE for Pattern Matching</h2>
     <pre>{`SELECT name
 FROM Employees
 WHERE name LIKE 'S%';`}</pre>
-    <p>🧠 LIKE is used for text pattern matching using wildcards such as %.</p>
+    <p className='subtitle'>🧠 LIKE is used for text pattern matching using wildcards such as %.</p>
 
     <h2>⚙️ Example 7: Use IS NULL / IS NOT NULL</h2>
     <pre>{`SELECT name
 FROM Employees
 WHERE city IS NULL;`}</pre>
-    <p>🧠 Checks for missing (NULL) values. Use IS NOT NULL to find rows where a column has a value.</p>
+    <p className="subtitle">🧠 Checks for missing (NULL) values. Use IS NOT NULL to find rows where a column has a value.</p>
 
     <h2>🧠 Example 8: Use NOT Keyword</h2>
     <pre>{`SELECT name, department
 FROM Employees
 WHERE NOT department = 'IT';`}</pre>
-    <p>🧠 NOT reverses the result — shows rows where the condition is false.</p>
+    <p className="subtitle">🧠 NOT reverses the result — shows rows where the condition is false.</p>
 
     <h2>⚡ Example 9: Combine Multiple Operators</h2>
     <pre>{`SELECT name, salary, city
 FROM Employees
 WHERE (department = 'IT' OR department = 'HR')
 AND salary >= 50000;`}</pre>
-    <p>🧠 Parentheses () control the order of conditions — filters employees who are in IT or HR and earn at least 50,000.</p>
+    <p className="subtitle">🧠 Parentheses () control the order of conditions — filters employees who are in IT or HR and earn at least 50,000.</p>
 
     <h2>🧮 Practice Tip</h2>
-    <p>
+    <p className="subtitle">
       Try forming queries like:
       <pre>{`SELECT * FROM Employees
 WHERE city = 'Delhi' AND salary < 50000;`}</pre>
@@ -3306,7 +3306,7 @@ WHERE city = 'Delhi' AND salary < 50000;`}</pre>
     </p>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Keyword</th><th>Use</th></tr>
       </thead>
@@ -3321,7 +3321,7 @@ WHERE city = 'Delhi' AND salary < 50000;`}</pre>
       </tbody>
     </table>
 
-    <p className="summary-note">
+    <p className="subtitle">
       ✅ In short: The WHERE clause is your filter — it helps you fetch only the data you need, not everything in the table.
     </p>
   </div>
@@ -3342,7 +3342,7 @@ WHERE city = 'Delhi' AND salary < 50000;`}</pre>
 FROM table_name
 ORDER BY column_name [ASC | DESC];`}</pre>
 
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Keyword</th><th>Meaning</th></tr>
       </thead>
@@ -3353,7 +3353,7 @@ ORDER BY column_name [ASC | DESC];`}</pre>
     </table>
 
     <h2>📊 Example Table: Employees</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr>
           <th>emp_id</th><th>name</th><th>department</th><th>salary</th><th>city</th>
@@ -3377,54 +3377,54 @@ ORDER BY salary;`}</pre>
     <pre>{`SELECT name, salary
 FROM Employees
 ORDER BY salary DESC;`}</pre>
-    <p>🧠 Sorted by salary from highest to lowest.</p>
+    <p className="subtitle">🧠 Sorted by salary from highest to lowest.</p>
 
     <h2>🧩 Example 3: Sort by Text Column (Alphabetically)</h2>
     <pre>{`SELECT name, city
 FROM Employees
 ORDER BY name ASC;`}</pre>
-    <p>🧠 Sorts names in alphabetical order (A–Z).</p>
+    <p className="subtitle">🧠 Sorts names in alphabetical order (A–Z).</p>
 
     <h2>⚙️ Example 4: Sort by Multiple Columns</h2>
     <pre>{`SELECT name, department, salary
 FROM Employees
 ORDER BY department ASC, salary DESC;`}</pre>
-    <p>🧠 First sorts by department alphabetically (A–Z). Within each department, sorts by salary from highest to lowest.</p>
+    <p className="subtitle">🧠 First sorts by department alphabetically (A–Z). Within each department, sorts by salary from highest to lowest.</p>
 
     <h2>🧮 Example 5: Using Column Position (Not Recommended)</h2>
     <pre>{`SELECT name, department, salary
 FROM Employees
 ORDER BY 3 DESC;`}</pre>
-    <p>🧠 The number 3 refers to the 3rd column in the SELECT list (salary). Although this works, it’s better to use column names for clarity.</p>
+    <p className="subtitle">🧠 The number 3 refers to the 3rd column in the SELECT list (salary). Although this works, it’s better to use column names for clarity.</p>
 
     <h2>⚡ Example 6: Sort with WHERE Clause</h2>
     <pre>{`SELECT name, salary
 FROM Employees
 WHERE department = 'IT'
 ORDER BY salary DESC;`}</pre>
-    <p>🧠 First filters (WHERE department = 'IT'), then sorts the filtered records by salary (highest first).</p>
+    <p className="subtitle">🧠 First filters (WHERE department = 'IT'), then sorts the filtered records by salary (highest first).</p>
 
     <h2>🧠 Example 7: Sort with NULL Values</h2>
     <pre>{`SELECT name, salary
 FROM Employees
 ORDER BY salary DESC NULLS LAST;`}</pre>
-    <p>🧠 Some databases allow control over where NULL values appear — at the start or end. <b>NULLS LAST</b> ensures null values come after all real values.</p>
+    <p className="subtitle">🧠 Some databases allow control over where NULL values appear — at the start or end. <b>NULLS LAST</b> ensures null values come after all real values.</p>
 
     <h2>💡 Tip: Combine WHERE and ORDER BY</h2>
     <pre>{`SELECT name, city, salary
 FROM Employees
 WHERE city = 'Delhi'
 ORDER BY salary DESC;`}</pre>
-    <p>🧠 Retrieves employees from Delhi and sorts them by salary (highest to lowest).</p>
+    <p className="subtitle">🧠 Retrieves employees from Delhi and sorts them by salary (highest to lowest).</p>
 
     <h2>🧩 Example 8: Sort by Expression</h2>
     <pre>{`SELECT name, salary * 12 AS annual_salary
 FROM Employees
 ORDER BY annual_salary DESC;`}</pre>
-    <p>🧠 Calculates annual salary (monthly × 12) and sorts by this calculated column.</p>
+    <p className="subtitle">🧠 Calculates annual salary (monthly × 12) and sorts by this calculated column.</p>
 
     <h2>🧠 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <thead>
         <tr><th>Keyword / Concept</th><th>Description</th><th>Example</th></tr>
       </thead>
@@ -3437,7 +3437,7 @@ ORDER BY annual_salary DESC;`}</pre>
       </tbody>
     </table>
 
-    <p className="summary-note">
+    <p className="subtitle ">
       ✅ In short: The ORDER BY clause helps organize your query results —
       showing them from smallest to largest, A–Z, or any order you need.
     </p>
@@ -3453,7 +3453,7 @@ ORDER BY annual_salary DESC;`}</pre>
       <code>MIN()</code>, and <code>MAX()</code> to summarize information.
     </p>
 
-    <p>
+    <p className="subtitle">
       👉 Think of it like: <br />
       <b>“Group my data based on a column, and then calculate something for each
       group.”</b>
@@ -3466,7 +3466,7 @@ FROM table_name
 GROUP BY column1;`}
     </pre>
 
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Term</th>
@@ -3486,7 +3486,7 @@ GROUP BY column1;`}
     </table>
 
     <h2>📊 Example Table: Employees</h2>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>emp_id</th>
@@ -3514,7 +3514,7 @@ GROUP BY department;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>department</th>
@@ -3528,7 +3528,7 @@ GROUP BY department;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 Groups rows by <b>department</b> and counts employees in each group.
     </p>
 
@@ -3540,7 +3540,7 @@ GROUP BY department;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr><th>department</th><th>total_salary</th></tr>
       </thead>
@@ -3551,7 +3551,7 @@ GROUP BY department;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 Calculates the total salary for each department using{" "}
       <code>SUM()</code>.
     </p>
@@ -3564,7 +3564,7 @@ GROUP BY department;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr><th>department</th><th>average_salary</th></tr>
       </thead>
@@ -3575,12 +3575,12 @@ GROUP BY department;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 Finds the <b>average salary</b> for each department.
     </p>
 
     <h2>🧠 Common Aggregate Functions (Used with GROUP BY)</h2>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Function</th>
@@ -3598,7 +3598,7 @@ GROUP BY department;`}
     </table>
 
     <h2>🧠 Summary Table</h2>
-    <table className="styled-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Clause</th>
@@ -3614,7 +3614,7 @@ GROUP BY department;`}
       </tbody>
     </table>
 
-    <p className="summary">
+    <p className="subtitle">
       ✅ <b>In short:</b> <br />
       The <b>GROUP BY</b> clause helps you summarize data — turning large tables
       into meaningful insights like totals, averages, and counts.
@@ -3631,7 +3631,7 @@ GROUP BY department;`}
       It’s like <b>WHERE</b>, but it filters <b>after grouping</b>.
     </p>
 
-    <ul>
+    <ul className='bullet-points'>
       <li>🔹 WHERE filters rows before grouping</li>
       <li>🔹 HAVING filters groups after grouping</li>
     </ul>
@@ -3644,7 +3644,7 @@ GROUP BY column1
 HAVING condition;`}
     </pre>
 
-    <table className="keyword-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Keyword</th>
@@ -3664,7 +3664,7 @@ HAVING condition;`}
     </table>
 
     <h2>📊 Example Table: Sales</h2>
-    <table className="example-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>id</th>
@@ -3692,7 +3692,7 @@ GROUP BY region;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>region</th><th>total_sales</th></tr>
       </thead>
@@ -3703,7 +3703,7 @@ GROUP BY region;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 Groups rows by region and sums up sales for each region.
     </p>
 
@@ -3716,7 +3716,7 @@ HAVING SUM(sales_amount) > 20000;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>region</th><th>total_sales</th></tr>
       </thead>
@@ -3726,7 +3726,7 @@ HAVING SUM(sales_amount) > 20000;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       HAVING filters out groups where <b>total_sales ≤ 20000</b>.
     </p>
 
@@ -3739,7 +3739,7 @@ GROUP BY region
 HAVING SUM(sales_amount) > 20000;`}
     </pre>
 
-    <p className="explanation">
+    <p className="subtitle">
       WHERE removes Maria’s row before grouping, and HAVING filters grouped results.
     </p>
 
@@ -3752,7 +3752,7 @@ HAVING COUNT(*) > 2;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>region</th><th>total_salespersons</th></tr>
       </thead>
@@ -3770,7 +3770,7 @@ HAVING SUM(sales_amount) > 20000 AND AVG(sales_amount) > 8000;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>region</th><th>total_sales</th><th>avg_sales</th></tr>
       </thead>
@@ -3788,7 +3788,7 @@ HAVING SUM(sales_amount) > 50000;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>total_sales</th></tr></thead>
       <tbody><tr><td>72000</td></tr></tbody>
     </table>
@@ -3803,7 +3803,7 @@ ORDER BY total_sales DESC;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>region</th><th>total_sales</th></tr>
       </thead>
@@ -3815,7 +3815,7 @@ ORDER BY total_sales DESC;`}
     </table>
 
     <h2>🧠 HAVING vs WHERE — Key Differences</h2>
-    <table className="comparison-table">
+    <table className="style-table">
       <thead>
         <tr><th>Feature</th><th>WHERE</th><th>HAVING</th></tr>
       </thead>
@@ -3828,7 +3828,7 @@ ORDER BY total_sales DESC;`}
     </table>
 
     <h2>⚡ Quick Summary</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead><tr><th>Step</th><th>Clause</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td>1️⃣</td><td>WHERE</td><td>Filters rows before grouping</td></tr>
@@ -3875,7 +3875,7 @@ FROM table_name AS alias_name;`}
     </p>
 
     <h2>📊 Example Table: Employees</h2>
-    <table className="example-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>emp_id</th>
@@ -3899,7 +3899,7 @@ FROM Employees;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>Name</th><th>Monthly Salary</th></tr></thead>
       <tbody>
         <tr><td>John</td><td>40000</td></tr>
@@ -3908,7 +3908,7 @@ FROM Employees;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 <b>AS</b> renames columns in the result set.  
       Double quotes (" ") allow aliases with spaces.
     </p>
@@ -3920,7 +3920,7 @@ FROM Employees;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>Name</th><th>Dept</th></tr></thead>
       <tbody>
         <tr><td>John</td><td>HR</td></tr>
@@ -3929,7 +3929,7 @@ FROM Employees;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       Works the same way as <b>AS</b> — just shorter syntax.
     </p>
 
@@ -3940,7 +3940,7 @@ FROM Employees;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>first_name</th><th>annual_salary</th></tr></thead>
       <tbody>
         <tr><td>John</td><td>480000</td></tr>
@@ -3949,7 +3949,7 @@ FROM Employees;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       The alias <b>annual_salary</b> names the computed column (<code>salary * 12</code>).
     </p>
 
@@ -3960,7 +3960,7 @@ FROM Employees AS e;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>first_name</th><th>salary</th></tr></thead>
       <tbody>
         <tr><td>John</td><td>40000</td></tr>
@@ -3969,7 +3969,7 @@ FROM Employees AS e;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 The table <b>Employees</b> is temporarily renamed as <b>e</b>.
       Useful in long or multi-table queries.
     </p>
@@ -3983,7 +3983,7 @@ ON e.department = d.dept_name;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>first_name</th><th>dept_name</th></tr></thead>
       <tbody>
         <tr><td>John</td><td>HR</td></tr>
@@ -3992,7 +3992,7 @@ ON e.department = d.dept_name;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       Aliases <b>e</b> and <b>d</b> make the query shorter and cleaner.  
       They connect tables via <code>e.department = d.dept_name</code>.
     </p>
@@ -4004,7 +4004,7 @@ FROM Employees;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>full_name</th></tr></thead>
       <tbody>
         <tr><td>John Doe</td></tr>
@@ -4013,7 +4013,7 @@ FROM Employees;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       Combines two columns using concatenation and names the result <b>full_name</b>.
     </p>
 
@@ -4025,7 +4025,7 @@ GROUP BY department;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead><tr><th>Dept</th><th>Avg_Salary</th></tr></thead>
       <tbody>
         <tr><td>HR</td><td>40000</td></tr>
@@ -4035,7 +4035,7 @@ GROUP BY department;`}
     </table>
 
     <h2>🧠 Important Notes</h2>
-    <table className="keyword-table">
+    <table className="style-table">
       <thead><tr><th>Concept</th><th>Explanation</th></tr></thead>
       <tbody>
         <tr><td>Aliases are temporary</td><td>They exist only while the query runs</td></tr>
@@ -4055,7 +4055,7 @@ WHERE e.salary > 45000;`}
     </pre>
 
     <h3>Output:</h3>
-    <table className="output-table">
+    <table className="style-table">
       <thead>
         <tr><th>Employee Name</th><th>Monthly Pay</th><th>Annual Pay</th></tr>
       </thead>
@@ -4065,12 +4065,12 @@ WHERE e.salary > 45000;`}
       </tbody>
     </table>
 
-    <p className="explanation">
+    <p className="subtitle">
       🧠 Aliases make reports clearer and more readable for end users and analysts.
     </p>
 
     <h2>🧾 Summary Table</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead><tr><th>Type</th><th>Example</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td>Column Alias</td><td>salary AS Monthly_Income</td><td>Rename column output</td></tr>
@@ -4094,7 +4094,7 @@ WHERE e.salary > 45000;`}
     </p>
 
     <h2>🧩 Types of Set Operations</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Operation</th><th>Description</th></tr>
       <tr><td>UNION</td><td>Combines results and removes duplicates</td></tr>
       <tr><td>UNION ALL</td><td>Combines results and keeps duplicates</td></tr>
@@ -4104,7 +4104,7 @@ WHERE e.salary > 45000;`}
 
     <h2>📊 Example Tables</h2>
     <h3>🧱 Employees_2024</h3>
-    <table>
+    <table className='style-table'>
       <tr><th>emp_id</th><th>name</th><th>department</th></tr>
       <tr><td>1</td><td>John</td><td>HR</td></tr>
       <tr><td>2</td><td>Sara</td><td>IT</td></tr>
@@ -4113,7 +4113,7 @@ WHERE e.salary > 45000;`}
     </table>
 
     <h3>🧱 Employees_2025</h3>
-    <table>
+    <table className='style-table'>
       <tr><th>emp_id</th><th>name</th><th>department</th></tr>
       <tr><td>3</td><td>Alex</td><td>Sales</td></tr>
       <tr><td>4</td><td>Riya</td><td>Marketing</td></tr>
@@ -4128,7 +4128,7 @@ UNION
 SELECT name, department FROM Employees_2025;`}
     </pre>
     <p><b>Output:</b></p>
-    <table>
+    <table className='style-table'>
       <tr><th>name</th><th>department</th></tr>
       <tr><td>John</td><td>HR</td></tr>
       <tr><td>Sara</td><td>IT</td></tr>
@@ -4137,7 +4137,7 @@ SELECT name, department FROM Employees_2025;`}
       <tr><td>Mohit</td><td>IT</td></tr>
       <tr><td>Neha</td><td>HR</td></tr>
     </table>
-    <p className="note">✅ Removes duplicate rows automatically.</p>
+    <p className="subtitle">✅ Removes duplicate rows automatically.</p>
 
     <h2>⚙️ 2️⃣ UNION ALL — Keep Duplicates</h2>
     <pre>
@@ -4145,7 +4145,7 @@ SELECT name, department FROM Employees_2025;`}
 UNION ALL
 SELECT name, department FROM Employees_2025;`}
     </pre>
-    <p className="note">⚡ Keeps duplicates; faster than UNION.</p>
+    <p className="subtitle">⚡ Keeps duplicates; faster than UNION.</p>
 
     <h2>🧮 3️⃣ INTERSECT — Common Records</h2>
     <pre>
@@ -4153,7 +4153,7 @@ SELECT name, department FROM Employees_2025;`}
 INTERSECT
 SELECT name, department FROM Employees_2025;`}
     </pre>
-    <p className="note">🧠 Returns only rows that exist in both tables.</p>
+    <p className="subtitle">🧠 Returns only rows that exist in both tables.</p>
 
     <h2>⚡ 4️⃣ EXCEPT / MINUS — Unique to First Query</h2>
     <pre>
@@ -4161,7 +4161,7 @@ SELECT name, department FROM Employees_2025;`}
 EXCEPT
 SELECT name, department FROM Employees_2025;`}
     </pre>
-    <p className="note">🧠 Shows employees from 2024 not in 2025.</p>
+    <p className="subtitle">🧠 Shows employees from 2024 not in 2025.</p>
 
     <h2>🧩 Example — Combine Multiple Operations</h2>
     <pre>
@@ -4179,10 +4179,10 @@ UNION
 SELECT name, department FROM Employees_2025
 ORDER BY name ASC;`}
     </pre>
-    <p className="note">📘 ORDER BY must come after all SELECTs.</p>
+    <p className="subtitle">📘 ORDER BY must come after all SELECTs.</p>
 
     <h2>🧠 Comparison Summary</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Operation</th><th>Removes Duplicates</th><th>Keeps All</th><th>Shows Common</th><th>Shows Unique</th></tr>
       <tr><td>UNION</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
       <tr><td>UNION ALL</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td></tr>
@@ -4209,7 +4209,7 @@ SELECT customer_name FROM Old_Customers;`}
     </pre>
 
     <h2>🧾 Quick Recap</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Operation</th><th>Use Case</th><th>Example</th></tr>
       <tr><td>UNION</td><td>Combine data without duplicates</td><td>Merge employee lists</td></tr>
       <tr><td>UNION ALL</td><td>Combine all data</td><td>Combine transaction logs</td></tr>
@@ -4229,10 +4229,10 @@ SELECT customer_name FROM Old_Customers;`}
     </p>
 
     <h2>📘 Simple Definition</h2>
-    <p>“A transaction is like an all-or-nothing operation.”</p>
+    <p className='subtitle'>“A transaction is like an all-or-nothing operation.”</p>
 
     <h2>🧱 Example Scenario</h2>
-    <p>
+    <p className='subtitle'>
       Imagine transferring ₹1000 from Alice’s account to Bob’s account. Both debit and
       credit must succeed together.
     </p>
@@ -4245,7 +4245,7 @@ SELECT customer_name FROM Old_Customers;`}
     </p>
 
     <h2>🧩 Transaction Control Commands (TCL)</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Command</th><th>Description</th></tr>
       <tr><td>BEGIN / START TRANSACTION</td><td>Starts a new transaction</td></tr>
       <tr><td>COMMIT</td><td>Saves all changes made during the transaction</td></tr>
@@ -4263,11 +4263,11 @@ BEGIN;`}
 
     <h2>⚙️ 2️⃣ COMMIT</h2>
     <pre>{`COMMIT;`}</pre>
-    <p className="note">Once committed, changes cannot be undone.</p>
+    <p className="subtitle">Once committed, changes cannot be undone.</p>
 
     <h2>⚙️ 3️⃣ ROLLBACK</h2>
     <pre>{`ROLLBACK;`}</pre>
-    <p className="note">Cancels all uncommitted changes since the transaction began.</p>
+    <p className="subtitle">Cancels all uncommitted changes since the transaction began.</p>
 
     <h2>⚙️ 4️⃣ SAVEPOINT</h2>
     <pre>{`SAVEPOINT savepoint_name;`}</pre>
@@ -4289,7 +4289,7 @@ WHERE name = 'Bob';
 
 COMMIT;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       Ensures both debit and credit succeed or both are rolled back.
     </p>
 
@@ -4307,7 +4307,7 @@ WHERE name = 'UnknownUser'; -- ❌ This will fail
 
 ROLLBACK;`}
     </pre>
-    <p className="note">💡 If any step fails, the whole transaction is rolled back.</p>
+    <p className="subtitle">💡 If any step fails, the whole transaction is rolled back.</p>
 
     <h2>🧩 Example: Using SAVEPOINT</h2>
     <pre>
@@ -4324,7 +4324,7 @@ ROLLBACK TO SAVEPOINT step1;
 
 COMMIT;`}
     </pre>
-    <p className="note">Only partial rollback happens up to the savepoint.</p>
+    <p className="subtitle">Only partial rollback happens up to the savepoint.</p>
 
     <h2>⚙️ Auto-Commit Mode</h2>
     <pre>
@@ -4333,7 +4333,7 @@ START TRANSACTION;
 -- SQL operations
 COMMIT;`}
     </pre>
-    <p className="note">
+    <p className="subtitle">
       In MySQL, auto-commit mode automatically commits each statement unless disabled.
     </p>
 
@@ -4360,12 +4360,12 @@ VALUES (104, 'Riya', 2500);
 
 COMMIT;`}
     </pre>
-    <p className="note">
+    <p className="subtitle ">
       The first insert was rolled back; the second was committed.
     </p>
 
     <h2>💡 Real-Life Use Cases</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Situation</th><th>Why Use Transactions?</th></tr>
       <tr><td>💰 Bank transfers</td><td>To ensure debit and credit succeed together</td></tr>
       <tr><td>🛒 E-commerce checkout</td><td>To confirm all order steps succeed</td></tr>
@@ -4374,7 +4374,7 @@ COMMIT;`}
     </table>
 
     <h2>🧾 Summary Table</h2>
-    <table>
+    <table className='style-table'>
       <tr><th>Command</th><th>Description</th></tr>
       <tr><td>START TRANSACTION / BEGIN</td><td>Begins a new transaction</td></tr>
       <tr><td>COMMIT</td><td>Saves all changes permanently</td></tr>
@@ -4384,7 +4384,7 @@ COMMIT;`}
       <tr><td>ACID</td><td>Ensures data reliability and safety</td></tr>
     </table>
 
-    <p className="note">
+    <p className="subtitle">
       ✅ <b>In short:</b> Transactions guarantee that database operations are safe,
       consistent, and reliable — either everything happens or nothing does.
     </p>
@@ -4398,14 +4398,14 @@ COMMIT;`}
     </p>
 
     <h2>🧱 1. What is SQL Security?</h2>
-    <p>
+    <p className='subtitle'>
       SQL Security protects your database from unauthorized access, data breaches, or accidental data loss. 
       <br />
       <strong>In short:</strong> “Not everyone should be able to do everything.”
     </p>
 
     <h2>🧩 2. Why Is Security Important?</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Reason</th><th>Explanation</th></tr>
       </thead>
@@ -4419,7 +4419,7 @@ COMMIT;`}
     </table>
 
     <h2>⚙️ 3. SQL Security Components</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li><b>Users:</b> People or applications that connect to the database</li>
       <li><b>Roles:</b> Groups of permissions assigned to multiple users</li>
       <li><b>Privileges:</b> Rights to perform specific actions</li>
@@ -4437,7 +4437,7 @@ GRANT SELECT, INSERT, UPDATE
 ON school.students
 TO 'sofia'@'localhost';
     </code></pre>
-    <p>Gives sofia permission to read, insert, and update data — but not delete it.</p>
+    <p className='subtitle'>Gives sofia permission to read, insert, and update data — but not delete it.</p>
 
     <h3>Grant All Privileges</h3>
     <pre><code>
@@ -4467,7 +4467,7 @@ FROM 'sofia'@'localhost';
     <pre><code>SHOW GRANTS FOR 'sofia'@'localhost';</code></pre>
 
     <h2>🧮 9. Types of Privileges</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Privilege</th><th>Description</th></tr>
       </thead>
@@ -4491,14 +4491,14 @@ GRANT 'data_analyst' TO 'sofia'@'localhost';
     </code></pre>
 
     <h2>🧩 12. Principle of Least Privilege (POLP)</h2>
-    <p>✅ Give users the <b>minimum privileges</b> they need to do their job.</p>
+    <p className='subtitle'>✅ Give users the <b>minimum privileges</b> they need to do their job.</p>
 
     <h2>⚙️ 13. SQL Injection Protection</h2>
     <pre><code>SELECT * FROM users WHERE username = '' OR '1'='1';</code></pre>
-    <p><b>Prevention:</b> Use parameterized queries, validate inputs, and limit database permissions.</p>
+    <p className='subtitle'><b>Prevention:</b> Use parameterized queries, validate inputs, and limit database permissions.</p>
 
     <h2>🧮 14. Password and Authentication Best Practices</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>🔐 Use strong passwords</li>
       <li>🔄 Change passwords regularly</li>
       <li>🧱 Use encryption</li>
@@ -4516,7 +4516,7 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
     </code></pre>
 
     <h2>🧠 Summary</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td>CREATE USER</td><td>Create a new user</td></tr>
@@ -4528,7 +4528,7 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
       </tbody>
     </table>
 
-    <p className="summary">
+    <p className="subtitle">
       ✅ <strong>In short:</strong> Database security = Right users + Right permissions + Safe queries.
       <br />It protects your system from misuse, accidents, and attacks.
     </p>
@@ -4543,14 +4543,14 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
     </p>
 
     <h2>🧱 1. What Is Database Design?</h2>
-    <p>
+    <p className='subtitle'>
       Database Design is the process of structuring and organizing data logically in a database.
       <br />
       <strong>In simple words:</strong> “It’s about deciding what data to store, how to connect it, and how to make it efficient.”
     </p>
 
     <h2>🧩 2. Why Is Database Design Important?</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Benefit</th><th>Description</th></tr>
       </thead>
@@ -4564,7 +4564,7 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
     </table>
 
     <h2>🧭 3. Database Design Process (Steps)</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Step</th><th>Description</th></tr>
       </thead>
@@ -4585,7 +4585,7 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
 
     <h3>🧩 b) Attributes</h3>
     <p>Attributes are characteristics (columns) of an entity.</p>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Attribute</th><th>Description</th></tr>
       </thead>
@@ -4598,7 +4598,7 @@ SHOW GRANTS FOR 'sales_user'@'localhost';
     </table>
 
     <h3>🧱 c) Relationships</h3>
-    <table className="info-table">
+    <table className="style-table">
       <thead>
         <tr><th>Type</th><th>Description</th><th>Example</th></tr>
       </thead>
@@ -4655,7 +4655,7 @@ CREATE TABLE Enrollments (
     </code></pre>
 
     <h2>🧮 8. Normalization in Design</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead><tr><th>Normal Form</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td>1NF</td><td>No repeating groups; atomic values</td></tr>
@@ -4665,17 +4665,17 @@ CREATE TABLE Enrollments (
     </table>
 
     <h2>🧱 9. Denormalization (When Needed)</h2>
-    <p>Used in reporting systems or warehouses to improve performance — at the cost of some redundancy.</p>
+    <p className='subtitle'>Used in reporting systems or warehouses to improve performance — at the cost of some redundancy.</p>
 
     <h2>⚙️ 10. Indexes in Design</h2>
     <pre><code>CREATE INDEX idx_student_name ON Students(name);</code></pre>
 
     <h2>🧩 11. Referential Integrity</h2>
-    <p>Ensures valid relationships between tables. Example:</p>
+    <p className='subtitle'>Ensures valid relationships between tables. Example:</p>
     <pre><code>FOREIGN KEY (course_id) REFERENCES Courses(course_id);</code></pre>
 
     <h2>🧠 12. Good Database Design Practices</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>✅ Use meaningful table and column names</li>
       <li>✅ Normalize up to 3NF</li>
       <li>✅ Add indexes for frequent queries</li>
@@ -4684,7 +4684,7 @@ CREATE TABLE Enrollments (
     </ul>
 
     <h2>🧾 13. Example: Good vs Bad Design</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead><tr><th>Bad Design</th><th>Good Design</th></tr></thead>
       <tbody>
         <tr><td>All data in one big table</td><td>Separate tables for Students, Courses, Enrollments</td></tr>
@@ -4693,7 +4693,7 @@ CREATE TABLE Enrollments (
     </table>
 
     <h2>🧩 14. Tools for Database Design</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead><tr><th>Tool</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td>🧱 Draw.io / Diagrams.net</td><td>Free tool to draw ER diagrams</td></tr>
@@ -4704,7 +4704,7 @@ CREATE TABLE Enrollments (
     </table>
 
     <h2>🧠 15. Summary</h2>
-    <table className="info-table">
+    <table className="style-table">
       <thead><tr><th>Concept</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td>Entity</td><td>Real-world object (table)</td></tr>
@@ -4717,7 +4717,7 @@ CREATE TABLE Enrollments (
       </tbody>
     </table>
 
-    <p className="summary">
+    <p className="subtitle">
       ✅ <strong>In short:</strong> Good database design = Clean structure + Logical relationships + Efficient access.
       <br />It’s the foundation of every reliable and scalable SQL system.
     </p>
@@ -4731,21 +4731,21 @@ CREATE TABLE Enrollments (
       you’ll understand how everything connects: tables, joins, constraints, queries, transactions, and more.
     </p>
 
-    <p>
+    <p className='subtitle'>
       Let’s go through step-by-step mini projects, arranged from beginner to intermediate level.
     </p>
 
     {/* 1️⃣ Student Management System */}
     <h2>🧩 1️⃣ Student Management System</h2>
-    <p><strong>Concepts used:</strong> CREATE, INSERT, SELECT, UPDATE, DELETE, JOINS</p>
-    <p><strong>Description:</strong> Build a database to manage students, courses, and enrollments.</p>
-    <p><strong>Tables:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Concepts used:</strong> CREATE, INSERT, SELECT, UPDATE, DELETE, JOINS</p>
+    <p className='subtitle'><strong>Description:</strong> Build a database to manage students, courses, and enrollments.</p>
+    <p className='subtitle'><strong>Tables:</strong></p>
+    <ul className='bullet-points'>
       <li>Students(student_id, name, age, course_id)</li>
       <li>Courses(course_id, course_name, duration)</li>
     </ul>
-    <p><strong>Practice:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Practice:</strong></p>
+    <ul className='bullet-points'>
       <li>Insert sample data</li>
       <li>Display all students enrolled in each course</li>
       <li>Update student details</li>
@@ -4755,15 +4755,15 @@ CREATE TABLE Enrollments (
 
     {/* 2️⃣ Library Management System */}
     <h2>🧱 2️⃣ Library Management System</h2>
-    <p><strong>Concepts:</strong> Primary & Foreign Keys, Relationships, Joins, Normalization</p>
-    <p><strong>Tables:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Concepts:</strong> Primary & Foreign Keys, Relationships, Joins, Normalization</p>
+    <p className='subtitle'><strong>Tables:</strong></p>
+    <ul className='bullet-points'>
       <li>Books(book_id, title, author, price, category)</li>
       <li>Members(member_id, name, join_date)</li>
       <li>Issue(book_id, member_id, issue_date, return_date)</li>
     </ul>
-    <p><strong>Practice:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Practice:</strong></p>
+    <ul className='bullet-points'>
       <li>Display books borrowed by each member</li>
       <li>Find overdue books</li>
       <li>Count how many books are currently issued</li>
@@ -4771,15 +4771,15 @@ CREATE TABLE Enrollments (
 
     {/* 3️⃣ Employee Payroll System */}
     <h2>⚙️ 3️⃣ Employee Payroll System</h2>
-    <p><strong>Concepts:</strong> Functions, Aggregates, Subqueries, Constraints</p>
-    <p><strong>Tables:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Concepts:</strong> Functions, Aggregates, Subqueries, Constraints</p>
+    <p className='subtitle'><strong>Tables:</strong></p>
+    <ul className='bullet-points'>
       <li>Employees(emp_id, name, designation, salary, dept_id)</li>
       <li>Departments(dept_id, dept_name)</li>
       <li>Attendance(emp_id, days_present)</li>
     </ul>
-    <p><strong>Practice:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Practice:</strong></p>
+    <ul className='bullet-points'>
       <li>Find total and average salary by department</li>
       <li>Update salary for promotion</li>
       <li>Display top 3 highest-paid employees</li>
@@ -4787,15 +4787,15 @@ CREATE TABLE Enrollments (
 
     {/* 4️⃣ Online Shopping Database */}
     <h2>🧭 4️⃣ Online Shopping Database</h2>
-    <p><strong>Concepts:</strong> Joins, Transactions, Views, Keys</p>
-    <ul>
+    <p className='subtitle'><strong>Concepts:</strong> Joins, Transactions, Views, Keys</p>
+    <ul className='bullet-points'>
       <li>Customers(cust_id, name, city)</li>
       <li>Products(prod_id, name, price)</li>
       <li>Orders(order_id, cust_id, order_date)</li>
       <li>OrderDetails(order_id, prod_id, quantity)</li>
     </ul>
-    <p><strong>Practice:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Practice:</strong></p>
+    <ul className='bullet-points'>
       <li>Create a view showing customer orders</li>
       <li>Calculate total bill for each order</li>
       <li>Use transactions to process an order safely</li>
@@ -4803,14 +4803,14 @@ CREATE TABLE Enrollments (
 
     {/* 5️⃣ Hospital Management System */}
     <h2>🧮 5️⃣ Hospital Management System</h2>
-    <p><strong>Concepts:</strong> Relationships, Constraints, Subqueries, Grouping</p>
-    <ul>
+    <p className='subtitle'><strong>Concepts:</strong> Relationships, Constraints, Subqueries, Grouping</p>
+    <ul className='bullet-points'>
       <li>Patients(patient_id, name, age, gender)</li>
       <li>Doctors(doctor_id, name, specialization)</li>
       <li>Appointments(app_id, patient_id, doctor_id, date, fees)</li>
     </ul>
-    <p><strong>Practice:</strong></p>
-    <ul>
+    <p className='subtitle'><strong>Practice:</strong></p>
+    <ul className='bullet-points'>
       <li>Find total fees collected by each doctor</li>
       <li>Show patients treated by a specific doctor</li>
       <li>Cancel an appointment using ROLLBACK</li>
@@ -4819,7 +4819,7 @@ CREATE TABLE Enrollments (
     {/* Continue remaining projects in same format up to 25️⃣ */}
 
     <h2>✅ Tips for Hands-on Practice</h2>
-    <ul>
+    <ul className='bullet-points'>
       <li>Start with simple 2–3 table databases, then expand.</li>
       <li>Try to use every SQL feature you’ve learned: Joins, Subqueries, Views, Transactions, Constraints, Functions.</li>
       <li>Always document your project with table design and queries.</li>
