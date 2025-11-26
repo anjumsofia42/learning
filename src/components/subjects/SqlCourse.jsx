@@ -4770,7 +4770,388 @@ CREATE TABLE Enrollments (
     <p className='subtitle'>  MYSQL  is an open-source Relational Database Management System (RDBMS) that uses SQL as its query language to store and manage data
     </p>
     <h2>🧱 3. What are the different types of SQL commands (DDL, DML, DCL, TCL, DRL)?</h2>
-    <p className='subtitle'> </p>
+    <p class='subtitle'>1️⃣ <strong>DDL – Data Definition Language</strong></p>
+    <p class='subtitle'>Used to define or modify the structure of database objects like tables, views, schemas.</p>
+    <p class='subtitle'>Commands:</p>
+    <ul class='bullet-points'>
+    <li><strong>CREATE</strong> – Creates a new table or database</li>
+    <li><strong>ALTER</strong> – Modifies an existing table (add, modify, drop columns)</li>
+    <li><strong>DROP</strong> – Deletes table/database permanently (cannot rollback)</li>
+    <li><strong>TRUNCATE</strong> – Deletes all records instantly but keeps the table structure (cannot rollback)</li>
+  <li><strong>RENAME</strong> – Renames a table</li>
+</ul>
+<p class='subtitle'>✔ DDL commands are auto-committed → changes cannot be rolled back.</p>
+<p class='subtitle'>2️⃣ <strong>DML – Data Manipulation Language</strong></p>
+<p class='subtitle'>Used to modify or manage the actual data inside tables.</p>
+<ul class='bullet-points'>
+  <li><strong>INSERT</strong> – Adds new records</li>
+  <li><strong>UPDATE</strong> – Modifies existing records</li>
+  <li><strong>DELETE</strong> – Deletes records row-by-row (can rollback)</li>
+  <li><strong>MERGE</strong> – Performs UPSERT (update if exists, insert if not)</li>
+</ul>
+<p class='subtitle'>✔ DML commands can be rolled back until committed.</p>
+<p class='subtitle'>3️⃣ <strong>DRL / DQL – Data Retrieval Language</strong></p>
+<p class='subtitle'>Used to retrieve data from the database.</p>
+<ul class='bullet-points'>
+  <li><strong>SELECT</strong> – Fetches data from one or more tables</li>
+</ul>
+<p class='subtitle'>✔ SELECT does not modify data.</p>
+<p class='subtitle'>4️⃣ <strong>DCL – Data Control Language</strong></p>
+<p class='subtitle'>Used to control access and permissions in the database.</p>
+<ul class='bullet-points'>
+  <li><strong>GRANT</strong> – Gives privileges/permissions</li>
+  <li><strong>REVOKE</strong> – Takes back permissions</li>
+</ul>
+<p class='subtitle'>5️⃣ <strong>TCL – Transaction Control Language</strong></p>
+<p class='subtitle'>Used to manage transactions in SQL.</p>
+<ul class='bullet-points'>
+  <li><strong>COMMIT</strong> – Saves all changes permanently</li>
+  <li><strong>ROLLBACK</strong> – Undo uncommitted changes</li>
+  <li><strong>SAVEPOINT</strong> – Creates a checkpoint inside a transaction</li>
+</ul>
+<h2>🧱 4. What is a table in SQL?</h2>
+<p className='subtitle'>A table is a database object that stores data in the form of rows and columns.
+Each row represents a record, and each column represents a specific field or attribute of that record.</p>
+<h2>5🔹What is a primary key?</h2>
+<p className='subtitle'>A Primary Key is a column in a table that uniquely identifies each row.</p>
+<p className='subtitle'>It cannot contain NULL values, and every value must be unique.</p>
+<ul class='bullet-points'>
+  <li>A table can have only one primary key.</li>
+</ul>
+<h2>6🔹What is a foreign key?</h2>
+<p className='subtitle'>A Foreign Key is a column in one table (child table) that is used to create a relationship with another table (parent table).
+It refers to the Primary Key or Unique Key of the parent table.</p>
+<ul class='bullet-points'>
+  <li>A foreign key can contain duplicate values.</li>
+  <li>A foreign key can contain NULL values (unless restricted).</li>
+</ul>
+<h2>7🔹What is a unique key?</h2>
+<p className='subtitle'>A Unique Key is a column in a table that ensures all values are unique, meaning no duplicate values are allowed.</p>
+<ul class='bullet-points'>
+  <li>A Unique Key allows one NULL value</li>
+  <li>A table can have multiple unique keys.</li>
+</ul>
+<h2>8🔹What is a composite key?</h2>
+<p className='subtitle'>A Composite Key is a primary key that is created using two or more columns in a table.
+These columns together uniquely identify each row,</p>
+<h2>9🔹What is a NULL value??</h2>
+<p className='subtitle'>A NULL value represents missing, unknown or no data in a table.</p>
+<ul class='bullet-points'>
+  <li>NULL is not the same as 0</li>
+  <li>NULL is not an empty string ("")</li>
+</ul>
+<h2>10🔹 Difference between WHERE and HAVING?</h2>
+<p className='subtitle'><strong>WHERE Clause</strong></p>
+<p className='subtitle'>WHERE filters rows before grouping, HAVING filters groups after grouping.</p>
+<h2>11🔹 What is a JOIN? Explain types of JOINs?</h2>
+<p class='subtitle'>
+A JOIN is used to combine rows from two or more tables based on a related column between them (usually a primary key and foreign key).
+</p>
+<p class='subtitle'><strong>✅ Types of JOINs in SQL</strong></p>
+<p class='subtitle'>1️⃣ <strong>INNER JOIN</strong></p>
+<p class='subtitle'>Returns only the matching records from both tables.</p>
+<pre>
+SELECT * 
+FROM A 
+INNER JOIN B 
+ON A.id = B.id;
+</pre>
+<p class='subtitle'>2️⃣ <strong>LEFT JOIN (LEFT OUTER JOIN)</strong></p>
+<p class='subtitle'>Returns all records from the left table and the matching records from the right table. If no match → shows NULL for right table columns.</p>
+<p class='subtitle'>3️⃣ <strong>RIGHT JOIN (RIGHT OUTER JOIN)</strong></p>
+<p class='subtitle'>Returns all records from the right table and the matching records from the left table. If no match → shows NULL for left table columns.</p>
+<p class='subtitle'>4️⃣ <strong>FULL JOIN (FULL OUTER JOIN)</strong></p>
+<p class='subtitle'>Returns all records from both tables. Matching records are combined; non-matching records show NULL on one side.</p>
+<p class='subtitle'>5️⃣ <strong>CROSS JOIN</strong></p>
+<p class='subtitle'>Returns the Cartesian product of both tables. Every row of Table A is paired with every row of Table B.</p>
+<p class='subtitle'>6️⃣ <strong>SELF JOIN</strong></p>
+<p class='subtitle'>A table is joined with itself, usually to compare rows within the same table.</p>
+<h2>12. 🔹Difference between INNER JOIN and LEFT JOIN</h2>
+<p className="subtitle">
+<strong>INNER JOIN</strong> returns only the matching records between two tables.
+If a record does not have a match in the other table → it is not shown.
+</p>
+<pre>
+{`SELECT *
+FROM A
+INNER JOIN B
+ON A.id = B.id;`}
+</pre>
+<p className="subtitle">
+<strong>Output:</strong> Only rows where <code>A.id = B.id</code>.
+</p>
+<p className="subtitle">
+<strong>LEFT JOIN</strong> returns all records from the left table, even if there is no match in the right table.
+Unmatched rows from the right side become <code>NULL</code>.
+</p>
+<pre>
+{`SELECT *
+FROM A
+LEFT JOIN B
+ON A.id = B.id;`}
+</pre>
+<p className="subtitle">
+<strong>Output:</strong><br/>
+• All rows from <code>A</code> <br/>
+• Matching rows from <code>B</code> <br/>
+• Non-matching rows from <code>B</code> → <code>NULL</code>
+</p>
+<h2>13🔹 What is a Self Join?</h2>
+<p className='subtitle'>
+A Self Join is a type of JOIN where a table is joined with itself.
+</p>
+<p className='subtitle'>
+It is used when we want to compare rows within the same table — for example, finding the manager of an employee from the same employees table.
+</p>
+<p className='subtitle'>Example:</p>
+<pre className='code-block'>
+SELECT e.name AS employee,
+       m.name AS manager
+FROM employees e
+JOIN employees m
+ON e.manager_id = m.id;
+</pre>
+<p className='subtitle'>Explanation:</p>
+<ul className='bullet-points'>
+  <li>The <b>employees</b> table is used twice using aliases.</li>
+  <li><b>e</b> → represents employee</li>
+  <li><b>m</b> → represents manager</li>
+  <li>We join the table with itself to find related data within the same table.</li>
+</ul>
+<h2>14🔹 What is a CROSS JOIN?</h2>
+<p className='subtitle'>
+A CROSS JOIN returns the <b>Cartesian product</b> of two tables.
+</p>
+<p className='subtitle'>
+This means every row from Table A is combined with every row from Table B, regardless of matching columns.
+</p>
+<p className='subtitle'>
+A CROSS JOIN does <b>not require any join condition</b>.
+</p>
+<p className='subtitle'>Example:</p>
+<pre className='code-block'>
+SELECT *
+FROM A
+CROSS JOIN B;
+</pre>
+<p className='subtitle'>Output:</p>
+<ul className='bullet-points'>
+  <li>If <b>Table A</b> has 3 rows</li>
+  <li>And <b>Table B</b> has 4 rows</li>
+  <li>Result = <b>3 × 4 = 12 rows</b></li>
+</ul>
+<p className='subtitle'>When is CROSS JOIN used?</p>
+<ul className='bullet-points'>
+  <li>To generate combinations of all values</li>
+  <li>Creating test data</li>
+  <li>Building calendar/time combinations</li>
+</ul>
+<h2>15. What is Normalization?</h2>
+<p className='subtitle'>
+Normalization is a process in SQL used to organize data in a database to:
+</p>
+<ul className='bullet-points'>
+  <li>✔ Remove redundancy (duplicate data)</li>
+  <li>✔ Improve data integrity</li>
+  <li>✔ Make the database efficient</li>
+</ul>
+<p className='subtitle'>
+Normalization divides large tables into smaller related tables.
+</p>
+<h3 className='subtitle'>✅ 1NF – First Normal Form</h3>
+<p className='subtitle'>A table is in 1NF if:</p>
+<ul className='bullet-points'>
+  <li>All values are <b>atomic</b> (no multiple values in a single column)</li>
+  <li>No repeating groups or arrays</li>
+  <li>Each record can be uniquely identified</li>
+</ul>
+<p className='subtitle'>❌ Not in 1NF:</p>
+<pre className='code-block'>
+id   hobbies
+1    cricket, music
+</pre>
+<p className='subtitle'>✔ In 1NF → split values:</p>
+<pre className='code-block'>
+id   hobby
+1    cricket
+1    music
+</pre>
+<h3 className='subtitle'>✅ 2NF – Second Normal Form</h3>
+<p className='subtitle'>A table is in 2NF if:</p>
+<ul className='bullet-points'>
+  <li>It is already in <b>1NF</b></li>
+  <li>No <b>partial dependency</b> (a non-key column should not depend on part of a composite key)</li>
+</ul>
+<p className='subtitle'>❌ Not in 2NF example:</p>
+<pre className='code-block'>
+Primary key → (student_id, course_id)
+student_id   course_id   student_name
+</pre>
+<p className='subtitle'>
+Here <b>student_name</b> depends only on student_id → partial dependency.
+</p>
+<p className='subtitle'>✔ Fix → separate into two tables.</p>
+<h3 className='subtitle'>✅ 3NF – Third Normal Form</h3>
+<p className='subtitle'>A table is in 3NF if:</p>
+<ul className='bullet-points'>
+  <li>It is already in <b>2NF</b></li>
+  <li>No <b>transitive dependency</b> (non-key columns should not depend on other non-key columns)</li>
+</ul>
+<p className='subtitle'>❌ Not in 3NF:</p>
+<pre className='code-block'>
+emp_id   emp_name   dept_id   dept_name
+</pre>
+<p className='subtitle'>
+Here: <b>dept_name</b> depends on <b>dept_id</b> → transitive dependency.
+</p>
+<p className='subtitle'>✔ Fix → split into two tables:</p>
+<ul className='bullet-points'>
+  <li>employees</li>
+  <li>departments</li>
+</ul>
+<h2>16. What is Denormalization?</h2>
+
+<p className='subtitle'>
+Denormalization is the process of intentionally adding redundancy (duplicate data) into a database to improve read performance.
+</p>
+
+<p className='subtitle'>
+It is often used when fast data retrieval is more important than avoiding duplicates — such as in reporting, analytics, or large-scale applications.
+</p>
+
+<h3 className='subtitle'>✔ Why do we use Denormalization?</h3>
+
+<ul className='bullet-points'>
+  <li>To speed up SELECT queries</li>
+  <li>To reduce JOIN operations</li>
+  <li>To improve performance in large databases</li>
+  <li>Useful in data warehouses, OLAP systems, and high-traffic applications</li>
+</ul>
+
+<h3 className='subtitle'>✔ Example of Denormalization</h3>
+
+<p className='subtitle'>🔹 Normalized structure:</p>
+
+<pre className='code-block'>
+orders table
+------------------------------
+order_id   customer_id   total
+
+customers table
+------------------------------
+customer_id   customer_name
+</pre>
+
+<p className='subtitle'>
+To get the customer name → a JOIN is required.
+</p>
+
+<p className='subtitle'>🔹 Denormalized structure:</p>
+
+<pre className='code-block'>
+orders table
+-----------------------------------------------
+order_id   customer_id   customer_name   total
+</pre>
+
+<p className='subtitle'>
+Here we store <b>customer_name</b> directly in the orders table → no JOIN needed.
+</p>
+
+<h3 className='subtitle'>🔍 When is Denormalization used?</h3>
+
+<ul className='bullet-points'>
+  <li>When reading data happens more frequently than writing</li>
+  <li>When JOIN operations are too slow</li>
+  <li>In analytics dashboards</li>
+  <li>In distributed systems</li>
+</ul>
+<h2>17. Difference between DELETE, TRUNCATE, and DROP</h2>
+
+<ul className='bullet-points'>
+  <li><b>DELETE</b> – Removes records row-by-row based on a condition.<br/>
+      ✔ Can be rolled back<br/>
+      ✔ Table structure remains<br/>
+      ✔ Slower because it logs each row deletion</li>
+
+  <li><b>TRUNCATE</b> – Removes all records at once.<br/>
+      ❌ Cannot be rolled back (auto-commit)<br/>
+      ✔ Table structure remains<br/>
+      ✔ Faster than DELETE</li>
+
+  <li><b>DROP</b> – Deletes the table completely from the database.<br/>
+      ❌ Cannot be rolled back<br/>
+      ❌ Table structure is removed<br/>
+      ✔ Fastest (removes table + data)</li>
+</ul>
+
+<br/>
+
+<h2>18. What is a View?</h2>
+
+<p className='subtitle'>
+A <b>View</b> is a virtual table created from a SQL query.
+It does not store data physically; it shows data from underlying tables.
+</p>
+
+<p className='subtitle'>Example:</p>
+
+<pre className='code-block'>
+CREATE VIEW employee_view AS
+SELECT id, name, salary
+FROM employees;
+</pre>
+
+<ul className='bullet-points'>
+  <li>✔ Used to simplify complex queries</li>
+  <li>✔ Provides security by restricting column access</li>
+  <li>✔ Acts like a table but doesn't store data</li>
+</ul>
+
+<br/>
+
+<h2>19. What is an Index? Why is it used?</h2>
+
+<p className='subtitle'>
+An <b>Index</b> is a database object used to speed up data retrieval.
+It works like an index in a book — helps the database find rows faster.
+</p>
+
+<ul className='bullet-points'>
+  <li>✔ Improves SELECT query performance</li>
+  <li>✔ Faster searching, sorting, and filtering</li>
+  <li>❌ Slows down INSERT/UPDATE/DELETE because index must be updated</li>
+</ul>
+
+<p className='subtitle'>Example:</p>
+
+<pre className='code-block'>
+CREATE INDEX idx_name ON employees(name);
+</pre>
+
+<br/>
+
+<h2>20. Difference between Clustered and Non-Clustered Index</h2>
+
+<ul className='bullet-points'>
+  <li><b>Clustered Index</b><br/>
+      ✔ Stores table data in sorted order<br/>
+      ✔ Only ONE clustered index per table<br/>
+      ✔ Faster for range-based searches</li>
+
+  <li><b>Non-Clustered Index</b><br/>
+      ✔ Stores index separately from table data<br/>
+      ✔ Can have MULTIPLE non-clustered indexes<br/>
+      ✔ Contains pointers to actual data rows</li>
+</ul>
+
+<p className='subtitle'><b>Simple example:</b></p>
+
+<ul className='bullet-points'>
+  <li>Clustered Index → Book pages arranged in order</li>
+  <li>Non-Clustered Index → Index page at the back of the book pointing to locations</li>
+</ul>
+
   </>
 )}
 {activeSection === "sql-mini-projects" && (
