@@ -41,6 +41,7 @@ const SqlCourse = () => {
           <li className={activeSection === 'sql-transactions' ? 'active' : ''} onClick={() => setActiveSection('sql-transactions')}>🧩 Transactions</li>
           <li className={activeSection === 'sql-security' ? 'active' : ''} onClick={() => setActiveSection('sql-security')}>🧰 Security and Permissions</li>
           <li className={activeSection === 'database-design' ? 'active' : ''} onClick={() => setActiveSection('database-design')}>🧠 Database Design Concepts</li>
+          <li className={activeSection === 'sql-interview-questions' ? 'active' : ''} onClick={() => setActiveSection('sql-interview-questions')}>❓ SQL Interview Questions</li>
           <li className={activeSection === 'sql-mini-projects' ? 'active' : ''} onClick={() => setActiveSection('sql-mini-projects')}>🚀 Mini Projects (Hands-on Practice)</li>
         </ul>
       </aside>
@@ -101,6 +102,7 @@ const SqlCourse = () => {
           <li className={activeSection === 'sql-transactions' ? 'active' : ''} onClick={() => setActiveSection('sql-transactions')}>🧩 Transactions</li>
           <li className={activeSection === 'sql-security' ? 'active' : ''} onClick={() => setActiveSection('sql-security')}>🧰 Security and Permissions</li>
           <li className={activeSection === 'database-design' ? 'active' : ''} onClick={() => setActiveSection('database-design')}>🧠 Database Design Concepts</li>
+          <li className={activeSection === 'sql-interview-questions' ? 'active' : ''} onClick={() => setActiveSection('sql-interview-questions')}>❓ SQL Interview Questions</li>
           <li className={activeSection === 'sql-mini-projects' ? 'active' : ''} onClick={() => setActiveSection('sql-mini-projects')}>🚀 Mini Projects (Hands-on Practice)</li>
         </ul>
         </div>
@@ -2962,231 +2964,262 @@ CREATE TABLE ExamResults (
 )}
 {activeSection === "sql-normalization" && (
   <>
-    <h1>🧮 SQL Normalization</h1>
-    <p className="subtitle">
-      <strong>Normalization</strong> is the process of organizing data in a database to reduce redundancy
-      (duplicate data) and improve data integrity.
-    </p>
+    <h1>🧮 What is Normalization? (With Example)</h1>
 
     <p className="subtitle">
-      👉 It divides large tables into smaller related tables and links them using keys (like primary and foreign keys).
+      <strong>Normalization</strong> means organizing data into smaller, clean tables so that:
     </p>
 
-    <h2>🧠 Why Normalization?</h2>
-    <ul className='bullet-points'>
-      <li>❌ Without normalization → data duplication, inconsistency, and anomalies</li>
-      <li>✅ With normalization → no redundancy, consistent updates, and efficient storage</li>
+    <ul className="bullet-points">
+      <li>✔ No duplicate data</li>
+      <li>✔ No confusion</li>
+      <li>✔ No update problems</li>
+      <li>✔ Easy to maintain</li>
     </ul>
 
-    <h2>⚙️ Example Problem</h2>
-    <pre>
-{`StudentID | Name | Dept | DeptHead
-1 | Alex | CS | Dr. John
-2 | Sara | IT | Dr. Smith
-3 | John | CS | Dr. John`}
-    </pre>
-    <p className="subtitle">
-      ⚠️ DeptHead is repeated multiple times. If the CS head changes, many rows must be updated → leads to inconsistency.
-    </p>
-    <p className="subtitle">✅ Solution → Apply Normalization</p>
+    {/* ---------- Example Scenario ---------- */}
+    <h2>🎓 Example Scenario</h2>
+    <p>A school stores students and courses.</p>
 
-    <h2>🧩 Normal Forms Overview</h2>
-    <table className='style-table'>
+    <h3>❌ Before Normalization (UNF – Unnormalized Form)</h3>
+    <table className="style-table">
       <thead>
         <tr>
-          <th>Normal Form</th>
-          <th>Goal</th>
-          <th>Key Idea</th>
+          <th>StudentID</th>
+          <th>Name</th>
+          <th>Course1</th>
+          <th>Course2</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>1NF</td><td>Eliminate repeating groups</td><td>Each column has atomic values</td></tr>
-        <tr><td>2NF</td><td>Eliminate partial dependency</td><td>Every non-key depends on the whole key</td></tr>
-        <tr><td>3NF</td><td>Eliminate transitive dependency</td><td>No column depends on another non-key</td></tr>
-        <tr><td>BCNF</td><td>Stronger 3NF</td><td>Every determinant is a candidate key</td></tr>
-        <tr><td>4NF / 5NF</td><td>Advanced</td><td>Remove multi-valued and join dependencies</td></tr>
+        <tr><td>1</td><td>Alex</td><td>DBMS</td><td>SQL</td></tr>
+        <tr><td>2</td><td>Sara</td><td>Java</td><td>HTML</td></tr>
       </tbody>
     </table>
 
-    <h2>🧱 1️⃣ First Normal Form (1NF)</h2>
-    <p className='bullet-points'><strong>Rule:</strong> Each cell should have a single value only; no repeating groups.</p>
-    <pre className='block-code'>
-{`Not in 1NF:
-StudentID | Name | Subjects
-1 | Alex | Math, English
-2 | Sara | Science`}
-    </pre>
-    <p>Convert to 1NF 👇</p>
-    <pre>
-{`StudentID | Name | Subject
-1 | Alex | Math
-1 | Alex | English
-2 | Sara | Science`}
-    </pre>
-    <p className="note">✅ Each cell has a single value — table is now in 1NF.</p>
+    <h2>🔥 APPLY NORMALIZATION STEP BY STEP</h2>
 
-    <h2>⚙️ 2️⃣ Second Normal Form (2NF)</h2>
-    <p className="subtitle"><strong>Rule:</strong> Must be in 1NF, and all non-key attributes depend on the full primary key.</p>
-    <p className="subtitle">👉 Applies to tables with <strong>composite keys</strong>.</p>
-    <pre>
-{`Not in 2NF:
-StudentID | Subject | StudentName | Dept
-1 | Math | Alex | CS
-1 | English | Alex | CS`}
-    </pre>
-    <p>Convert to 2NF 👇</p>
-    <pre>
-{`Students
-StudentID | StudentName | Dept
-1 | Alex | CS
+    {/* ---------- 1NF ---------- */}
+    <h2>1️⃣ First Normal Form (1NF)</h2>
+    <p className="subtitle">
+      <strong>Rule:</strong> One value per cell — no repeating groups.
+    </p>
+    <p>👉 Remove Course1, Course2 and put each course in a new row.</p>
 
-Subjects
-StudentID | Subject
-1 | Math
-1 | English`}
-    </pre>
-    <p className="subtitle">✅ Now every non-key depends on the full key — in 2NF.</p>
+    <h3>✔ 1NF Table</h3>
+    <table className="style-table">
+      <thead>
+        <tr>
+          <th>StudentID</th>
+          <th>Name</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Alex</td><td>DBMS</td></tr>
+        <tr><td>1</td><td>Alex</td><td>SQL</td></tr>
+        <tr><td>2</td><td>Sara</td><td>Java</td></tr>
+        <tr><td>2</td><td>Sara</td><td>HTML</td></tr>
+      </tbody>
+    </table>
 
-    <h2>🧩 3️⃣ Third Normal Form (3NF)</h2>
-    <p><strong>Rule:</strong> Must be in 2NF, and no non-key depends on another non-key column.</p>
-    <pre>
-{`Not in 3NF:
-StudentID | Name | DeptID | DeptName
-1 | Alex | 101 | Computer Science
-2 | Sara | 102 | Electronics`}
-    </pre>
-    <p>Convert to 3NF 👇</p>
-    <pre>
-{`Students
-StudentID | Name | DeptID
-1 | Alex | 101
-2 | Sara | 102
+    {/* ---------- 2NF ---------- */}
+    <h2>2️⃣ Second Normal Form (2NF)</h2>
+    <p className="subtitle">
+      <strong>Rule:</strong>  
+      ✔ Must be in 1NF  
+      ✔ No partial dependency
+    </p>
 
-Departments
-DeptID | DeptName
-101 | Computer Science
-102 | Electronics`}
-    </pre>
-    <p className="subtitle">✅ DeptName now depends only on DeptID — table is in 3NF.</p>
+    <p>⚠️ Issue in 1NF:</p>
+    <p>
+      Primary Key = <strong>(StudentID + Course)</strong><br />
+      But <strong>Name</strong> depends only on StudentID → Partial dependency.
+    </p>
 
-    <h2>🧠 4️⃣ Boyce-Codd Normal Form (BCNF)</h2>
-    <p className="subtitle"><strong>Rule:</strong> Must be in 3NF, and every determinant must be a candidate key.</p>
-    <pre>
-{`Not in BCNF:
-StudentID | Course | Instructor
-1 | DBMS | Dr. John
-2 | DBMS | Dr. John
-3 | AI | Dr. Smith`}
-    </pre>
-    <p className='subtitle'>Convert to BCNF 👇</p>
-    <pre>
-{`Courses
-Course | Instructor
-DBMS | Dr. John
-AI | Dr. Smith
+    <h3>✔ 2NF Result</h3>
+    <h4>Students Table</h4>
+    <table className="style-table">
+      <thead>
+        <tr><th>StudentID</th><th>Name</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Alex</td></tr>
+        <tr><td>2</td><td>Sara</td></tr>
+      </tbody>
+    </table>
 
-StudentCourses
-StudentID | Course
-1 | DBMS
-2 | DBMS
-3 | AI`}
-    </pre>
-    <p className="subtitle">✅ Each dependency has a candidate key — in BCNF.</p>
+    <h4>StudentCourses Table</h4>
+    <table className="style-table">
+      <thead>
+        <tr><th>StudentID</th><th>Course</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>DBMS</td></tr>
+        <tr><td>1</td><td>SQL</td></tr>
+        <tr><td>2</td><td>Java</td></tr>
+        <tr><td>2</td><td>HTML</td></tr>
+      </tbody>
+    </table>
 
-    <h2>🧩 Higher Normal Forms (Optional)</h2>
+    {/* ---------- 3NF ---------- */}
+    <h2>3️⃣ Third Normal Form (3NF)</h2>
+    <p className="subtitle">
+      <strong>Rule:</strong>  
+      ✔ Must be in 2NF  
+      ✔ No transitive dependency
+    </p>
+
+    <p>“Course Fee” depends on Course, not StudentID → Transitive dependency</p>
+
+    <h3>✔ 3NF Result</h3>
+    <h4>Courses Table</h4>
+    <table className="style-table">
+      <thead>
+        <tr>
+          <th>CourseID</th>
+          <th>CourseName</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>101</td><td>DBMS</td><td>500</td></tr>
+        <tr><td>102</td><td>SQL</td><td>400</td></tr>
+        <tr><td>103</td><td>Java</td><td>600</td></tr>
+        <tr><td>104</td><td>HTML</td><td>350</td></tr>
+      </tbody>
+    </table>
+
+    <h4>StudentCourses Table</h4>
+    <table className="style-table">
+      <thead>
+        <tr><th>StudentID</th><th>CourseID</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>101</td></tr>
+        <tr><td>1</td><td>102</td></tr>
+        <tr><td>2</td><td>103</td></tr>
+        <tr><td>2</td><td>104</td></tr>
+      </tbody>
+    </table>
+
+    {/* ---------- BCNF ---------- */}
+<h2>4️⃣ Boyce–Codd Normal Form (BCNF)</h2>
+<p className="subtitle">
+  <strong>Rule:</strong><br />
+  A table is in <strong>BCNF</strong> if for every functional dependency,
+  the <strong>left side is a Candidate Key</strong>.
+</p>
+
+<p>
+  ⭐ <strong>Simple Meaning:</strong><br />
+  Only keys should determine other columns.<br />
+  If a non-key or partial key decides another column → ❌ BCNF is broken.
+</p>
+
+<p>
+  BCNF is a <strong>stricter version of 3NF</strong> and removes remaining issues like:<br />
+  ✔ Duplicate data<br />
+  ✔ Wrong dependencies<br />
+  ✔ Update/Delete anomalies
+</p>
+
+{/* ---------- BCNF Example ---------- */}
+<h3>✔ BCNF Example (Easy)</h3>
+
+<p>Consider this table:</p>
+
+<table className="style-table">
+  <thead>
+    <tr><th>Course</th><th>Teacher</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>DBMS</td><td>John</td></tr>
+    <tr><td>SQL</td><td>John</td></tr>
+    <tr><td>HTML</td><td>Sarah</td></tr>
+  </tbody>
+</table>
+
+<p>
+  Assume:<br/>
+  • One teacher teaches only one course → <strong>Teacher → Course</strong><br/>
+  • One course has only one teacher → <strong>Course → Teacher</strong>
+</p>
+
+<p>
+  These are <strong>two-way dependencies</strong>.  
+  But <strong>Teacher is NOT a key</strong>, yet <strong>Teacher → Course</strong> exists.<br/>
+  So this table <strong>breaks BCNF</strong>.
+</p>
+
+{/* ---------- BCNF FIX ---------- */}
+<h3>✔ BCNF Fix</h3>
+<p>Split into two tables:</p>
+
+<h4>1️⃣ Teacher Table</h4>
+<table className="style-table">
+  <thead>
+    <tr><th>Teacher</th><th>Course</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>John</td><td>DBMS</td></tr>
+    <tr><td>Sarah</td><td>HTML</td></tr>
+  </tbody>
+</table>
+
+<h4>2️⃣ CourseAssignments Table</h4>
+<table className="style-table">
+  <thead>
+    <tr><th>Course</th><th>Teacher</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>DBMS</td><td>John</td></tr>
+    <tr><td>HTML</td><td>Sarah</td></tr>
+  </tbody>
+</table>
+
+<p>
+  ✔ Now, every determinant is a <strong>candidate key</strong> → No BCNF violation.
+</p>
+
+
+    {/* ---------- Summary Table ---------- */}
+    <h2>⭐ Simple Summary</h2>
+
     <table className="style-table">
       <thead>
         <tr>
           <th>Normal Form</th>
-          <th>Description</th>
+          <th>What It Means</th>
+          <th>Example Fix</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>4NF</td><td>Removes multi-valued dependencies</td></tr>
-        <tr><td>5NF</td><td>Removes join dependencies</td></tr>
-        <tr><td>6NF</td><td>Rarely used — ensures minimal redundancy</td></tr>
-      </tbody>
-    </table>
-
-    <h2>⚙️ Benefits of Normalization</h2>
-    <table className='style-table'>
-      <thead>
-        <tr><th>Benefit</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>✅ Eliminates redundancy</td><td>No duplicate data</td></tr>
-        <tr><td>✅ Ensures data integrity</td><td>Data stays consistent</td></tr>
-        <tr><td>✅ Easier updates</td><td>Update one place only</td></tr>
-        <tr><td>✅ Improves efficiency</td><td>Optimized storage</td></tr>
-        <tr><td>✅ Simplifies relationships</td><td>Clear table connections</td></tr>
-      </tbody>
-    </table>
-
-    <h2>⚠️ Drawbacks of Over-Normalization</h2>
-    <table className='style-table'>
-      <thead>
-        <tr><th>Drawback</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>❌ Too many tables</td><td>Queries become complex</td></tr>
-        <tr><td>❌ Slower joins</td><td>Multiple joins needed</td></tr>
-        <tr><td>❌ Overhead for small DBs</td><td>Simple design might be better</td></tr>
-      </tbody>
-    </table>
-
-    <h2>🧮 Practice Example</h2>
-    <pre>
-{`Unnormalized:
-StudentID | Name | Course1 | Course2
-1 | Alex | DBMS | SQL
-2 | Sara | Java | HTML
-
-Normalized:
-Students
-StudentID | Name
-1 | Alex
-2 | Sara
-
-Courses
-CourseID | CourseName
-101 | DBMS
-102 | SQL
-103 | Java
-104 | HTML
-
-StudentCourses
-StudentID | CourseID
-1 | 101
-1 | 102
-2 | 103
-2 | 104`}
-    </pre>
-    <p className="subtitle">✅ Now the database is in 3NF — clean and efficient.</p>
-
-    <h2>🧠 Summary Table</h2>
-    <table className='style-table'>
-      <thead>
         <tr>
-          <th>Normal Form</th>
-          <th>Requirement</th>
-          <th>Removes</th>
+          <td>1NF</td>
+          <td>One value per cell</td>
+          <td>Remove Course1, Course2 → Rows</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>1NF</td><td>Each cell has one value</td><td>Repeating groups</td></tr>
-        <tr><td>2NF</td><td>Non-key depends on full key</td><td>Partial dependency</td></tr>
-        <tr><td>3NF</td><td>No non-key depends on another non-key</td><td>Transitive dependency</td></tr>
-        <tr><td>BCNF</td><td>Left side is candidate key</td><td>Remaining anomalies</td></tr>
-        <tr><td>4NF/5NF</td><td>Advanced normalization</td><td>Multi-valued & join dependencies</td></tr>
+        <tr>
+          <td>2NF</td>
+          <td>No partial dependency</td>
+          <td>Move Name to Students table</td>
+        </tr>
+        <tr>
+          <td>3NF</td>
+          <td>No transitive dependency</td>
+          <td>Move Fee to Courses</td>
+        </tr>
+        <tr>
+          <td>BCNF</td>
+          <td>Every determinant must be a candidate key</td>
+          <td>Split Teacher–Subject–Classroom</td>
+        </tr>
       </tbody>
     </table>
-
-    <p className="subtitle">
-      ✅ In short: <strong>Normalization = Clean, efficient, and reliable database design.</strong><br />
-      Use 1NF → 2NF → 3NF → BCNF for most practical databases.
-    </p>
   </>
 )}
+
 {activeSection === "sql-where-clause" && (
   <div className="content-section">
     <h1>🧩 Filtering Data (WHERE Clause)</h1>
@@ -4721,6 +4754,23 @@ CREATE TABLE Enrollments (
       ✅ <strong>In short:</strong> Good database design = Clean structure + Logical relationships + Efficient access.
       <br />It’s the foundation of every reliable and scalable SQL system.
     </p>
+  </>
+)}
+{activeSection === "sql-interview-questions" && (
+  <>
+  <h1>🧩 SQL Interview Questions & Answers</h1>
+  <p className='subtitle'>
+    Preparing for SQL interviews? Here are some common questions along with concise answers to help you get ready!
+  </p>
+  <h2>🧱 1. What is SQL?</h2>
+  <p className='subtitle'>SQL stands for Structured Query Language it is used for managing and manipulate data into the database
+    we can perform operation like creating databse and table inseting updating and deleting the data into the database.</p>
+    <h2>🧩 2. What is the difference between SQL and MySQL?</h2>
+    <p className='subtitle'>SQL is a standard programming language used to interact with relational database it defines commands like SELECT, INSERT, UPDATE, DELETE.</p>
+    <p className='subtitle'>  MYSQL  is an open-source Relational Database Management System (RDBMS) that uses SQL as its query language to store and manage data
+    </p>
+    <h2>🧱 3. What are the different types of SQL commands (DDL, DML, DCL, TCL, DRL)?</h2>
+    <p className='subtitle'> </p>
   </>
 )}
 {activeSection === "sql-mini-projects" && (

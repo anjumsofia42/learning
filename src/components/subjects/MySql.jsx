@@ -191,7 +191,7 @@ return (
         <li><b>Client Layer:</b> Where users or applications send SQL commands (e.g., <code>SELECT * FROM users;</code>).</li>
         <li><b>Server Layer:</b> The brain of MySQL — processes queries, checks permissions, manages memory and caching.  
           Includes:
-          <ul>
+          <ul className="bullet-points">
             <li>Parser & Optimizer → Understands and improves queries</li>
             <li>Query Cache → Stores previously run queries for faster response</li>
             <li>Pluggable Storage Engine → Actual data storage system (InnoDB, MyISAM, etc.)</li>
@@ -426,7 +426,7 @@ CREATE TABLE Marks (
     </pre>
 
     <h2>🎯 Summary</h2>
-    <table className="summary-table">
+    <table className="style-table">
       <thead>
         <tr>
           <th>Topic</th>
